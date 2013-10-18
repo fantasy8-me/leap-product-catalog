@@ -351,13 +351,22 @@
 
 						_x.attr('src', x.src);
 						
-						if (x.type != 'image')
+						if (x.type != 'image'){
 							_x
 								.css('position', 'relative')
 								.css('outline', '0')
 								.css('z-index', settings.baseZIndex + 100)
 								.width(x.width)
 								.height(x.height);
+							/* Eric.To fix the nav buttons are hid while x.type!=img*/
+							_nav_next.css('z-index', settings.baseZIndex + 100);
+							_nav_previous.css('z-index', settings.baseZIndex + 100);
+							/* Eric.To fix the nav buttons are hidden while x.type!=img*/
+						}else{
+							/* Eric.To remove the z-index while x.type==img to avoid affecting existing logic*/
+							_nav_next.css('z-index', '');
+							_nav_previous.css('z-index', '');
+						}
 
 					// Initialize
 						_loader.trigger('startSpinning').fadeIn(300);

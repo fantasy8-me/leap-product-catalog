@@ -17,6 +17,7 @@ $(function() { h5u_parallelism.init({
 		Refer to README.txt for details.
 
 	*/
+	maxRows:			1
 
 });});
 

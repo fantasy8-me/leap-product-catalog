@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"ske",
+				"Sketchfab"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"i",
+				"iframe	Tag"
+			],
+			[
+				"s",
+				"style	Tag"
+			],
+			[
+				"poin",
+				"pointer"
+			],
+			[
+				"scro",
+				"scrollDirection"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
 				"git",
 				"gitignore"
 			],
@@ -88,10 +116,6 @@
 				"localStorage"
 			],
 			[
-				"s",
-				"scroll"
-			],
-			[
 				"log",
 				"log"
 			],
@@ -110,10 +134,6 @@
 			[
 				"win",
 				"Window"
-			],
-			[
-				"c",
-				"click"
 			],
 			[
 				"glo",
@@ -162,10 +182,6 @@
 			[
 				"padd",
 				"padding"
-			],
-			[
-				"get",
-				"getScrollObject"
 			],
 			[
 				"per",
@@ -498,32 +514,74 @@
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"feedn",
-				"feedNavBarSummaryModeRef"
-			],
-			[
-				"feed",
-				"feedId"
-			],
-			[
-				"feedN",
-				"feedNavBarAdminMode"
-			],
-			[
-				"f",
-				"font-weight"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "close after save project",
+			"file": "prj-leapmotion-catalog/index.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 8813,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/scene.js",
+			"settings":
+			{
+				"buffer_size": 10723,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/zyx.tmp/blank.html",
+			"settings":
+			{
+				"buffer_size": 1777,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "ISSUE 6330 - App should only send heartbeat when in focus\nISSUE 6322 - App accepts input when not in focus\nISSUE 6321 - App must gracefully notify user when no internet connection available\nISSUE 6314 - Disconnection message should be adjusted\nISSUE 6341 - Cursor selection area considerably smaller than cursor\nISSUE 6340 - Facebook share button stops working after using mouse\nISSUE 6318 - 'Share' icons on Article Summary Screen difficult to select\nISSUE 6304 - Onscreen reminders of gestures would be very helpful\nISSUE 6329 - AP articles are missing time/date info\nISSUE 6327 - Fox News articles are missing body text\nISSUE 6323 - Inconsistent feed link icon sizes\nISSUE 6310 - Latency when scrolling on Article Summary Screen or Navigation Bar\nISSUE 6333 - Admin Scene gesture requires multiple attempts to activate",
+			"settings":
+			{
+				"buffer_size": 821,
+				"line_ending": "Unix",
+				"name": "ISSUE 6330 - App should only send heartbeat when i"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
+			"settings":
+			{
+				"buffer_size": 505,
+				"line_ending": "Unix",
+				"name": "Updated Files:"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/leap.js",
+			"settings":
+			{
+				"buffer_size": 208496,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/leaphandler.js",
+			"settings":
+			{
+				"buffer_size": 6545,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/config.js",
+			"settings":
+			{
+				"buffer_size": 18283,
 				"line_ending": "Unix"
 			}
 		}
@@ -604,6 +662,23 @@
 	},
 	"file_history":
 	[
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/leap.css",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/sketchfab-iframe-nonmin.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/config.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/blank.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/Backup/index.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/leaphandler.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/scene.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/index.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/test.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/index-online.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/leap/leap-0.2.0.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/event_simulator.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/response",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/skel.min.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.res/Catalog/index.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/close after save project",
 		"/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/close after save project",
 		"/Users/me/Work/WS/sublime-master-ws/xyz5_repo/close after save project",
 		"/Users/me/Work/Tools/Util/aa",
@@ -714,24 +789,7 @@
 		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/js/readability/js/readability_port.js",
 		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/js/readability/js/readability.js",
 		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/samplefeeds.txt",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/node_modules/node-readability/node_modules/jsdom/lib/jsdom/level2/html.js",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/rwm_pin_page/scene-two.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/rwm_pin_page/scene-one.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/js/readability/js/setParams.js",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/dummy.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/readability-complex.html",
-		"/Users/me/Downloads/readability-0.5.1/index.htm",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/index.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/rwm_pin_page/css/stylesheet.css",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/readability.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/css/readability/readability-home.css",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/css-study.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/rwm_pin_page/index.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/mysample_bootstrap.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/jquery_event.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/dragAndDrop.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/masonrytest.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/mydragAndDrop"
+		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/node_modules/node-readability/node_modules/jsdom/lib/jsdom/level2/html.js"
 	],
 	"find":
 	{
@@ -742,6 +800,8 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css",
+			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader-parent/prj-leapmotion-rssreader/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader-parent/prj-leapmotion-rssreader",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader",
@@ -760,9 +820,49 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"fab",
+			"init(",
+			"articleSummaryScene",
+			"articleReaderScene",
+			"chooseProtocol",
+			"options",
+			"Sketchfab(",
+			"Sketchfab",
+			"poptrox_switch",
+			"z-index",
+			"poptrox",
+			"_pic",
+			"\"pic\"",
+			"'pic'",
+			"height",
+			"z-index",
+			"popupNavPreviousSelector",
+			"nav-previous",
+			"z-index",
+			"Scroll",
+			"DOMS",
+			"ARTICLE_READER_SCENE",
+			"ARTICLE_SUMMARY_SCENE",
+			"sketch",
+			"sketuch",
+			".poptrox(",
+			"thumb",
+			"moveTo",
+			"selectFromPoint",
+			"caughtcu",
+			"caughtC",
+			"Float32Array",
+			"DOM",
+			"objects",
+			"scrollHand",
+			"scroll",
+			".css",
+			"appear",
+			"appear(",
+			"admin",
 			"_next",
 			"poptrox(",
 			"_popup",
@@ -850,47 +950,7 @@
 			"modal",
 			"pointerArea",
 			"\"height:100%;padding-top: 40px;padding-bottom:40px\"",
-			"feedStoreBtn",
-			"list",
-			"media",
-			"drag",
-			"back to bottom when reach top",
-			"back to top when reach bottom",
-			"guide",
-			"h2>",
-			"h3>",
-			"<td class=\"active\"",
-			"<td class=\"success\"",
-			"<td class=\"danger\"",
-			"<td class=\"warning\"",
-			"class=\"success\"",
-			"td",
-			"selectFromPoint",
-			"sele",
-			"reader",
-			"Reader",
-			"msgBox",
-			"#feedNavBar",
-			"currentScene.onHelpAppear()",
-			"onHelpAppear",
-			"logo",
-			"h5>",
-			"h4>",
-			"getScrollObject",
-			"getScrollObject\ngetScrollObject",
-			"scrollObject",
-			"scrollDirection",
-			"onS",
-			"onswip",
-			"prese",
-			"readermode",
-			"\"readermode\": ",
-			"\"readermode\": \"website\"",
-			"reader",
-			"openre",
-			"sceneBeforeHelp",
-			"bind",
-			"click("
+			"feedStoreBtn"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -898,6 +958,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"appMainScene",
+			"PRODCUT_SCENE",
+			"APP_MAIN_SCENE",
 			"$stepToCompleteContainerCash",
 			"$currentToolTipContainer",
 			"$toolTipContainer",
@@ -959,7 +1022,7 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
@@ -970,23 +1033,215 @@
 			[
 				{
 					"buffer": 0,
-					"file": "close after save project",
+					"file": "prj-leapmotion-catalog/index.html",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 8813,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "prj-leapmotion-catalog/js/scene.js",
+					"settings":
+					{
+						"buffer_size": 10723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								224,
+								224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "prj-leapmotion-catalog/zyx.tmp/blank.html",
+					"settings":
+					{
+						"buffer_size": 1777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1523,
+								1523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 821,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								750,
+								750
+							]
+						],
+						"settings":
+						{
+							"auto_name": "ISSUE 6330 - App should only send heartbeat when i",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								505,
+								505
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Updated Files:",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "prj-leapmotion-catalog/js/leap.js",
+					"settings":
+					{
+						"buffer_size": 208496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								576,
 								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "prj-leapmotion-catalog/js/leaphandler.js",
+					"settings":
+					{
+						"buffer_size": 6545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2004,
+								2004
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "prj-leapmotion-catalog/js/config.js",
+					"settings":
+					{
+						"buffer_size": 18283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								160,
+								175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1030,7 +1285,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 186.0
+		"height": 99.0
 	},
 	"output.git":
 	{
