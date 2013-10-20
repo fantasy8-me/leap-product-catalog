@@ -4,12 +4,52 @@
 		"selected_items":
 		[
 			[
-				"ske",
-				"Sketchfab"
+				"ini",
+				"init2"
+			],
+			[
+				"sc",
+				"scrollLeft"
+			],
+			[
+				"or",
+				"oriScrollLeft"
+			],
+			[
+				"scR",
+				"scrollLeft"
+			],
+			[
+				"is",
+				"isClockWise"
 			],
 			[
 				"c",
-				"center"
+				"clockwise"
+			],
+			[
+				"se",
+				"selectedElement"
+			],
+			[
+				"sce",
+				"Scene"
+			],
+			[
+				"cre",
+				"createProductScene"
+			],
+			[
+				"P",
+				"PRODUCT_SCENE"
+			],
+			[
+				"S",
+				"SCENES"
+			],
+			[
+				"ske",
+				"Sketchfab"
 			],
 			[
 				"i",
@@ -38,10 +78,6 @@
 			[
 				"Wo",
 				"WORKING_DIR"
-			],
-			[
-				"se",
-				"selectFeed"
 			],
 			[
 				"ste",
@@ -476,44 +512,8 @@
 				"prePrimaryPointer"
 			],
 			[
-				"sc",
-				"scrollObject"
-			],
-			[
 				"scree",
 				"screen_pos"
-			],
-			[
-				"sat",
-				"state"
-			],
-			[
-				"ge",
-				"gestureString"
-			],
-			[
-				"fr",
-				"frameString"
-			],
-			[
-				"ha",
-				"handString"
-			],
-			[
-				"v",
-				"vertical-align"
-			],
-			[
-				"inline",
-				"inline-block"
-			],
-			[
-				"im",
-				"important"
-			],
-			[
-				"back",
-				"background-color"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "prj-leapmotion-catalog/index.html",
 			"settings":
 			{
-				"buffer_size": 8813,
+				"buffer_size": 7826,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "prj-leapmotion-catalog/js/scene.js",
 			"settings":
 			{
-				"buffer_size": 10723,
+				"buffer_size": 12064,
 				"line_ending": "Unix"
 			}
 		},
@@ -541,15 +541,6 @@
 			{
 				"buffer_size": 1777,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "ISSUE 6330 - App should only send heartbeat when in focus\nISSUE 6322 - App accepts input when not in focus\nISSUE 6321 - App must gracefully notify user when no internet connection available\nISSUE 6314 - Disconnection message should be adjusted\nISSUE 6341 - Cursor selection area considerably smaller than cursor\nISSUE 6340 - Facebook share button stops working after using mouse\nISSUE 6318 - 'Share' icons on Article Summary Screen difficult to select\nISSUE 6304 - Onscreen reminders of gestures would be very helpful\nISSUE 6329 - AP articles are missing time/date info\nISSUE 6327 - Fox News articles are missing body text\nISSUE 6323 - Inconsistent feed link icon sizes\nISSUE 6310 - Latency when scrolling on Article Summary Screen or Navigation Bar\nISSUE 6333 - Admin Scene gesture requires multiple attempts to activate",
-			"settings":
-			{
-				"buffer_size": 821,
-				"line_ending": "Unix",
-				"name": "ISSUE 6330 - App should only send heartbeat when i"
 			}
 		},
 		{
@@ -573,7 +564,7 @@
 			"file": "prj-leapmotion-catalog/js/leaphandler.js",
 			"settings":
 			{
-				"buffer_size": 6545,
+				"buffer_size": 8859,
 				"line_ending": "Unix"
 			}
 		},
@@ -797,9 +788,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader-parent/prj-leapmotion-rssreader/js",
@@ -820,9 +812,22 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"sceneSwitch",
+			"item thumb",
+			"tipPosition",
+			"DOMSc",
+			"productScene",
+			"selectFromPoint",
+			"PROD",
+			"PRODC",
+			"productDetailsScene",
+			"PRODUCT_DETAILS_SCENE",
+			"PRODUCT_S",
+			"PRODUCT",
+			"Product",
 			"fab",
 			"init(",
 			"articleSummaryScene",
@@ -937,20 +942,7 @@
 			"availableFeedsPanel\navailableFeedsPanel",
 			"availableFeedsPanel",
 			"onHe",
-			"$(\"#globalMsgBox\")",
-			"main.js",
-			"\"name\": \"",
-			"ATTR_ID",
-			"discon",
-			"disco",
-			"disconn",
-			"reconnect",
-			"Disconnected",
-			"connect(",
-			"modal",
-			"pointerArea",
-			"\"height:100%;padding-top: 40px;padding-bottom:40px\"",
-			"feedStoreBtn"
+			"$(\"#globalMsgBox\")"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -958,6 +950,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"productScene",
+			"PRODUCT_SCENE",
 			"appMainScene",
 			"PRODCUT_SCENE",
 			"APP_MAIN_SCENE",
@@ -1022,7 +1016,7 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
@@ -1036,15 +1030,15 @@
 					"file": "prj-leapmotion-catalog/index.html",
 					"settings":
 					{
-						"buffer_size": 8813,
+						"buffer_size": 7826,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								178,
-								178
+								1627,
+								1627
 							]
 						],
 						"settings":
@@ -1053,7 +1047,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2800.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1063,15 +1057,15 @@
 					"file": "prj-leapmotion-catalog/js/scene.js",
 					"settings":
 					{
-						"buffer_size": 10723,
+						"buffer_size": 12064,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								224,
-								224
+								11861,
+								11861
 							]
 						],
 						"settings":
@@ -1081,7 +1075,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6742.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1116,32 +1110,6 @@
 				},
 				{
 					"buffer": 3,
-					"settings":
-					{
-						"buffer_size": 821,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								750,
-								750
-							]
-						],
-						"settings":
-						{
-							"auto_name": "ISSUE 6330 - App should only send heartbeat when i",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
 					"settings":
 					{
@@ -1168,7 +1136,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "prj-leapmotion-catalog/js/leap.js",
 					"settings":
 					{
@@ -1196,25 +1164,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "prj-leapmotion-catalog/js/leaphandler.js",
 					"settings":
 					{
-						"buffer_size": 6545,
+						"buffer_size": 8859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2004,
-								2004
+								2467,
+								2390
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1223,7 +1192,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "prj-leapmotion-catalog/js/config.js",
 					"settings":
 					{
@@ -1234,8 +1203,8 @@
 						"selection":
 						[
 							[
-								160,
-								175
+								12240,
+								12250
 							]
 						],
 						"settings":
@@ -1244,7 +1213,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6510.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

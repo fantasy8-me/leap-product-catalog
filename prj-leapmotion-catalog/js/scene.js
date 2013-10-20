@@ -9,13 +9,18 @@
 var currentScene;
 
 var appMainScene;
+var productScene;
 
 var SCENES = {
   APP_MAIN_SCENE:"APP_MAIN_SCENE",
+  PRODUCT_SCENE:"PRODUCT_SCENE",
 }
 
 
 function sceneSwitch(scene){
+  if(currentScene && currentScene.name === scene){
+    return;
+  }
   if(currentScene)
     currentScene.onExit();
   switch(scene){
@@ -23,7 +28,10 @@ function sceneSwitch(scene){
       currentScene = appMainScene;
       break;
     }
-
+    case SCENES.PRODUCT_SCENE:{
+      currentScene = productScene;
+      break;
+    }
   }
   currentScene.init();
 }
@@ -149,7 +157,6 @@ var defineSceneClass = function(){//called after dom model is ready
 
   Scene.prototype.onHelpDisappear = function(event){
     
-    //sceneSwitch(SCENES.PRODCUT_SCENE);
   }  
 
   Scene.prototype.pointer = (function(){
@@ -175,6 +182,23 @@ var defineSceneClass = function(){//called after dom model is ready
       ctx.stroke();
     };
 
+    var init2 = function(){
+      var ctx = canvasEm.getContext("2d");
+      ctx.clearRect(0,0,center.x * 2,center.y*2);
+      var ctx = canvasEm.getContext("2d");
+      ctx.beginPath();
+
+      ctx.arc(center.x,center.y,baseRadius-2,0,2 * Math.PI);
+      ctx.fillStyle = "rgba(214,71,96,0.5)";//#d64760
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.lineWidth =center.x - baseRadius + 2;
+      ctx.strokeStyle = 'rgba(55,50,54,0.9)';
+      ctx.arc(center.x,center.y,baseRadius +2,0,2*Math.PI);
+      ctx.stroke();
+    };
+
     var restore = function(){
       var ctx = canvasEm.getContext("2d");
       ctx.clearRect(0,0,center.x * 2,center.y*2);
@@ -190,7 +214,6 @@ var defineSceneClass = function(){//called after dom model is ready
         ctx.beginPath();
         ctx.arc(center.x,center.y,baseRadius-3,0,step * Math.PI);
         ctx.lineTo(center.x,center.y);
-        // ctx.fillStyle = "#CCFFFF";
         ctx.fillStyle = "#d64760";
         ctx.fill();
 
@@ -225,16 +248,6 @@ var defineSceneClass = function(){//called after dom model is ready
     var moveTo = function(x,y){
       canvasEm.style.left = x - center.x + "px";
       canvasEm.style.top = y - center.y + "px";    
-      //$(canvasEm).click();
-      //console.log("x:" + x + "  " + "y:" +y);
-      // $(canvasEm).simulate( "drag", {
-      //     dx: 1,
-      //     dy: 1,
-      //     moves:1,
-      //     moveandup:false,
-      //     moveonly:true
-      //   });
-      //$(canvasEm).simulate(document, "mousemove", {clientX:canvasEm.style.left,clientY:canvasEm.style.top} );  
     }
     var centerPosition = function(){
       return {
@@ -247,6 +260,7 @@ var defineSceneClass = function(){//called after dom model is ready
       center:center,
       restore:restore,
       startSelectAnimation:startSelectAnimation,
+      init2:init2,
       stopSelectAnimation:stopSelectAnimation,
       appear:appear,
       disappear:disappear,
@@ -264,14 +278,9 @@ var defineSceneClass = function(){//called after dom model is ready
 var createAppMainScene = function($){
   var stub = new Scene({name:SCENES.APP_MAIN_SCENE,
                         selectFromPoint: function(x,y){
-                          $selectedElementRightExt = $(document.elementFromPoint(x+28,y)).parent().parent().parent();
-                          $selectedElementLeftExt = $(document.elementFromPoint(x-28,y)).parent().parent().parent();
-                          $selectedElementTopExt = $(document.elementFromPoint(x,y-28)).parent().parent().parent();
-                          $selectedElementBottomExt = $(document.elementFromPoint(x,y+28)).parent().parent().parent();
                           $selectedElement = $(document.elementFromPoint(x,y));
-                          if($selectedElementRightExt.hasClass("item thumb") && $selectedElementLeftExt.hasClass("item thumb")
-                            && $selectedElementTopExt.hasClass("item thumb") && $selectedElementBottomExt.hasClass("item thumb")){
-                            return $(document.elementFromPoint(x+28,y));
+                          if($selectedElement.parent().parent().parent().hasClass("item thumb")){
+                            return $selectedElement;
                           }else{
                             return undefined;
                           }
@@ -282,14 +291,6 @@ var createAppMainScene = function($){
                       });
   stub.onSwipe = function(event){
     
-    if(event.numOfPointable >= 3 && (event.direction === "left" || event.direction === "right")){
-      // console.debug("Swipe:" + event.numOfPointable);
-
-      // $('html > div').filter(function() {
-      //      return $(this).css('float') == 'left';
-      // });
-      $("html > div").click();
-    }    
   };
 
   stub.onKeyTap = function(event){
@@ -305,46 +306,54 @@ var createAppMainScene = function($){
   }
   stub.onCircle =function(event){
       var evt = document.createEvent("MouseEvents");
-      if(event.clockwise){
-        evt.initMouseEvent(
-          'DOMMouseScroll', // in DOMString typeArg,
-           true,  // in boolean canBubbleArg,
-           true,  // in boolean cancelableArg,
-           window,// in views::AbstractView viewArg,
-           1,   // in long detailArg,
-           0,     // in long screenXArg,
-           0,     // in long screenYArg,
-           0,     // in long clientXArg,
-           0,     // in long clientYArg,
-           0,     // in boolean ctrlKeyArg,
-           0,     // in boolean altKeyArg,
-           0,     // in boolean shiftKeyArg,
-           0,     // in boolean metaKeyArg,
-           0,     // in unsigned short buttonArg,
-           null   // in EventTarget relatedTargetArg
-        );        
-        window.dispatchEvent(evt);  
-      }else{
-        evt.initMouseEvent(
-          'DOMMouseScroll', // in DOMString typeArg,
-           true,  // in boolean canBubbleArg,
-           true,  // in boolean cancelableArg,
-           window,// in views::AbstractView viewArg,
-           -1,   // in long detailArg,
-           0,     // in long screenXArg,
-           0,     // in long screenYArg,
-           0,     // in long clientXArg,
-           0,     // in long clientYArg,
-           0,     // in boolean ctrlKeyArg,
-           0,     // in boolean altKeyArg,
-           0,     // in boolean shiftKeyArg,
-           0,     // in boolean metaKeyArg,
-           0,     // in unsigned short buttonArg,
-           null   // in EventTarget relatedTargetArg
-        );        
-        window.dispatchEvent(evt);  
-      }      
       
+      var isClockWise = event.clockwise;
+      var offest = 1 * (isClockWise ? 1 : -1);
+      var oriScrollLeft = document.getElementById("main").scrollLeft;
+      evt.initMouseEvent(
+        'DOMMouseScroll', // in DOMString typeArg,
+         true,  // in boolean canBubbleArg,
+         true,  // in boolean cancelableArg,
+         window,// in views::AbstractView viewArg,
+         offest,   // in long detailArg,
+         0,     // in long screenXArg,
+         0,     // in long screenYArg,
+         0,     // in long clientXArg,
+         0,     // in long clientYArg,
+         0,     // in boolean ctrlKeyArg,
+         0,     // in boolean altKeyArg,
+         0,     // in boolean shiftKeyArg,
+         0,     // in boolean metaKeyArg,
+         0,     // in unsigned short buttonArg,
+         null   // in EventTarget relatedTargetArg
+      );        
+      window.dispatchEvent(evt);  
+      
+      if(event.numOfPointable >= 4){
+        if(oriScrollLeft === document.getElementById("main").scrollLeft){
+          // isClockWise = !isClockWise
+          offest = document.getElementById("main").scrollWidth * (isClockWise ? -1 : 1);
+        }
+        var evt2 = document.createEvent("MouseEvents");
+        evt2.initMouseEvent(
+          'DOMMouseScroll', // in DOMString typeArg,
+           true,  // in boolean canBubbleArg,
+           true,  // in boolean cancelableArg,
+           window,// in views::AbstractView viewArg,
+           offest,   // in long detailArg,
+           0,     // in long screenXArg,
+           0,     // in long screenYArg,
+           0,     // in long clientXArg,
+           0,     // in long clientYArg,
+           0,     // in boolean ctrlKeyArg,
+           0,     // in boolean altKeyArg,
+           0,     // in boolean shiftKeyArg,
+           0,     // in boolean metaKeyArg,
+           0,     // in unsigned short buttonArg,
+           null   // in EventTarget relatedTargetArg
+        );        
+        window.dispatchEvent(evt2);  
+      }   
 
   }
   return stub;
@@ -352,9 +361,59 @@ var createAppMainScene = function($){
 
 };
 
+var createProductScene = function($){
+  var stub = new Scene({name:SCENES.PRODUCT_SCENE,
+                        selectFromPoint: function(x,y){
+                          $selectedElement = $(document.elementFromPoint(x,y));
+                          if($selectedElement.hasClass("nav-next") || $selectedElement.hasClass("nav-previous")){
+                            $selectedElement.hover();
+                            return $selectedElement
+                          }else{
+                            return undefined;
+                          }
+                        },
+                        onSelected: function(selectedElement){
+                          selectedElement.click();
+                        },
+                      });
+  stub.onSwipe = function(event){
+    if(event.numOfPointable >= 3 && (event.direction === "left" || event.direction === "right")){
+      $("html > div").click();
+      //sceneSwitch(SCENES.APP_MAIN_SCENE);
+    }
+
+  };
+
+
+  stub.onExit = function(){
+    this.pointer.stopSelectAnimation();
+    this.selecting = false;
+    this.selectedElement = undefined;
+  }
+
+  stub.init = function(){
+  }
+  stub.onCircle =function(event){
+
+  }
+  return stub;
+
+
+};
 
 var initScene = function($){
     defineSceneClass();
     appMainScene = createAppMainScene($);
+    productScene = createProductScene($);
+    $("article.item.thumb a").each(function(){
+      $(this).click(function(){
+        console.debug("Go to details scene");
+        setTimeout(function(){sceneSwitch(SCENES.PRODUCT_SCENE);},1000);  
+      });
+    });
+    $("html > div").click(function(){
+      console.debug("return admin scene");
+      sceneSwitch(SCENES.APP_MAIN_SCENE);  
+    });    
     sceneSwitch(SCENES.APP_MAIN_SCENE);
 }

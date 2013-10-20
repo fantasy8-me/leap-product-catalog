@@ -25,9 +25,14 @@
 		<script src="js/leaphandler.js"></script>
 		<script src="js/scene.js"></script>
 		<script type="text/javascript">
+
 		jQuery(document).ready(function() {
 			initLeap();
 			initScene(jQuery);
+			window.onresize=function(){
+				sceneSwitch(SCENES.APP_MAIN_SCENE);
+				console.log("resize");
+			}			
 		});
 
 		</script>
@@ -40,6 +45,13 @@
 			<link rel="stylesheet" href="css/style-noscript.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+
+		<style type="text/css">
+		div.quickfix{
+			top:auto !important;
+			margin-top:0px !important
+		}
+		</style>
 	</head>
 	<body>
 
@@ -55,7 +67,7 @@
 						</ul>
 					</div>
 				</div>
-			<div id="main">
+			<div id="main" class="quickfix">
 				<div id="reel">
 				<Browse Products Below>
 				<!-- ******************************************************************************************** -->
@@ -135,28 +147,7 @@
 							<h2>Ducati</h2>
 							<a href="http://sketchfab.com/nj3gedc0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
 						</article>		
-
-
-						<article class="item thumb" data-width="400">
-							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="300">
-							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="250">
-							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
-						</article>											
+										
 				<!-- ******************************************************************************************** -->
 				<!-- ******************************************************************************************** -->
 				</div>
@@ -186,7 +177,7 @@
 		</div>
 
 		<!-- Leap integration-->
-		<canvas id="pointer" width="54px" height="54px" style="position:absolute;top:0px;z-index:1999;display:none"></canvas>	
+		<canvas id="pointer" width="54px" height="54px" style="position:absolute;top:0px;z-index:1999;display:none;pointer-events:none"></canvas>	
 		<!-- Leap integration end-->
 	</body>
 </html>
