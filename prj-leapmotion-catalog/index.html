@@ -51,9 +51,125 @@
 			top:auto !important;
 			margin-top:0px !important
 		}
+		nav span{
+			position: absolute;
+			top: 50%;
+			height: 40px;
+			width: 40px;
+			background-color: #d64760;
+			cursor: pointer;
+		}
+		nav span:after{
+			position: absolute;
+			content: '';
+			width: 20px;
+			height: 20px;
+			top: 10px;
+			left: 10px;
+			background: transparent url("images/arrows.png") no-repeat;
+		}
+		nav span.nav-previous:after{
+			background-position:top left
+		}	
+		nav span.nav-next:after{
+			background-position:top right
+		}		
+
+
+
+		.custom-poptrox-popup div.pic{
+			width: 55%;
+			/*border: solid 1px black;*/
+			margin-right:10px;
+			float: right
+		}
+
+		.content h2{
+			color: #777;
+			font-size: 46px;
+			white-space: nowrap;
+			font-weight: 300;
+			font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+			text-transform: none;
+			line-height: 1.1;
+		}
+
+		.content{
+			color: #888;
+		}
+		.content h3{
+			color: #777;
+			font-size: 32px;
+			white-space: nowrap;
+			font-weight: 300;
+			font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+			text-transform: none;
+			line-height: 1.5;
+		}
+		.content h3 span{
+			padding-bottom: 5px;
+			margin-bottom: 5px;
+			border-bottom: 2px solid #eee;
+			text-transform: none
+		}
+		.content p{
+			width: 40%;
+			top: 105px;
+			color: #888;
+			font-size: 15px;
+			line-height: 26px;
+			height: 80px;
+			overflow: hidden;
+			font-weight: 400;
+			font-style: italic;
+			/*margin-top:5px;*/
+			margin-bottom:15px;
+		}
+		.content .fullsize p{
+			width: 100%;
+		}		
 		</style>
 	</head>
 	<body>
+		<div class="custom-poptrox-popup" style="background-color:white">
+		  <div class="loader">
+		  </div>
+		  <div class="content" style="margin: 10px auto;width:80%;height:90%;overflow:auto;padding-top:20px">
+		  	<h2>MOBILE</h2>
+
+		  	<hr>
+		  	<div class="pic" >
+		  		  	
+		  	</div>		  	
+		  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. Nam lacinia arcu id varius sagittis. Fusce ultrices, sapien et luctus pellentesque, nisl dolor dictum velit, eu pharetra lectus magna eu nunc. Aenean nec rutrum erat. Nam nec malesuada nunc, sit amet vulputate eros. Praesent nec posuere eros. Mauris non eros iaculis,</p>
+
+		  	<h3><span>BLOCK 1</span></h3>
+			<p>
+				Phasellus rutrum dui at urna mattis cursus. Ut euismod tortor tincidunt ipsum lobortis cursus. Mauris aliquet molestie lectus sit amet interdum. Duis luctus ut eros ut volutpat. Integer ac enim sit amet massa viverra sollicitudin. 
+			</p>
+		  	<h3><span>BLOCK 2</span></h3>
+			  	<p>Vivamus dolor dolor, fermentum vel diam non, consequat euismod mi. Ut posuere dapibus lacus, a lobortis lectus aliquam ac. Integer vitae mauris a tortor porta rutrum vitae a libero. Mauris ligula mi, vulputate sed condimentum eget, euismod at augue. Vivamus eget cursus augue</p>
+		
+
+			<p sytle="width:100%;height:0px"></p>  
+			<div class="fullsize">	
+			  	<h3><span>Full Size BLOCK 1</span></h3>
+			  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>		  	
+			  	<h3><span>Full Size BLOCK 2</span></h3>
+			  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+			</div>				  		
+		</div>
+
+		  <nav>
+		        <span class="nav-previous" style="left:25px"></span>
+		        <span class="nav-next" style="right:25px"></span>
+		  </nav>
+
+<!-- 		  <div class="nav-previous">
+		  </div>
+		  <div class="nav-next">
+		  </div> -->
+		</div>
 
 		<div id="wrapper">
 				<div id="header-image">

@@ -479,10 +479,14 @@ $(function() { h5u_parallelism.init({
 							popupCloserText: '',
 							popupLoaderText: '',
 							selector: '.thumb a',
-							usePopupCaption: true,
+							usePopupCaption: false,
 							usePopupCloser: false,
 							usePopupDefaultStyling: false,
-							usePopupNav: true
+							usePopupNav: true,
+							popupSelector:".custom-poptrox-popup",
+							popupWidth:1000,
+							popupHeight:600,
+							popupIsFixed:true
 						});
 
 					// Trigger resize event
