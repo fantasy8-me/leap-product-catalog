@@ -70,6 +70,7 @@ var defineSceneClass = function(){//called after dom model is ready
           if(!event.gestureFound && !this.selecting){
             this.selecting = true;
             this.selectedElement = tmpEm;
+            this.pointer.initSelect();
             this.pointer.startSelectAnimation((function(){
               this.onSelected.bind(this)(this.selectedElement);
             }).bind(this),this.selectMode);
@@ -111,14 +112,14 @@ var defineSceneClass = function(){//called after dom model is ready
       ori = this.scrollObject.scrollTop;
       if(event.clockwise){
         this.scrollObject.scrollTop += this.scrollPace + event.radius * 0.2;
-        if(event.numOfPointable >= 3){
+        if(event.numOfPointable >= 4){
           if(this.scrollObject.scrollTop === ori){
             this.scrollObject.scrollTop = 0;  
           }  
         }
       }else{
         this.scrollObject.scrollTop -= this.scrollPace + event.radius * 0.2;
-        if(event.numOfPointable >= 3){
+        if(event.numOfPointable >= 4){
           if(this.scrollObject.scrollTop === 0){
             this.scrollObject.scrollTop = this.scrollObject.scrollHeight;
           }  
@@ -128,14 +129,14 @@ var defineSceneClass = function(){//called after dom model is ready
       ori = this.scrollObject.scrollLeft;
       if(event.clockwise){
         this.scrollObject.scrollLeft += this.scrollPace + event.radius * 0.2;
-        if(event.numOfPointable >= 3){
+        if(event.numOfPointable >= 4){
           if(this.scrollObject.scrollLeft === ori){
             this.scrollObject.scrollLeft = 0;  
           }  
         }
       }else{
         this.scrollObject.scrollLeft -= this.scrollPace + event.radius * 0.2;
-        if(event.numOfPointable >= 3){
+        if(event.numOfPointable >= 4){
           if(this.scrollObject.scrollLeft === 0){
             this.scrollObject.scrollLeft = this.scrollObject.scrollWidth;
           }  
@@ -172,7 +173,7 @@ var defineSceneClass = function(){//called after dom model is ready
       ctx.arc(center.x,center.y,baseRadius-2,0,2 * Math.PI);
       // ctx.fillStyle = "rgba(102,204,204,0.7)";
       // ctx.fillStyle = "rgba(102,176,204,0.7)";
-      ctx.fillStyle = "rgba(255,255,255,0.5)";
+      ctx.fillStyle = "rgba(255,255,255,0.9)";
       ctx.fill();
 
       ctx.beginPath();
@@ -182,14 +183,15 @@ var defineSceneClass = function(){//called after dom model is ready
       ctx.stroke();
     };
 
-    var init2 = function(){
+    var initSelect = function(){
       var ctx = canvasEm.getContext("2d");
       ctx.clearRect(0,0,center.x * 2,center.y*2);
       var ctx = canvasEm.getContext("2d");
       ctx.beginPath();
 
       ctx.arc(center.x,center.y,baseRadius-2,0,2 * Math.PI);
-      ctx.fillStyle = "rgba(214,71,96,0.5)";//#d64760
+      //ctx.fillStyle = "rgba(214,71,96,0.7)";//#d64760
+      ctx.fillStyle = "#0066ff";//#d64760
       ctx.fill();
 
       ctx.beginPath();
@@ -214,7 +216,7 @@ var defineSceneClass = function(){//called after dom model is ready
         ctx.beginPath();
         ctx.arc(center.x,center.y,baseRadius-3,0,step * Math.PI);
         ctx.lineTo(center.x,center.y);
-        ctx.fillStyle = "#d64760";
+        ctx.fillStyle = "rgba(255,255,255,0.5)";
         ctx.fill();
 
         ctx.beginPath();
@@ -223,7 +225,7 @@ var defineSceneClass = function(){//called after dom model is ready
         ctx.arc(center.x,center.y,baseRadius + 1,0,step * Math.PI);
         ctx.stroke();
 
-        step += 0.1;
+        step += 0.15;
         timer = setTimeout(function(){startSelectAnimation(callback,selectMode,step)},100);
       }else{
         if(selectMode === Scene.SELECT_MODE.click){
@@ -260,7 +262,7 @@ var defineSceneClass = function(){//called after dom model is ready
       center:center,
       restore:restore,
       startSelectAnimation:startSelectAnimation,
-      init2:init2,
+      initSelect:initSelect,
       stopSelectAnimation:stopSelectAnimation,
       appear:appear,
       disappear:disappear,
@@ -301,7 +303,9 @@ var createAppMainScene = function($){
     this.selecting = false;
     this.selectedElement = undefined;
   }
-
+  stub.getTips = function(){
+    return "Fingertip circle to scroll<br>Point and hold to open product"
+  }
   stub.init = function(){
   }
   stub.onCircle =function(event){
@@ -375,15 +379,14 @@ var createProductScene = function($){
                         onSelected: function(selectedElement){
                           selectedElement.click();
                         },
+                        scrollObject:document.getElementById("popupContent")
                       });
   stub.onSwipe = function(event){
     if(event.numOfPointable >= 3 && (event.direction === "left" || event.direction === "right")){
       $("html > div").click();
-      //sceneSwitch(SCENES.APP_MAIN_SCENE);
     }
 
   };
-
 
   stub.onExit = function(){
     this.pointer.stopSelectAnimation();
@@ -393,8 +396,8 @@ var createProductScene = function($){
 
   stub.init = function(){
   }
-  stub.onCircle =function(event){
-
+  stub.getTips = function(){
+    return "Swipe horizontally to escape <br> Point and hold to navigate"
   }
   return stub;
 

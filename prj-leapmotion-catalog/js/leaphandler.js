@@ -131,7 +131,6 @@ var initLeap = (function(){
                     currentScene.onMove(event);
                     prePrimaryPointer = primaryPointable;
                 }else{
-                    //console.debug("disapprer B, pre:["+prePrimaryPointer.id + "] primary[" + primaryPointable.id +"]");
                     prePrimaryPointer = undefined;
                     currentScene.onPointerDisappear();
                 }
@@ -173,6 +172,9 @@ var initLeap = (function(){
                 };
                 return tmpGesture;
             })();
+            if(validGestures.length === 0){
+                tutorialManager.displayTips();
+            }
 
             for (var i = 0; i < validGestures.length; i++) {
               var gesture = validGestures[i];
@@ -190,6 +192,8 @@ var initLeap = (function(){
                         }
                         currentScene.onCircle(event);
                     }
+                    var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" : "1 finger";
+                    tutorialManager.displayGesture("CIRCLE",submsg);
                   break;
                 case "swipe":{
                   var direction = "unknown";
@@ -216,6 +220,7 @@ var initLeap = (function(){
                       }
                       if(direction !== "unknown"){
                         event.direction = direction;
+                        tutorialManager.displayGesture("SWIPE", event.direction);
                         currentScene.onSwipe(event);
                       }
                   break;

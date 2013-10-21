@@ -479,7 +479,7 @@ $(function() { h5u_parallelism.init({
 							popupCloserText: '',
 							popupLoaderText: '',
 							selector: '.thumb a',
-							usePopupCaption: false,
+							usePopupCaption: true,
 							usePopupCloser: false,
 							usePopupDefaultStyling: false,
 							usePopupNav: true,
