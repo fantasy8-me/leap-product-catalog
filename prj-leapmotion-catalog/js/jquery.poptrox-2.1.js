@@ -552,8 +552,8 @@
 						x.type = 'sketchfab';
 						x.object = jQuery('<iframe src="" frameborder="0" allowFullScreen="1"></iframe>');
 						x.src = 'http://sketchfab.com/' + tmp[2];
-						x.width = '600';
-						x.height = '600';
+						x.width = '380';
+						x.height = '380';
 
 						break;
 
