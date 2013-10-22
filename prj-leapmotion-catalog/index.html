@@ -79,89 +79,106 @@
 		}		
 
 
-
+		.custom-poptrox-popup{
+		    text-transform: none;
+		    color: #888;
+		}    
 		.custom-poptrox-popup div.pic{
-			width: 45%;
-			/*border: solid 1px black;*/
-			margin-right:10px;
-			float: right
+		    width: 100%;
 		}
-
 		.custom-poptrox-popup div.pic iframe,img{
-			width: 100% !important;
+		    width: 100% !important;
 		}
-		.content h2{
-			color: #777;
-			font-size: 46px;
-			white-space: nowrap;
-			font-weight: 300;
-			font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
-			text-transform: none;
-			line-height: 1.1;
+		#popupContent{
+			height:100%;
+			overflow:auto;
+			padding:65px
+		}
+		#popupContent h2{
+		    color: #777;
+		    font-size: 46px;
+		    white-space: nowrap;
+		    font-weight: 300;
+		    font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+		    line-height: 1.1;
 		}
 
-		.content{
-			color: #888;
+		#popupContent h3{
+		    color: #777;
+		    font-size: 32px;
+		    white-space: nowrap;
+		    font-weight: 300;
+		    font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+		    line-height: 1.5;
 		}
-		.content h3{
-			color: #777;
-			font-size: 32px;
-			white-space: nowrap;
-			font-weight: 300;
-			font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
-			text-transform: none;
-			line-height: 1.5;
+		#popupContent h3 span{
+		    padding-bottom: 5px;
+		    margin-bottom: 5px;
+		    border-bottom: 2px solid #eee;
 		}
-		.content h3 span{
-			padding-bottom: 5px;
-			margin-bottom: 5px;
-			border-bottom: 2px solid #eee;
-			text-transform: none
+		#popupContent p{
+		    color: #888;
+		    font-size: 15px;
+		    line-height: 26px;
+		    overflow: hidden;
+		    font-weight: 400;
+		    font-style: italic;
+		    margin-bottom:15px;
 		}
-		.content p{
-			width: 50%;
-			top: 105px;
-			color: #888;
-			font-size: 15px;
-			line-height: 26px;
-			height: 80px;
-			overflow: hidden;
-			font-weight: 400;
-			font-style: italic;
-			/*margin-top:5px;*/
-			margin-bottom:15px;
+
+		/*custom popup layout*/
+		#popupContent .main {
+			margin:20px 0px;
 		}
-		.content .fullsize p{
-			width: 100%;
-		}		
+		#popupContent .main .left {
+		    width:35%; 
+		    float:left; 
+		    padding:10px; 
+		    background:green;
+		}
+		#popupContent .main .center {
+		    width:30%; 
+		    /*float:left; */
+		    margin:0 auto;
+		    padding-left:10px; 
+		    padding-right:10px; 
+		    padding-bottom:10px; 
+		} 
+		#popupContent .main .right {
+		    width:35%;  
+		    float:right; 
+		    padding:10px; 
+		    background:orange;
+		}
+
+		#popupContent .main .clearfloat {
+		    clear:both;
+		    height:1px;
+		    overflow:hidden;
+		    margin-top:-1px;
+		}
+		/*custom popup layout*/
+
 		.tips {
 			position: absolute;
 			height: 80px;
 			width: 200px;
 			left: 10px;
 			bottom: 30px;
-			/*color: rgb(194, 223, 156);*/
 			color: white;
 			border-radius: 8px;
 			font-size: 15px;
 			line-height:22px;
+			font-weight: 300
 			text-transform: none;
 			z-index:1200;
-		}
-		.tip-block {
-			-webkit-transition: all 1s;
-			position: relative;
-			background: rgba(51, 51, 51, 0.95);
-			border-radius: 8px;
-			height: 100%;
 			padding: 10px;
-			font-weight: 300
+			background: rgba(51, 51, 51, 0.95);
 		}
-			
 		</style>
 	</head>
 	<body>
-		<div class="custom-poptrox-popup" style="background-color:white">
+<!-- 		<div class="custom-poptrox-popup" style="background-color:white">
 			<div class="loader">
 			</div>
 		  	<div id="popupContent" class="content" style="width:100%;height:100%;overflow:auto;padding:50px">
@@ -172,7 +189,7 @@
 			  	<div class="pic" >
 			  		  	
 			  	</div>		  	
-			  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. Nam lacinia arcu id varius sagittis. Fusce ultrices, sapien et luctus pellentesque, nisl dolor dictum velit, eu pharetra lectus magna eu nunc. Aenean nec rutrum erat. Nam nec malesuada nunc, sit amet vulputate eros. Praesent nec posuere eros. Mauris non eros iaculis,</p>
+			  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. Nam lacinia arcu id varius sagittis. Fusce ultrices, sapien et luctus pellentesque, nisl dolor dictum velit.m velit.m velit.m velit.m velit.iscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. </p>
 
 			  	<h3><span>BLOCK 1</span></h3>
 				<p>
@@ -183,7 +200,7 @@
 			
 
 				<p style="width:100%;height:0px"></p>  
-				<div class="fullsize">	
+				<div>	
 				  	<h3><span>Full Size BLOCK 1</span></h3>
 				  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>		  	
 				  	<h3><span>Full Size BLOCK 2</span></h3>
@@ -194,8 +211,60 @@
 			    <span class="nav-previous" style="left:0px"></span>
 			    <span class="nav-next" style="right:0px"></span>
 			</nav>
-		</div>
+		</div> -->
+		<div class="custom-poptrox-popup" style="background-color:white">
+			<div class="loader">
+			</div>
+		  	<div id="popupContent">
 
+		  		<h2 class="caption">MOBILE</h2>
+		  		<hr>
+		  		<div class="top">
+		  			
+		  			<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam,Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam.</p>
+		  		</div>
+		  		<div class="main"> 
+		  		    <div class="left">
+		  		        <h3><span>BLOCK 1</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+		  		        <h3><span>BLOCK 2</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+		  		        <h3><span>BLOCK 3</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. </p>            
+		  		        <h3><span>BLOCK 4</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>		  		        
+		  		    </div>
+		  		    <div class="right">
+		  		        <h3><span>BLOCK 5</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+		  		        <h3><span>BLOCK 6</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+		  		        <h3><span>BLOCK 7</span></h3>
+		  		        <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+	  		        
+		  		    </div>                            
+		  		    <div class="center">
+			  		    <div class="pic" ></div>
+			  		    <h3><span>BLOCK 8</span></h3>
+			  		    <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			  		    <h3><span>BLOCK 9</span></h3>
+			  		    <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>			  		    
+		  		    </div>
+		  		    <div class="clearfloat"></div>
+		  		</div>
+		  		<div class="bottom">
+			  		    <h3><span>BLOCK 10</span></h3>
+			  		    <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			  		    <h3><span>BLOCK 11</span></h3>
+			  		    <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+		  		</div>
+			 
+			</div>
+			<nav>
+			    <span class="nav-previous" style="left:15px"></span>
+			    <span class="nav-next" style="right:15px"></span>
+			</nav>
+		</div>
 		<div id="wrapper">
 				<div id="header-image">
 					<div id="header">
@@ -334,10 +403,7 @@
 		<!-- Leap integration end-->
 
 		<div class="tips" >
-		  <div class="tip-block">
-		    <span>
-		    </span>
-		  </div>
+		    <span></span>
 		</div>
 
 		<div id="preloadDiv" style="display:none">

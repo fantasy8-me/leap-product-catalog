@@ -3,14 +3,15 @@ var tutorialManager = (function($){
     var gestureDes = {
         "CIRCLE":"Circling with ",
         "SWIPE":"Swipe ",
+        "KEYTAB":"Keytab detected",
     }
 
     var displayGesture = function(key,submsg){
-        $(".tip-block span").css("color","rgb(194, 223, 156)").html(gestureDes[key] + submsg);
+        $(".tips span").css("color","rgb(194, 223, 156)").html(gestureDes[key] + submsg);
     }
     var displayTips = function(key){
 
-        $(".tip-block span").css("color","white").html(currentScene.getTips());
+        $(".tips span").css("color","white").html(currentScene.getTips());
     }    
     return {
         displayGesture:displayGesture,

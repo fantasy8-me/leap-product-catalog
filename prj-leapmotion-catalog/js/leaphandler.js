@@ -238,6 +238,7 @@ var initLeap = (function(){
                 //case "screenTap":
                 case "keyTap":{
                     if(validPointables.length >= 2){
+                        tutorialManager.displayGesture("KEYTAB");
                         currentScene.onKeyTap(event);
                     }
                   break;
