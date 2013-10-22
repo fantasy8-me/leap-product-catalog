@@ -4,16 +4,32 @@
 		"selected_items":
 		[
 			[
+				"scr",
+				"scrollObject"
+			],
+			[
+				"va",
+				"validGestures"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
 				"con",
 				"content"
 			],
 			[
 				"mar",
 				"margin"
-			],
-			[
-				"fon",
-				"font-family"
 			],
 			[
 				"hi",
@@ -498,22 +514,6 @@
 			[
 				"op",
 				"options"
-			],
-			[
-				"LE",
-				"LEAP_MAX_Y"
-			],
-			[
-				"select",
-				"selectedElement"
-			],
-			[
-				"val",
-				"validPointables"
-			],
-			[
-				"LEA",
-				"LEAP_MAX_X"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "prj-leapmotion-catalog/index.html",
 			"settings":
 			{
-				"buffer_size": 11366,
+				"buffer_size": 12480,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,8 +531,17 @@
 			"file": "prj-leapmotion-catalog/js/scene.js",
 			"settings":
 			{
-				"buffer_size": 12064,
+				"buffer_size": 12383,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/app.js",
+			"settings":
+			{
+				"buffer_size": 505,
+				"line_ending": "Unix",
+				"name": "var tutorialManager = fun"
 			}
 		},
 		{
@@ -556,7 +565,7 @@
 			"file": "prj-leapmotion-catalog/js/leaphandler.js",
 			"settings":
 			{
-				"buffer_size": 8859,
+				"buffer_size": 9101,
 				"line_ending": "Unix"
 			}
 		},
@@ -564,7 +573,7 @@
 			"file": "prj-leapmotion-catalog/js/config.js",
 			"settings":
 			{
-				"buffer_size": 18404,
+				"buffer_size": 18403,
 				"line_ending": "Unix"
 			}
 		},
@@ -585,7 +594,10 @@
 			}
 		},
 		{
+			"contents": "<!DOCTYPE html>\n<!-- saved from url=(0167)file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/index1_update.html -->\n<html lang=\"en\" class=\" js cssanimations csstransitions\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n  \n  <meta charset=\"utf-8\">\n  <title>Metro Mania</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"\">\n  <meta name=\"keywords\" content=\"\">\n  <link href=\"css/custom/product/css\" rel=\"stylesheet\" type=\"text/css\">\n\n  \n  <!-- Stylesheets -->\n  <link href=\"file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/style/bootstrap.css\" rel=\"stylesheet\">\n  <!-- <link rel=\"stylesheet\" href=\"style/font-awesome.css\"> -->\n  <!-- <link href=\"style/prettyPhoto.css\" rel=\"stylesheet\"> -->\n  <!-- Parallax slider -->\n  <link rel=\"stylesheet\" href=\"file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/style/slider.css\">\n  <!-- Flexslider -->\n  <!-- <link rel=\"stylesheet\" href=\"style/flexslider.css\"> -->\n\n  <link href=\"file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/style/style.css\" rel=\"stylesheet\">\n\n  <!-- Colors - Orange, Purple, Light Blue (lblue), Red, Green and Blue -->\n  <link href=\"file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/style/green.css\" rel=\"stylesheet\">\n\n  \n  \n  <!-- HTML5 Support for IE -->\n  <!--[if lt IE 9]>\n  <script src=\"js/html5shim.js\"></script>\n  <![endif]-->\n</head>\n\n<body style=\"\">\n\n<!-- Header Starts -->\n<header>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4 col-sm-4\">\n        <div class=\"logo\">\n          <h1><a href=\"file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/index1_update.html#\">Metro <span class=\"color\">Mania</span></a></h1>\n          <div class=\"hmeta\">Responsive Metro Styled Theme</div>\n        </div>\n      </div>\n      <div class=\"col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-2\">\n        \n      </div>\n    </div>\n  </div>\n</header>\n\n\n\n<div class=\"content\">\n  <div class=\"container\">\n\n<!-- Slider starts -->\n  \n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <!-- Slider (Parallax Slider) -->\n          <div id=\"da-slider\" class=\"da-slider\">\n            <div class=\"da-slide da-slide-current\">\n              <div class=\"da-blue\">\n                <h2><span>Metro Mania</span></h2>\n                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>\n                \n                <h2><span>Metro Mania</span></h2>\n                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>\n                               \n                <div class=\"da-img\"><img src=\"images/thumbs/1.png\" alt=\"image01\"></div>\n\n                <a href=\"file://localhost/Users/me/Work/WS/sublime-master-ws/fs-webui-frameworks-repo/fs-webui-frameworks/modified/products-WB07F9G8L/Bootstrap%20Version%203/index1_update.html#\" class=\"da-link\">Read more</a>\n              </div>\n            </div>\n            <div class=\"da-slide\">\n              <div class=\"da-green\">\n                <h2><span>Easy management</span></h2>\n                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>\n                <a href=\"#\" class=\"da-link\">Read more</a>\n                <div class=\"da-img\"><img src=\"img/parallax/2.png\" alt=\"image01\" /></div>\n              </div>\n            </div>\n            <div class=\"da-slide\">\n              <h2><span>Revolution</span></h2>\n              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>\n              <a href=\"#\" class=\"da-link\">Read more</a>\n              <div class=\"da-img\"><img src=\"img/parallax/3.png\" alt=\"image01\" /></div>\n            </div>\n            <div class=\"da-slide\">\n              <h2><span>Quality Control</span></h2>\n              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>\n              <a href=\"#\" class=\"da-link\">Read more</a>\n              <div class=\"da-img\"><img src=\"img/parallax/4.png\" alt=\"image01\" /></div>\n            </div>\n            <nav class=\"da-arrows\">\n              <span class=\"da-arrows-prev\"></span>\n              <span class=\"da-arrows-next\"></span>\n            </nav>\n          <nav class=\"da-dots\"><span class=\"da-dots-current\"></span></nav></div>\n      </div>\n    </div>\n\n<!-- Slider Ends -->\n\n<!-- Hero Unit -->\n\n\n  <div class=\"clearfix\"></div>\n  </div>\n \n\n<!-- JS -->\n<script src=\"js/jquery.min.js\"></script>\n<script src=\"js/custom/product/bootstrap.js\"></script> \n\n<!-- <script src=\"js/custom/product/jquery.cslider.js\"></script> <!-- Parallax slider --> -->\n<script src=\"js/custom/product/modernizr.custom.28468.js\"></script>\n<!-- <script src=\"js/cycle.js\"></script> Cycle slider -->\n<!--<script src=\"js/jquery.flexslider-min.js\"></script>  Flex slider -->\n\n<!--<script src=\"js/easing.js\"></script>  Easing -->\n<script src=\"js/custom/product/custom.js\"></script>\n\n</div></body></html>",
 			"file": "prj-leapmotion-catalog/product.html",
+			"file_size": 6157,
+			"file_write_time": 1382337671000000,
 			"settings":
 			{
 				"buffer_size": 6157,
@@ -804,7 +816,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
@@ -831,6 +843,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"h o r",
 			"-next",
 			"popupWidth",
 			".object",
@@ -957,8 +970,7 @@
 			"TODO",
 			"img/gear",
 			"gear",
-			"z-index",
-			"feedNavBarAdminMode"
+			"z-index"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1038,7 +1050,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -1046,15 +1058,15 @@
 					"file": "prj-leapmotion-catalog/index.html",
 					"settings":
 					{
-						"buffer_size": 11366,
+						"buffer_size": 12480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								384,
-								384
+								11246,
+								11246
 							]
 						],
 						"settings":
@@ -1063,7 +1075,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5613.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1073,15 +1085,15 @@
 					"file": "prj-leapmotion-catalog/js/scene.js",
 					"settings":
 					{
-						"buffer_size": 12064,
+						"buffer_size": 12383,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5966,
-								5940
+								11824,
+								11763
 							]
 						],
 						"settings":
@@ -1091,13 +1103,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6737.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "prj-leapmotion-catalog/js/app.js",
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var tutorialManager = fun",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "prj-leapmotion-catalog/zyx.tmp/blank.html",
 					"settings":
 					{
@@ -1119,13 +1158,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 226.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
 					"settings":
 					{
@@ -1152,19 +1191,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "prj-leapmotion-catalog/js/leaphandler.js",
 					"settings":
 					{
-						"buffer_size": 8859,
+						"buffer_size": 9101,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2553,
-								2553
+								8468,
+								8525
 							]
 						],
 						"settings":
@@ -1174,25 +1213,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3487.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "prj-leapmotion-catalog/js/config.js",
 					"settings":
 					{
-						"buffer_size": 18404,
+						"buffer_size": 18403,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16174,
-								16179
+								16110,
+								16110
 							]
 						],
 						"settings":
@@ -1201,13 +1240,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 8304.0,
+						"translation.y": 8346.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "prj-leapmotion-catalog/zyx.tmp/notes",
 					"settings":
 					{
@@ -1224,7 +1263,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 709.0,
@@ -1233,7 +1274,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
 					"settings":
 					{
@@ -1244,8 +1285,8 @@
 						"selection":
 						[
 							[
-								18424,
-								18424
+								3346,
+								3353
 							]
 						],
 						"settings":
@@ -1254,13 +1295,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9466.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "prj-leapmotion-catalog/product.html",
 					"settings":
 					{
@@ -1278,7 +1319,7 @@
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,

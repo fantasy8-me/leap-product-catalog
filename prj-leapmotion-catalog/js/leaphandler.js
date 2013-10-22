@@ -10,6 +10,7 @@ var initLeap = (function(){
 
     var controllerOptions = {enableGestures: true};
     var prePrimaryPointer;
+    var preNumOfPointable;
 
     var LEAP_MIN_X = -130;
     var LEAP_MAX_X = 130;
@@ -29,6 +30,14 @@ var initLeap = (function(){
         return longestPointable;
     }
 
+    var isNumOfPointableChanged = function(pointables){
+         if(pointables.length !== preNumOfPointable){
+            preNumOfPointable = pointables.length;
+            return true;
+         }else{
+            return false;   
+         }
+    }
     var transCoordinate = function(v) {
 
         var vec = {
@@ -104,7 +113,8 @@ var initLeap = (function(){
 
             var event = {
                 gestureFound: frame.gestures.length > 0,
-                numOfPointable: validPointables.length
+                numOfPointable: validPointables.length,
+                numOfPointableChanged: isNumOfPointableChanged(validPointables)
             }
             
             var primaryPointablePos;

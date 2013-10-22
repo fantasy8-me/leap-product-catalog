@@ -63,6 +63,9 @@ var defineSceneClass = function(){//called after dom model is ready
 
   Scene.prototype.onMove = function(event){
     if(this.supportPointer){
+      if(event.numOfPointableChanged && !this.selecting){
+        this.pointer.restore(event);
+      }
       this.pointer.moveTo(event.x,event.y);
       if(this.selectFromPoint){
         var tmpEm = this.selectFromPoint(event.x,event.y);
@@ -73,11 +76,11 @@ var defineSceneClass = function(){//called after dom model is ready
             this.pointer.initSelect();
             this.pointer.startSelectAnimation((function(){
               this.onSelected.bind(this)(this.selectedElement);
-            }).bind(this),this.selectMode);
+            }).bind(this),this.selectMode,event);
           }
         }else if(this.selecting){
           this.selecting = false;
-          this.pointer.stopSelectAnimation();
+          this.pointer.stopSelectAnimation(event);
         }
       }
 
@@ -87,7 +90,7 @@ var defineSceneClass = function(){//called after dom model is ready
   Scene.prototype.onPointerAppear = function(event){
     if(this.supportPointer){
       // console.log(this.name + ": onPointerAppear:");
-      this.pointer.appear();
+      this.pointer.appear(event);
     }
   }
 
@@ -166,7 +169,7 @@ var defineSceneClass = function(){//called after dom model is ready
     var baseRadius = 19;
 
 
-    var init = function(){
+    var init = function(event){
       var ctx = canvasEm.getContext("2d");
       ctx.beginPath();
 
@@ -181,6 +184,12 @@ var defineSceneClass = function(){//called after dom model is ready
       ctx.strokeStyle = 'rgba(55,50,54,0.9)';
       ctx.arc(center.x,center.y,baseRadius +2,0,2*Math.PI);
       ctx.stroke();
+      
+      if(event){
+        ctx.fillStyle = "#d64760";
+        ctx.font="25px Arial";
+        ctx.fillText(event.numOfPointable,20,35);
+      }
     };
 
     var initSelect = function(){
@@ -201,14 +210,14 @@ var defineSceneClass = function(){//called after dom model is ready
       ctx.stroke();
     };
 
-    var restore = function(){
+    var restore = function(event){
       var ctx = canvasEm.getContext("2d");
       ctx.clearRect(0,0,center.x * 2,center.y*2);
-      init();
+      init(event);
     };
 
     var timer;
-    var startSelectAnimation = function(callback,selectMode,step){
+    var startSelectAnimation = function(callback,selectMode,event,step){
       if(!step) 
         step = 0;
       if(step <2.01){
@@ -226,25 +235,29 @@ var defineSceneClass = function(){//called after dom model is ready
         ctx.stroke();
 
         step += 0.15;
-        timer = setTimeout(function(){startSelectAnimation(callback,selectMode,step)},100);
+        timer = setTimeout(function(){startSelectAnimation(callback,selectMode,event,step)},100);
       }else{
         if(selectMode === Scene.SELECT_MODE.click){
-          restore();
+          restore(event);
         }
         callback();
       }
     };
 
-    var stopSelectAnimation = function(){
+    var stopSelectAnimation = function(event){
       clearTimeout(timer);
-      restore();
+      if(event)
+        restore(event);
+      else{
+        restore();
+      }
     };
 
     var disappear = function(){
       canvasEm.style.display = "none";
     }
-    var appear = function(){
-      restore();
+    var appear = function(event){
+      restore(event);
       canvasEm.style.display = "inline-block";
     }
     var moveTo = function(x,y){

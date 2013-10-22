@@ -299,7 +299,9 @@
 						.css('position', __pos)
 						.css('z-index', settings.baseZIndex + 1)
 						.css('width', settings.popupWidth + 'px')
+						// .css('width', settings.popupWidth) //Eric.change to support %
 						.css('height', settings.popupHeight + 'px')
+						// .css('height', settings.popupHeight) //Eric.change to support %
 						.css('left', (windowWidth / 2) + 'px')
 						.css('top', (windowHeight / 2) + 'px')
 						.css('top', (windowHeight / 2) + 'px')
@@ -552,6 +554,10 @@
 						x.type = 'sketchfab';
 						x.object = jQuery('<iframe src="" frameborder="0" allowFullScreen="1"></iframe>');
 						x.src = 'http://sketchfab.com/' + tmp[2];
+
+						// x.object.attr('src', x.src);
+						// $("#preloadDiv").append(x.object);
+
 						x.width = '380';
 						x.height = '380';
 
