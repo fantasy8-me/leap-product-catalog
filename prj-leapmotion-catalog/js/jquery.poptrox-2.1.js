@@ -360,10 +360,10 @@
 								.css('z-index', settings.baseZIndex + 100)
 								.width(x.width)
 								.height(x.height);
-							/* Eric.To fix the nav buttons are hid while x.type!=img*/
+							/* Eric To fix the nav buttons are hid while x.type!=img*/
 							_nav_next.css('z-index', settings.baseZIndex + 100);
 							_nav_previous.css('z-index', settings.baseZIndex + 100);
-							/* Eric.To fix the nav buttons are hidden while x.type!=img*/
+							/* Eric To fix the nav buttons are hidden while x.type!=img*/
 						}else{
 							/* Eric.To remove the z-index while x.type==img to avoid affecting existing logic*/
 							_nav_next.css('z-index', '');
@@ -381,7 +381,11 @@
 							.height(settings.popupHeight)
 							.css('margin-left', (-1 * (_popup.innerWidth() / 2)) + 'px')
 							.css('margin-top', (-1 * (_popup.innerHeight() / 2)) + 'px');
-
+						
+						if (x.type != 'image'){
+							_x.height(_x.width()); //Eric set height equals width after _popup css is set.
+							preLoad(x.src);//preload the model
+						}
 						_x.load(function() {
 							_x.unbind('load');
 							_loader.hide().trigger('stopSpinning');
@@ -558,8 +562,8 @@
 						// x.object.attr('src', x.src);
 						// $("#preloadDiv").append(x.object);
 
-						x.width = '380';
-						x.height = '380';
+						x.width = '600';
+						x.height = '600';
 
 						break;
 

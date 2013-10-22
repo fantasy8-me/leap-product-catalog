@@ -81,13 +81,13 @@
 
 
 		.custom-poptrox-popup div.pic{
-			width: 55%;
+			width: 45%;
 			/*border: solid 1px black;*/
 			margin-right:10px;
 			float: right
 		}
 
-		.custom-poptrox-popup div.pic img{
+		.custom-poptrox-popup div.pic iframe,img{
 			width: 100% !important;
 		}
 		.content h2{
@@ -119,7 +119,7 @@
 			text-transform: none
 		}
 		.content p{
-			width: 40%;
+			width: 50%;
 			top: 105px;
 			color: #888;
 			font-size: 15px;
@@ -162,43 +162,38 @@
 	</head>
 	<body>
 		<div class="custom-poptrox-popup" style="background-color:white">
-		  <div class="loader">
-		  </div>
-		  <div id="popupContent" class="content" style="margin: 10px auto;width:80%;height:90%;overflow:auto;padding-top:20px">
-		  	<h2 class="caption">MOBILE</h2>
+			<div class="loader">
+			</div>
+		  	<div id="popupContent" class="content" style="width:100%;height:100%;overflow:auto;padding:50px">
+			  	<h2 class="caption">MOBILE</h2>
 
-		  	<hr>
-		  	<div class="pic" >
-		  		  	
-		  	</div>		  	
-		  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. Nam lacinia arcu id varius sagittis. Fusce ultrices, sapien et luctus pellentesque, nisl dolor dictum velit, eu pharetra lectus magna eu nunc. Aenean nec rutrum erat. Nam nec malesuada nunc, sit amet vulputate eros. Praesent nec posuere eros. Mauris non eros iaculis,</p>
+			  	<hr>
 
-		  	<h3><span>BLOCK 1</span></h3>
-			<p>
-				Phasellus rutrum dui at urna mattis cursus. Ut euismod tortor tincidunt ipsum lobortis cursus. Mauris aliquet molestie lectus sit amet interdum. Duis luctus ut eros ut volutpat. Integer ac enim sit amet massa viverra sollicitudin. 
-			</p>
-		  	<h3><span>BLOCK 2</span></h3>
-			  	<p>Vivamus dolor dolor, fermentum vel diam non, consequat euismod mi. Ut posuere dapibus lacus, a lobortis lectus aliquam ac. Integer vitae mauris a tortor porta rutrum vitae a libero. Mauris ligula mi, vulputate sed condimentum eget, euismod at augue. Vivamus eget cursus augue</p>
-		
+			  	<div class="pic" >
+			  		  	
+			  	</div>		  	
+			  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. Nam lacinia arcu id varius sagittis. Fusce ultrices, sapien et luctus pellentesque, nisl dolor dictum velit, eu pharetra lectus magna eu nunc. Aenean nec rutrum erat. Nam nec malesuada nunc, sit amet vulputate eros. Praesent nec posuere eros. Mauris non eros iaculis,</p>
 
-			<p style="width:100%;height:0px"></p>  
-			<div class="fullsize">	
-			  	<h3><span>Full Size BLOCK 1</span></h3>
-			  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>		  	
-			  	<h3><span>Full Size BLOCK 2</span></h3>
-			  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-			</div>				  		
-		</div>
+			  	<h3><span>BLOCK 1</span></h3>
+				<p>
+					Phasellus rutrum dui at urna mattis cursus. Ut euismod tortor tincidunt ipsum lobortis cursus. Mauris aliquet molestie lectus sit amet interdum. Duis luctus ut eros ut volutpat. Integer ac enim sit amet massa viverra sollicitudin. 
+				</p>
+			  	<h3><span>BLOCK 2</span></h3>
+				  	<p>Vivamus dolor dolor, fermentum vel diam non, consequat euismod mi. Ut posuere dapibus lacus, a lobortis lectus aliquam ac. Integer vitae mauris a tortor porta rutrum vitae a libero. Mauris ligula mi, vulputate sed condimentum eget, euismod at augue. Vivamus eget cursus augue</p>
+			
 
-		  <nav>
-		        <span class="nav-previous" style="left:25px"></span>
-		        <span class="nav-next" style="right:25px"></span>
-		  </nav>
-
-<!-- 		  <div class="nav-previous">
-		  </div>
-		  <div class="nav-next">
-		  </div> -->
+				<p style="width:100%;height:0px"></p>  
+				<div class="fullsize">	
+				  	<h3><span>Full Size BLOCK 1</span></h3>
+				  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>		  	
+				  	<h3><span>Full Size BLOCK 2</span></h3>
+				  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+				</div>				  		
+			</div>
+			<nav>
+			    <span class="nav-previous" style="left:0px"></span>
+			    <span class="nav-next" style="right:0px"></span>
+			</nav>
 		</div>
 
 		<div id="wrapper">
@@ -230,7 +225,7 @@
 					<!-- Thumb Items -->
 						<article class="item thumb" data-width="400">
 							<h2>Smartmobile</h2>
-							<a href="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=1&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0"><img src="images/thumbs/smartmobile.png" alt=""></a>
+							<a href="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0"><img src="images/thumbs/smartmobile.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Pilot Controller - Static Image</h2>
@@ -238,67 +233,67 @@
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=1&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0"><img src="images/thumbs/pilot.png" alt=""></a>
+							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0"><img src="images/thumbs/pilot.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="300">
 							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
+							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="250">
 							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
+							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
+							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
+							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
 						</article>
 
 
 						<article class="item thumb" data-width="400">
 							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
+							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="300">
 							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
+							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="250">
 							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
+							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
+							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
+							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
 						</article>
 
 
 						<article class="item thumb" data-width="400">
 							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
+							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="300">
 							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
+							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="250">
 							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
+							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
+							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=1&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
+							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
 						</article>		
 										
 				<!-- ******************************************************************************************** -->
@@ -346,7 +341,7 @@
 		</div>
 
 		<div id="preloadDiv" style="display:none">
-			<!-- <iframe src="http://sketchfab.com/nj3gedc0b?autostart=1&transparent=1&autospin=0&controls=0"></iframe> -->
+			<iframe src="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=1"></iframe>
 		</div>
 	</body>
 </html>

@@ -484,7 +484,7 @@ $(function() { h5u_parallelism.init({
 							usePopupDefaultStyling: false,
 							usePopupNav: true,
 							popupSelector:".custom-poptrox-popup",
-							popupWidth:1000,
+							popupWidth:1200,
 							popupHeight:600,
 							popupIsFixed:true
 						});

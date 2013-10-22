@@ -406,7 +406,14 @@ var createProductScene = function($){
     this.selecting = false;
     this.selectedElement = undefined;
   }
-
+  stub.onKeyTap = function(event){
+    var url = $('.custom-poptrox-popup .pic iframe').attr('src');
+    if(url.indexOf("autostart=0") !== -1){
+      // alert(url.replace("autostart=0","autostart=1"));
+      url = url.replace("autostart=0","autostart=1");
+      $('.custom-poptrox-popup .pic iframe').attr('src', url);
+    }
+  }  
   stub.init = function(){
   }
   stub.getTips = function(){
