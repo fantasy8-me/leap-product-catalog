@@ -20,10 +20,21 @@ var tutorialManager = (function($){
 })(jQuery);
 
 var preLoad = function(url){
-    if(url.indexOf("autostart=0") !== -1){
-        preLoadUrl = url.replace("autostart=0","autostart=1");
-        if($("#preloadDiv iframe:first").attr("src") !== preLoadUrl){
-            $("#preloadDiv iframe:first").attr("src",preLoadUrl);
-        }
+    if(!ifModelStarted(url)){
+        startModel($("#preloadDiv iframe:first"),url);
+    }
+}
+
+var ifModelStarted = function(url){
+    return (url.indexOf("autostart=0") === -1) ? true : false;
+}
+
+var startModel = function($theIFrame,url){
+    if(!url){
+        url = $theIFrame.attr("src");
+    }
+    var preLoadUrl = url.replace("autostart=0","autostart=1");
+    if($theIFrame.attr("src") !== preLoadUrl){
+        $theIFrame.attr("src",preLoadUrl);
     }
 }

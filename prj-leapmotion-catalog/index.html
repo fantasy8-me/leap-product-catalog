@@ -37,11 +37,6 @@
 				console.log("resize");
 			}
 
-			// var old = $(".custom-poptrox-popup .popupContent")[0];	
-  	// 		var newNode = $("#smartmobile")[0];
-  	// 		old.parentNode.replaceChild(newNode, old);
-				
-
 		});
 
 		</script>
@@ -57,10 +52,6 @@
 
 		<link rel="stylesheet" href="css/custom/app.css" />
 		<style type="text/css">
-/*		div.quickfix{
-			top:auto !important;
-			margin-top:0px !important
-		}*/
 
 		.tips {
 			position: absolute;
@@ -77,6 +68,11 @@
 			z-index:1200;
 			padding: 5px;
 			background: rgba(51, 51, 51, 0.95);
+			text-transform: none;
+		}
+		body{
+			/*To avoid sreen shaking while leap cursor move out of screen*/
+			overflow: hidden !important;
 		}
 		</style>
 	</head>
@@ -86,7 +82,6 @@
 			<div class="loader">
 			</div>
 		  	<div class="popupContent">
-			 
 			</div>
 			<nav>
 			    <span class="nav-previous" style="left:15px"></span>
@@ -98,11 +93,6 @@
 					<div id="header">
 						<h1>NUI (Natural User Interface) Showcase</h1>
 						<h1>An Immersive Product Catalog / eCommerce site</h1>
-<!-- 						<ul>
-							<li>point one finger and turn left or right to rotate the model </li>
-							<li>point two separate fingers and turn right or left to pan the model</li>
-							<li>point your open hand and move up and down to zoom in or out.</li>
-						</ul> -->
 					</div>
 				</div>
 			<div id="main" class="quickfix">
@@ -154,7 +144,7 @@
 					Catalog Screen:<br>
 					Scroll the products by circling your fingertip , point and hold to view a product<br>
 					Product Screen:<br>
-					Scroll the product by circling your fingertip , horizontally swipe to escape, point at the navigation button to navigate,<br>2-fingers keytab to start 3d model loading<br>
+					Scroll the product by circling your fingertip , horizontally swipe to escape, point at the navigation button to navigate,<br>Point at the static image to start 3d model<br>
 					Sketchfab:<br>
 					Point one finger and turn left or right to rotate the model,  point two separate fingers and turn right or left to pan the model, point your open hand and move up and down to zoom in or out.
 					</p>

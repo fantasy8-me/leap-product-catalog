@@ -300,8 +300,8 @@ var createAppMainScene = function($){
                             return undefined;
                           }
                         },
-                        onSelected: function(selectedElement){
-                          selectedElement.click();
+                        onSelected: function($selectedElement){
+                          $selectedElement.click();
                         },
                       });
   stub.onSwipe = function(event){
@@ -382,19 +382,25 @@ var createProductScene = function($){
   var stub = new Scene({name:SCENES.PRODUCT_SCENE,
                         selectFromPoint: function(x,y){
                           $selectedElement = $(document.elementFromPoint(x,y));
-                          if($selectedElement.hasClass("nav-next") || $selectedElement.hasClass("nav-previous")){
-                            $selectedElement.hover();
+                          if($selectedElement[0].tagName === "IFRAME"){
+                            if(!ifModelStarted($selectedElement.attr("src")))
+                                return $selectedElement
+                          }else if($selectedElement.hasClass("nav-next") || $selectedElement.hasClass("nav-previous")){
                             return $selectedElement
                           }else{
                             return undefined;
                           }
                         },
-                        onSelected: function(selectedElement){
-                          selectedElement.click();
+                        onSelected: function($selectedElement){
+                          if($selectedElement[0].tagName === "IFRAME"){
+                            startModel($selectedElement)
+                          }else{
+                            $selectedElement.click(); //navigate
+                          }
+
                         },
                         getScrollObject: function(){
                           return {object:$(".custom-poptrox-popup .popupContent")[0]}
-
                         }
                       });
   stub.onSwipe = function(event){
@@ -410,16 +416,16 @@ var createProductScene = function($){
     this.selectedElement = undefined;
   }
   stub.onKeyTap = function(event){
-    var url = $('.custom-poptrox-popup .pic iframe').attr('src');
-    if(url && (url.indexOf("autostart=0") !== -1)){
-      url = url.replace("autostart=0","autostart=1");
-      $('.custom-poptrox-popup .pic iframe').attr('src', url);
-    }
+    // var url = $('.custom-poptrox-popup .pic iframe').attr('src');
+    // if(url && (url.indexOf("autostart=0") !== -1)){
+    //   url = url.replace("autostart=0","autostart=1");
+    //   $('.custom-poptrox-popup .pic iframe').attr('src', url);
+    // }
   }  
   stub.init = function(){
   }
   stub.getTips = function(){
-    return "Swipe horizontally to escape <br> Point and hold to navigate <br>2-fingers keytab to load 3D model"
+    return "Swipe horizontally to escape <br> Point and hold to navigate or start 3d model"
   }
   return stub;
 
