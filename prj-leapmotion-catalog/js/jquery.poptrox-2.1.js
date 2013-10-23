@@ -341,11 +341,33 @@
 							_x.attr('src', '');
 						_x.detach();
 					
+
 					// Activate new object
 						x = queue[index];
 						_x = x.object;
 						_x.unbind('load');
 					
+						/*
+							Eric. load product data div
+						*/
+						console.log("getdata:"+x.productid);
+
+						// var old = $(".custom-poptrox-popup .popupContent")[0];	
+			  	// 		var newNode = $("#smartmobile")[0];
+			  	// 		old.parentNode.replaceChild(newNode, old);
+
+						var $productContent = $("#"+x.productid+ " .popupContent");
+						var $currentContent = $(".custom-poptrox-popup .popupContent");	
+						$currentContent.detach();
+						if($productContent.length===0){
+							$productContent = $("#error .popupContent")
+						}
+						$productContent.clone().appendTo(_popup);
+
+
+						_pic = _popup.find('.pic');
+						/*load product data div*/
+
 						_pic
 							.css('text-indent', '-9999em')
 							.show()
@@ -513,14 +535,16 @@
 					width:			a.attr('width'),
 					height:			a.attr('height'),
 					type:			null,
-					object:			null
+					object:			null,
+					productid: 		null,
 				};
 
 				tmp = x.src.match(/http[s]?:\/\/([a-z0-9\.]+)\/(.*)/);
 
 				if (!tmp || tmp.length < 3)
 					tmp = [false, false];
-					
+				x.productid = a.data("productid");
+
 				switch (tmp[1])
 				{
 					// Audio (Soundcloud)

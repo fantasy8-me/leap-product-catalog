@@ -35,7 +35,13 @@
 			window.onresize=function(){
 				sceneSwitch(SCENES.APP_MAIN_SCENE);
 				console.log("resize");
-			}			
+			}
+
+			// var old = $(".custom-poptrox-popup .popupContent")[0];	
+  	// 		var newNode = $("#smartmobile")[0];
+  	// 		old.parentNode.replaceChild(newNode, old);
+				
+
 		});
 
 		</script>
@@ -49,115 +55,12 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 
+		<link rel="stylesheet" href="css/custom/app.css" />
 		<style type="text/css">
 /*		div.quickfix{
 			top:auto !important;
 			margin-top:0px !important
 		}*/
-		nav span{
-			position: absolute;
-			top: 50%;
-			height: 40px;
-			width: 40px;
-			background-color: #d64760;
-			cursor: pointer;
-		}
-		nav span:after{
-			position: absolute;
-			content: '';
-			width: 20px;
-			height: 20px;
-			top: 10px;
-			left: 10px;
-			background: transparent url("images/arrows.png") no-repeat;
-		}
-		nav span.nav-previous:after{
-			background-position:top left
-		}	
-		nav span.nav-next:after{
-			background-position:top right
-		}		
-
-
-		.custom-poptrox-popup{
-		    text-transform: none;
-		    color: #888;
-		}    
-		.custom-poptrox-popup div.pic{
-		    width: 100%;
-		}
-		.custom-poptrox-popup div.pic iframe,img{
-		    width: 100% !important;
-		}
-		#popupContent{
-			height:100%;
-			overflow:auto;
-			padding:65px
-		}
-		#popupContent h2{
-		    color: #777;
-		    font-size: 46px;
-		    white-space: nowrap;
-		    font-weight: 300;
-		    font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
-		    line-height: 1.1;
-		}
-
-		#popupContent h3{
-		    color: #777;
-		    font-size: 32px;
-		    white-space: nowrap;
-		    font-weight: 300;
-		    font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
-		    line-height: 1.5;
-		}
-		#popupContent h3 span{
-		    padding-bottom: 5px;
-		    margin-bottom: 5px;
-		    border-bottom: 2px solid #eee;
-		}
-		#popupContent p{
-		    color: #888;
-		    font-size: 15px;
-		    line-height: 26px;
-		    overflow: hidden;
-		    font-weight: 400;
-		    font-style: italic;
-		    margin-bottom:15px;
-		}
-
-		/*custom popup layout*/
-		#popupContent .main {
-			margin:20px 0px;
-		}
-		#popupContent .main .left {
-		    width:35%; 
-		    float:left; 
-		    padding:10px; 
-		    background:green;
-		}
-		#popupContent .main .center {
-		    width:30%; 
-		    /*float:left; */
-		    margin:0 auto;
-		    padding-left:10px; 
-		    padding-right:10px; 
-		    padding-bottom:10px; 
-		} 
-		#popupContent .main .right {
-		    width:35%;  
-		    float:right; 
-		    padding:10px; 
-		    background:orange;
-		}
-
-		#popupContent .main .clearfloat {
-		    clear:both;
-		    height:1px;
-		    overflow:hidden;
-		    margin-top:-1px;
-		}
-		/*custom popup layout*/
 
 		.tips {
 			position: absolute;
@@ -178,46 +81,13 @@
 		</style>
 	</head>
 	<body>
-<!-- 		<div class="custom-poptrox-popup" style="background-color:white">
+
+		<div class="custom-poptrox-popup">
 			<div class="loader">
 			</div>
-		  	<div id="popupContent" class="content" style="width:100%;height:100%;overflow:auto;padding:50px">
-			  	<h2 class="caption">MOBILE</h2>
+		  	<div class="popupContent">
 
-			  	<hr>
-
-			  	<div class="pic" >
-			  		  	
-			  	</div>		  	
-			  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. Nam lacinia arcu id varius sagittis. Fusce ultrices, sapien et luctus pellentesque, nisl dolor dictum velit.m velit.m velit.m velit.m velit.iscing elit. Ut ac eros at urna adipiscing rhoncus vel in dui. Nullam eu risus massa. </p>
-
-			  	<h3><span>BLOCK 1</span></h3>
-				<p>
-					Phasellus rutrum dui at urna mattis cursus. Ut euismod tortor tincidunt ipsum lobortis cursus. Mauris aliquet molestie lectus sit amet interdum. Duis luctus ut eros ut volutpat. Integer ac enim sit amet massa viverra sollicitudin. 
-				</p>
-			  	<h3><span>BLOCK 2</span></h3>
-				  	<p>Vivamus dolor dolor, fermentum vel diam non, consequat euismod mi. Ut posuere dapibus lacus, a lobortis lectus aliquam ac. Integer vitae mauris a tortor porta rutrum vitae a libero. Mauris ligula mi, vulputate sed condimentum eget, euismod at augue. Vivamus eget cursus augue</p>
-			
-
-				<p style="width:100%;height:0px"></p>  
-				<div>	
-				  	<h3><span>Full Size BLOCK 1</span></h3>
-				  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>		  	
-				  	<h3><span>Full Size BLOCK 2</span></h3>
-				  	<p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-				</div>				  		
-			</div>
-			<nav>
-			    <span class="nav-previous" style="left:0px"></span>
-			    <span class="nav-next" style="right:0px"></span>
-			</nav>
-		</div> -->
-		<div class="custom-poptrox-popup" style="background-color:white">
-			<div class="loader">
-			</div>
-		  	<div id="popupContent">
-
-		  		<h2 class="caption">MOBILE</h2>
+<!-- 		  		<h2 class="caption">MOBILE</h2>
 		  		<hr>
 		  		<div class="top">
 		  			
@@ -257,7 +127,7 @@
 			  		    <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
 			  		    <h3><span>BLOCK 11</span></h3>
 			  		    <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-		  		</div>
+		  		</div> -->
 			 
 			</div>
 			<nav>
@@ -294,77 +164,35 @@
 					<!-- Thumb Items -->
 						<article class="item thumb" data-width="400">
 							<h2>Smartmobile</h2>
-							<a href="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0"><img src="images/thumbs/smartmobile.png" alt=""></a>
+							<a href="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0" data-productid="smartmobile"><img src="images/thumbs/smartmobile.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Pilot Controller - Static Image</h2>
-							<a href="images/thumbs/pilot.png"><img src="images/thumbs/pilot.png" alt=""></a>
+							<a href="images/thumbs/pilot.png" data-productid="pilotController-static"><img src="images/thumbs/pilot.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0"><img src="images/thumbs/pilot.png" alt=""></a>
+							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0" data-productid="pilotController"><img src="images/thumbs/pilot.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="300">
 							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
+							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0" data-productid="guitar"><img src="images/thumbs/guitar.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="250">
 							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
+							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0" data-productid="patrickAndSponge"><img src="images/thumbs/minions.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
+							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0" data-productid="bugatti"><img src="images/thumbs/bugatti.png" alt=""></a>
 						</article>
 						<article class="item thumb" data-width="400">
 							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
+							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0" data-productid="ducati"><img src="images/thumbs/ducati.png" alt=""></a>
 						</article>
 
 
-						<article class="item thumb" data-width="400">
-							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="300">
-							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="250">
-							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
-						</article>
-
-
-						<article class="item thumb" data-width="400">
-							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/pilot.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="300">
-							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/guitar.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="250">
-							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/minions.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Bugatti Veyron</h2>
-							<a href="http://sketchfab.com/nk4jh1dc0a?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/bugatti.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Ducati</h2>
-							<a href="http://sketchfab.com/nj3gedc0b?autostart=0&transparent=1&autospin=0&controls=0"><img src="images/thumbs/ducati.png" alt=""></a>
-						</article>		
-										
+						
 				<!-- ******************************************************************************************** -->
 				<!-- ******************************************************************************************** -->
 				</div>
@@ -406,8 +234,127 @@
 		    <span></span>
 		</div>
 
+
 		<div id="preloadDiv" style="display:none">
 			<iframe src="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=1"></iframe>
 		</div>
+
+		<div id="productData" style="display:none">
+			<!-- Do not edit the "error" block-->
+			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="error">
+				<div class="popupContent">
+			        <h2 class="caption">Error</h2>
+			        <hr>
+			        <div class="top">
+			            <p>Attribute "data-productid" is not configured properly</p>
+			        </div>
+			        <div class="main"> 
+			            <div class="center">
+			                <div class="pic" ></div>
+			            </div>
+			            <div class="clearfloat"></div>
+			        </div>
+			        <div class="bottom">
+			        </div>
+			    </div>
+			</div>
+
+			<!--Product Data Start From Here-->
+			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="smartmobile">
+				<div class="popupContent">
+			        <h2 class="caption">MOBILE</h2>
+			        <hr>
+			        <div class="top">
+			            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam,Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam.</p>
+			        </div>
+			        <div class="main"> 
+			            <div class="left">
+			                <h3><span>BLOCK 1fsafeafae</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			                <h3><span>BLOCK 2</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+			                <h3><span>BLOCK 3</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. </p>            
+			                <h3><span>BLOCK 4</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>                        
+			            </div>
+			            <div class="right">
+			                <h3><span>BLOCK 5</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			                <h3><span>BLOCK 6</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+			                <h3><span>BLOCK 7</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			                
+			            </div>                            
+			            <div class="center">
+			                <div class="pic" ></div>
+			                <h3><span>BLOCK 8</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			                <h3><span>BLOCK 9</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>                        
+			            </div>
+			            <div class="clearfloat"></div>
+			        </div>
+			        <div class="bottom">
+			                <h3><span>BLOCK 10</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+			                <h3><span>BLOCK 11</span></h3>
+			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+			        </div>
+			    </div>
+			</div>	
+			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="pilotController-static">
+				<div class="popupContent">
+			        <h2 class="caption">MOBILE</h2>
+			        <hr>
+			        <div class="top">
+			            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt.</p>
+			        </div>
+			        <div class="main"> 
+			            <div class="left">
+			                <h3><span>LEFT</span></h3>
+			            </div>
+			            <div class="right">
+			                <h3><span>RIGHT</span></h3>
+			            </div>                            
+			            <div class="center">
+			                <div class="pic" ></div>
+			                <h3><span>CENTER</span></h3>
+			            </div>
+			            <div class="clearfloat"></div>
+			        </div>
+			        <div class="bottom">
+			                <h3><span>BOTTOM</span></h3>
+			        </div>
+			    </div>
+			</div>
+			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="pilotController">
+				<div class="popupContent">
+			        <h2 class="caption">MOBILE</h2>
+			        <hr>
+			        <div class="top">
+			            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt.</p>
+			        </div>
+			        <div class="main"> 
+			            <div class="left">
+			                <h3><span>LEFT</span></h3>
+			            </div>
+			            <div class="right">
+			                <h3><span>RIGHT</span></h3>
+			            </div>                            
+			            <div class="center">
+			                <div class="pic" ></div>
+			                <h3><span>CENTER</span></h3>
+			            </div>
+			            <div class="clearfloat"></div>
+			        </div>
+			        <div class="bottom">
+			                <h3><span>BOTTOM</span></h3>
+			        </div>
+			    </div>
+			</div>
+			<!--Product Data Start From Here-->
+		</div>		
 	</body>
 </html>

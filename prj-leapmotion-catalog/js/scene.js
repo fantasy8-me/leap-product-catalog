@@ -392,7 +392,10 @@ var createProductScene = function($){
                         onSelected: function(selectedElement){
                           selectedElement.click();
                         },
-                        scrollObject:document.getElementById("popupContent")
+                        getScrollObject: function(){
+                          return $(".custom-poptrox-popup .popupContent")[0]
+                          // return document.getElementById("popupContent")  
+                        }
                       });
   stub.onSwipe = function(event){
     if(event.numOfPointable >= 3 && (event.direction === "left" || event.direction === "right")){
