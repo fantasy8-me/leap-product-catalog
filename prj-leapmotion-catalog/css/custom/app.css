@@ -79,7 +79,7 @@
             width:35%; 
             float:left; 
             padding:10px; 
-            background:green;
+            /*background:green;*/
         }
         .popupContent .main .center {
             width:30%; 
@@ -93,7 +93,7 @@
             width:35%;  
             float:right; 
             padding:10px; 
-            background:orange;
+            /*background:orange;*/
         }
 
         .popupContent .main .clearfloat {

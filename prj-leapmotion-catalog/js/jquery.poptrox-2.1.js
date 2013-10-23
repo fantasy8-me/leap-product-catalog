@@ -350,11 +350,6 @@
 						/*
 							Eric. load product data div
 						*/
-						console.log("getdata:"+x.productid);
-
-						// var old = $(".custom-poptrox-popup .popupContent")[0];	
-			  	// 		var newNode = $("#smartmobile")[0];
-			  	// 		old.parentNode.replaceChild(newNode, old);
 
 						var $productContent = $("#"+x.productid+ " .popupContent");
 						var $currentContent = $(".custom-poptrox-popup .popupContent");	
@@ -365,7 +360,14 @@
 						$productContent.clone().appendTo(_popup);
 
 
-						_pic = _popup.find('.pic');
+						_pic = _popup.find(	'.pic');
+						_caption = _popup.find(settings.popupCaptionSelector);
+						_caption
+							.bind('update', function(e, s) {
+								if (!s || s.length == 0)
+									s = settings.popupBlankCaptionText;
+								_caption.html(s);
+							});
 						/*load product data div*/
 
 						_pic

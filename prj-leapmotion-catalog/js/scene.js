@@ -393,8 +393,8 @@ var createProductScene = function($){
                           selectedElement.click();
                         },
                         getScrollObject: function(){
-                          return $(".custom-poptrox-popup .popupContent")[0]
-                          // return document.getElementById("popupContent")  
+                          return {object:$(".custom-poptrox-popup .popupContent")[0]}
+
                         }
                       });
   stub.onSwipe = function(event){
