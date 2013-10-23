@@ -411,8 +411,7 @@ var createProductScene = function($){
   }
   stub.onKeyTap = function(event){
     var url = $('.custom-poptrox-popup .pic iframe').attr('src');
-    if(url.indexOf("autostart=0") !== -1){
-      // alert(url.replace("autostart=0","autostart=1"));
+    if(url && (url.indexOf("autostart=0") !== -1)){
       url = url.replace("autostart=0","autostart=1");
       $('.custom-poptrox-popup .pic iframe').attr('src', url);
     }
