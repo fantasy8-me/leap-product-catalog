@@ -419,7 +419,7 @@ var createProductScene = function($){
   stub.init = function(){
   }
   stub.getTips = function(){
-    return "Swipe horizontally to escape <br> Point and hold to navigate"
+    return "Swipe horizontally to escape <br> Point and hold to navigate <br>2-fingers keytab to load 3D model"
   }
   return stub;
 
