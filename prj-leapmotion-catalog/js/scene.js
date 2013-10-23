@@ -317,7 +317,7 @@ var createAppMainScene = function($){
     this.selectedElement = undefined;
   }
   stub.getTips = function(){
-    return "Fingertip circle to scroll<br>Point and hold to open product"
+    return "2 Fingertips circle to scroll<br>Point and hold to open product"
   }
   stub.init = function(){
   }

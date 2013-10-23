@@ -191,16 +191,18 @@ var initLeap = (function(){
 
               switch (gesture.type) {
                 case "circle":
-                    var id = gesture.pointableIds[0];
-                    var dir = frame.finger(id).direction; // get direction of the Pointable used for the circle     
-                    if(dir){
-                        event.radius = gesture.radius.toFixed(0);
-                        if (angleBetweenVectors(dir, gesture.normal) <= (Math.PI / 4)){
-                          event.clockwise = true;
-                        } else if(angleBetweenVectors(dir, gesture.normal) > (Math.PI / 4)){
-                          event.clockwise = false;
+                    if(event.numOfPointable >=2){
+                        var id = gesture.pointableIds[0];
+                        var dir = frame.finger(id).direction; // get direction of the Pointable used for the circle     
+                        if(dir){
+                            event.radius = gesture.radius.toFixed(0);
+                            if (angleBetweenVectors(dir, gesture.normal) <= (Math.PI / 4)){
+                              event.clockwise = true;
+                            } else if(angleBetweenVectors(dir, gesture.normal) > (Math.PI / 4)){
+                              event.clockwise = false;
+                            }
+                            currentScene.onCircle(event);
                         }
-                        currentScene.onCircle(event);
                     }
                     var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" : "1 finger";
                     tutorialManager.displayGesture("CIRCLE",submsg);
