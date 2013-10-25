@@ -298,10 +298,10 @@
 					_popup
 						.css('position', __pos)
 						.css('z-index', settings.baseZIndex + 1)
-						.css('width', settings.popupWidth + 'px')
-						// .css('width', settings.popupWidth) //Eric.change to support %
-						.css('height', settings.popupHeight + 'px')
-						// .css('height', settings.popupHeight) //Eric.change to support %
+						// .css('width', settings.popupWidth + 'px')
+						.css('width', settings.popupWidth) //Eric.change to support %
+						// .css('height', settings.popupHeight + 'px')
+						.css('height', settings.popupHeight) //Eric.change to support %
 						.css('left', (windowWidth / 2) + 'px')
 						.css('top', (windowHeight / 2) + 'px')
 						.css('top', (windowHeight / 2) + 'px')

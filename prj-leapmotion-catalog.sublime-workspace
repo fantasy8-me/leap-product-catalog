@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"p",
+				"padding-bottom"
+			],
+			[
 				"cu",
 				"currentContent"
 			],
@@ -510,10 +514,6 @@
 			[
 				"loadFe",
 				"loadFeeds"
-			],
-			[
-				"test",
-				"testArray"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "prj-leapmotion-catalog/index.html",
 			"settings":
 			{
-				"buffer_size": 23101,
+				"buffer_size": 22976,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "prj-leapmotion-catalog/js/scene.js",
 			"settings":
 			{
-				"buffer_size": 13167,
+				"buffer_size": 13530,
 				"line_ending": "Unix"
 			}
 		},
@@ -552,10 +552,34 @@
 			}
 		},
 		{
+			"file": "prj-leapmotion-catalog/js/app.js",
+			"settings":
+			{
+				"buffer_size": 1020,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "prj-leapmotion-catalog/zyx.tmp/notes",
 			"settings":
 			{
-				"buffer_size": 9855,
+				"buffer_size": 11542,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/leaphandler.js",
+			"settings":
+			{
+				"buffer_size": 9639,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/config.js",
+			"settings":
+			{
+				"buffer_size": 18455,
 				"line_ending": "Unix"
 			}
 		}
@@ -636,6 +660,7 @@
 	},
 	"file_history":
 	[
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/notes",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/app.css",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/productData.html",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/productData_test.html",
@@ -644,7 +669,6 @@
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/leaphandler.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/config.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/notes",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/screen.css",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/blank.html",
@@ -774,6 +798,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css",
@@ -799,6 +824,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"quickfix",
+			"ske",
+			"appear",
+			"circle",
+			"autostart=0",
 			"_pic",
 			"\"update",
 			"_caption",
@@ -921,12 +951,7 @@
 			"MSG_TYPE.error",
 			"exitAdminScene",
 			"HelpScene",
-			"$currentToolTipContainer",
-			"$toolTipContainer",
-			"openReader",
-			"$toolTipContainer",
-			"enterArticleReaderScene",
-			"$currentStep"
+			"$currentToolTipContainer"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1010,6 +1035,7 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1017,15 +1043,15 @@
 					"file": "prj-leapmotion-catalog/index.html",
 					"settings":
 					{
-						"buffer_size": 23101,
+						"buffer_size": 22976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2152,
-								2152
+								1950,
+								1950
 							]
 						],
 						"settings":
@@ -1034,7 +1060,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1012.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1044,15 +1070,15 @@
 					"file": "prj-leapmotion-catalog/js/scene.js",
 					"settings":
 					{
-						"buffer_size": 13167,
+						"buffer_size": 13530,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12590,
-								12590
+								6998,
+								7004
 							]
 						],
 						"settings":
@@ -1062,7 +1088,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5317.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1079,8 +1105,8 @@
 						"selection":
 						[
 							[
-								10693,
-								10703
+								11385,
+								11385
 							]
 						],
 						"settings":
@@ -1089,7 +1115,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 10379.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1106,8 +1132,8 @@
 						"selection":
 						[
 							[
-								1778,
-								1778
+								717,
+								696
 							]
 						],
 						"settings":
@@ -1117,25 +1143,53 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 721.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "prj-leapmotion-catalog/zyx.tmp/notes",
+					"file": "prj-leapmotion-catalog/js/app.js",
 					"settings":
 					{
-						"buffer_size": 9855,
+						"buffer_size": 1020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9843,
-								9761
+								1020,
+								1020
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "prj-leapmotion-catalog/zyx.tmp/notes",
+					"settings":
+					{
+						"buffer_size": 11542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11540,
+								10365
 							]
 						],
 						"settings":
@@ -1145,7 +1199,62 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3044.0,
+						"translation.y": 916.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "prj-leapmotion-catalog/js/leaphandler.js",
+					"settings":
+					{
+						"buffer_size": 9639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								346
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "prj-leapmotion-catalog/js/config.js",
+					"settings":
+					{
+						"buffer_size": 18455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16346,
+								16348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8418.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
