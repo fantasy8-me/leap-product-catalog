@@ -1,11 +1,7 @@
 /*
-    1.Define global variables
-    2.Define global functions
+ *  1.Define global unti methods
+ *  2.Define tutorialManger.
 */
-
-var global = {
-
-}
 
 var tutorialManager = (function($){
 

@@ -1,11 +1,15 @@
 /*
-    1. Define the Scene class
-    2. Define all Scene instances
-    
-    In-File Execution: No
-     File init Method: initScene()
+ *   Module Usage:
+ *   1. Define the Scene class
+ *   2. Define all Scene instances, totally two scenes defined currently
+ *      a. Main scene, represent the catalog page
+ *      b.  Product scene, represent the product popup 
+ *   
 */
 
+/*
+  All methods and variables in these files should be treated as private except those exported by sceneExport
+*/
 var sceneExport = (function(){
 
   var SCENES ={
@@ -17,6 +21,9 @@ var sceneExport = (function(){
   var appMainScene = null;
   var productScene = null;
 
+  /*
+    Switch to specified "Scene"
+  */
   var sceneSwitch = function (scene){
     if(currentScene && currentScene.name === scene){
       return;
@@ -36,6 +43,9 @@ var sceneExport = (function(){
     currentScene.init();
   }
 
+  /*
+    Init this Scene module, this method must be invoked after dom is ready
+  */
   var initScene = function($){
       defineSceneClass();
       appMainScene = createAppMainScene($);
@@ -47,15 +57,14 @@ var sceneExport = (function(){
         });
       });
       $("html > div").click(function(){
-        console.debug("return admin scene");
         sceneSwitch(SCENES.APP_MAIN_SCENE);  
       });    
       sceneSwitch(SCENES.APP_MAIN_SCENE);
   }
+
   var getCurrentScene = function(){
     return currentScene;
   }
-
 
   return{
     SCENES:SCENES,
@@ -67,12 +76,12 @@ var sceneExport = (function(){
 
 
   /* 
-  * "Scene" is a virtual concept， which is used to separate the page flow in order to better control different page by Leap
-  * Each individual scene will support different set of Leap gestures.
-  * In parent class, a set of general elements are defined.
-  *   1. Pointer(or say cursor)
-  *   2. Handling for basic gestures, e.g. pointer move, appear/disappear, select, scroll
-  *   3. If the default handling is not applicable for specified scene, it can be overwritten in those scenes
+   * "Scene" is a virtual concept， which is used to separate the page flow in order to better control different page by Leap
+   * Each individual scene will support different set of Leap gestures.
+   * In this class, below common object and methods are defined.
+   *   1. Pointer(or say cursor)
+   *   2. Handling for basic gestures, e.g. pointer move, appear/disappear, select, scroll
+   *   3. If the default handling is not applicable for specified scene, it can be overwritten in those scenes
   */
 
   var Scene = function (options){
@@ -137,16 +146,6 @@ var sceneExport = (function(){
       }
     }
 
-    /*Stub method, do nothing if not overwritten by child*/
-    Scene.prototype.onSwipe = function(event){
-    } 
-
-    Scene.prototype.onKeyTap = function(event){
-    }
-
-    Scene.prototype.onHelpAppear = function(event){
-    }
-
     Scene.prototype.onCircle = function(event){
       var ori;
       if(this.getScrollObject){
@@ -193,6 +192,16 @@ var sceneExport = (function(){
         }
       }
     }
+
+    /*Stub method, do nothing if not overwritten by child*/
+    Scene.prototype.onSwipe = function(event){
+    } 
+
+    Scene.prototype.onKeyTap = function(event){
+    }
+
+    Scene.prototype.onHelpAppear = function(event){
+    }    
 
     /*Define the pointer, */
     Scene.prototype.pointer = (function(){
@@ -402,11 +411,10 @@ var sceneExport = (function(){
                           
                           selectFromPoint: function(x,y){
                             $selectedElement = $(document.elementFromPoint(x,y));
-                            if($selectedElement[0].tagName === "IFRAME"){
+                            if($selectedElement[0] && $selectedElement[0].tagName === "IFRAME"){
                               if(!globalUtil.ifModelStarted($selectedElement.attr("src")))
                                   return $selectedElement;
-                            }else if($selectedElement.hasClass("nav-next") || 
-                                      $selectedElement.hasClass("nav-previous")){
+                            }else if($selectedElement.hasClass("nav-next") || $selectedElement.hasClass("nav-previous")){
                               return $selectedElement;
                             }else{
                               return undefined;
@@ -414,12 +422,11 @@ var sceneExport = (function(){
                           },
                           
                           onSelected: function($selectedElement){
-                            if($selectedElement[0].tagName === "IFRAME"){
+                            if($selectedElement[0] && $selectedElement[0].tagName === "IFRAME"){
                               globalUtil.startModel($selectedElement)
                             }else{
                               $selectedElement.click(); //navigate
                             }
-
                           },
                           
                           getScrollObject: function(){
