@@ -1,431 +1,398 @@
 <!DOCTYPE HTML>
 <!--
 
-	Parallelism 1.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Parallelism 1.0 by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 -->
 <html>
-	<head>
-		<title>Product Catalog Showcase</title>
-		<meta name="viewport" content="width=1120,user-scalable=no" />
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" type="text/css" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script>-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.poptrox-2.1.js"></script>
-		<script src="js/config.js"></script>
-		<script src="js/skel.min.js"></script>
+    <head>
+        <title>Product Catalog Showcase</title>
+        <meta name="viewport" content="width=1120,user-scalable=no" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" type="text/css" />
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script>-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.poptrox-2.1.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/skel.min.js"></script>
 
-		<!-- Leap integration start-->
-		<script src="js/leap.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/leaphandler.js"></script>
-		<script src="js/scene.js"></script>
-		
+        <!-- Leap integration part 1 - start-->
+        <script src="js/custom/leap.js"></script>
+        <script src="js/custom/app.js"></script>
+        <script src="js/custom/leaphandler.js"></script>
+        <script src="js/custom/scene.js"></script>
+        
 
-		<script type="text/javascript">
+        <script type="text/javascript">
 
-		jQuery(document).ready(function() {
-			initLeap();
-			initScene(jQuery);
-			window.onresize=function(){
-				sceneSwitch(SCENES.APP_MAIN_SCENE);
-				console.log("resize");
-			}
+        jQuery(document).ready(function() {
+            initLeap();
+            initScene(jQuery);
+            window.onresize=function(){
+                sceneSwitch(SCENES.APP_MAIN_SCENE);
+            }
+        });
 
-		});
+        </script>
+        <link rel="stylesheet" href="css/custom/app.css" />
+        <!-- Leap integration part 1 - end-->
 
-		</script>
-		<!-- Leap integration end-->
+        <noscript>
+            <link rel="stylesheet" href="css/skel-noscript.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-desktop.css" />
+            <link rel="stylesheet" href="css/style-noscript.css" />
+        </noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+        
+    </head>
+    <body>
 
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-			<link rel="stylesheet" href="css/style-noscript.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+        <div class="custom-poptrox-popup">
+            <div class="loader">
+            </div>
+            <div class="popupContent">
+            </div>
+            <nav>
+                <span class="nav-previous" style="left:15px"></span>
+                <span class="nav-next" style="right:15px"></span>
+            </nav>
+        </div>
+        <div id="wrapper">
+                <div id="header-image">
+                    <div id="header">
+                        <h1>NUI (Natural User Interface) Showcase</h1>
+                        <h1>An Immersive Product Catalog / eCommerce site</h1>
+                    </div>
+                </div>
+            <div id="main" class="quickfix">
+                <div id="reel">
+                <Browse Products Below>
+                <!-- ******************************************************************************************** -->
+                <!-- ******************************************************************************************** -->
+                
 
-		<link rel="stylesheet" href="css/custom/app.css" />
-		<style type="text/css">
-
-		.tips {
-			position: absolute;
-			height: 80px;
-			width: 220px;
-			left: 10px;
-			bottom: 20px;
-			color: white;
-			border-radius: 8px;
-			font-size: 15px;
-			line-height:22px;
-			font-weight: 300
-			text-transform: none;
-			z-index:1200;
-			padding: 5px;
-			background: rgba(51, 51, 51, 0.95);
-			text-transform: none;
-		}
-		body{
-			/*To avoid sreen shaking while leap cursor move out of screen*/
-			overflow: hidden !important;
-		}
-		div.quickfix{
- 			top:auto !important;
- 			margin-top:0px !important
-		}
-		#footer .left{
-			padding-bottom: 1.5em;
-			font-size:13px;
-			line-height:18px;
-			padding-left:250px;
-/*			font-size:15px;
-			line-height:20px;*/
-			text-transform: none
-		}
-		</style>
-	</head>
-	<body>
-
-		<div class="custom-poptrox-popup">
-			<div class="loader">
-			</div>
-		  	<div class="popupContent">
-			</div>
-			<nav>
-			    <span class="nav-previous" style="left:15px"></span>
-			    <span class="nav-next" style="right:15px"></span>
-			</nav>
-		</div>
-		<div id="wrapper">
-				<div id="header-image">
-					<div id="header">
-						<h1>NUI (Natural User Interface) Showcase</h1>
-						<h1>An Immersive Product Catalog / eCommerce site</h1>
-					</div>
-				</div>
-			<div id="main" class="quickfix">
-				<div id="reel">
-				<Browse Products Below>
-				<!-- ******************************************************************************************** -->
-				<!-- ******************************************************************************************** -->
-				
-
-					<!-- Header Item -->
-					
-<!--						<div id="header" class="item" data-width="600">
-							<h1>NUI (Natural User Interface) Showcase</h1>
-							<h1>An Immersive Product Catalog / eCommerce site</h1>
-						</div>
-	-->				
-					<!-- Thumb Items -->
-						<article class="item thumb" data-width="400">
-							<h2>LCD TV</h2>
-							<a href="http://sketchfab.com/embed/bdbeeb38e74a4b4db97e4aa04767a4fb?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0" data-productid="lcdtv"><img src="images/thumbs/lcdtv.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>GALAXY S4</h2>
-							<a href="http://sketchfab.com/embed/oEvfp6AGCDFnCiwPvXyJ2INWRMt?autostart=0&transparent=1&autospin=0&controls=0" data-productid="galaxys4"><img src="images/thumbs/galaxys4.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="400">
-							<h2>Pilot Controller</h2>
-							<a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0" data-productid="pilotController"><img src="images/thumbs/pilot.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="300">
-							<h2>Billie Joe Armstrong Guitar</h2>
-							<a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0" data-productid="guitar"><img src="images/thumbs/guitar.png" alt=""></a>
-						</article>
-						<article class="item thumb" data-width="250">
-							<h2>Patrick and Sponge Minion</h2>
-							<a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0" data-productid="patrickAndSponge"><img src="images/thumbs/minions.png" alt=""></a>
-						</article>
+                    <!-- Header Item -->
+                    
+<!--                        <div id="header" class="item" data-width="600">
+                            <h1>NUI (Natural User Interface) Showcase</h1>
+                            <h1>An Immersive Product Catalog / eCommerce site</h1>
+                        </div>
+    -->             
+                    <!-- Thumb Items -->
+                        <article class="item thumb" data-width="400">
+                            <h2>LCD TV</h2>
+                            <a href="http://sketchfab.com/embed/bdbeeb38e74a4b4db97e4aa04767a4fb?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0" data-productid="lcdtv"><img src="images/thumbs/lcdtv.png" alt=""></a>
+                        </article>
+                        <article class="item thumb" data-width="400">
+                            <h2>GALAXY S4</h2>
+                            <a href="http://sketchfab.com/embed/oEvfp6AGCDFnCiwPvXyJ2INWRMt?autostart=0&transparent=1&autospin=0&controls=0" data-productid="galaxys4"><img src="images/thumbs/galaxys4.png" alt=""></a>
+                        </article>
+                        <article class="item thumb" data-width="400">
+                            <h2>Pilot Controller</h2>
+                            <a href="http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0" data-productid="pilotController"><img src="images/thumbs/pilot.png" alt=""></a>
+                        </article>
+                        <article class="item thumb" data-width="300">
+                            <h2>Billie Joe Armstrong Guitar</h2>
+                            <a href="http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0" data-productid="guitar"><img src="images/thumbs/guitar.png" alt=""></a>
+                        </article>
+                        <article class="item thumb" data-width="250">
+                            <h2>Patrick and Sponge Minion</h2>
+                            <a href="http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0" data-productid="patrickAndSponge"><img src="images/thumbs/minions.png" alt=""></a>
+                        </article>
 
 
-						
-				<!-- ******************************************************************************************** -->
-				<!-- ******************************************************************************************** -->
-				</div>
-			</div>
-		
-			<div id="footer">
-				<div class="left">
-					<p>An Immersive Product Catalog <b>Sample</b> Controlled by Leap Motion.<br/>
-					<strong>Catalog Screen:</strong>  Scroll the products by circling your 2 fingertips , point and hold to view a product<br>
-					<strong>Product Screen:</strong>  Scroll the product by circling your 2 fingertips , horizontally swipe to escape, point at the navigation button to navigate,<br>Point at the static image to start 3d model<br>
-					<strong>Sketchfab:</strong> Point one finger and turn left or right to rotate the model,  point two separate fingers and turn right or left to pan the model, <br>point your open hand and move up and down to zoom in or out.
-					</p>
-				</div>
-				<div class="right">
-					<ul class="contact">
-						<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
-						<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
-						<li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
-						<li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
-						<li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
-						<li><a href="#" class="icon icon-envelope-alt"><span>Email</span></a></li>
-					</ul>
-					<div id="copyright">
-						&copy; Rightcode LTD. Design: <a href="http://html5up.net/">HTML5 UP</a>
-					</div>
-				</div>
-			</div>
+                        
+                <!-- ******************************************************************************************** -->
+                <!-- ******************************************************************************************** -->
+                </div>
+            </div>
+        
+            <div id="footer">
+                <div class="left">
+                    <p>An Immersive Product Catalog <b>Sample</b> Controlled by Leap Motion.<br/>
+                    <strong>Catalog Screen:</strong>  Scroll the products by circling your 2 fingertips , point and hold to view a product<br>
+                    <strong>Product Screen:</strong>  Scroll the product by circling your 2 fingertips , horizontally swipe to escape, point at the navigation button to navigate,<br>Point at the static image to start 3d model<br>
+                    <strong>Sketchfab:</strong> Point one finger and turn left or right to rotate the model,  point two separate fingers and turn right or left to pan the model, <br>point your open hand and move up and down to zoom in or out.
+                    </p>
+                </div>
+                <div class="right">
+                    <ul class="contact">
+                        <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+                        <li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+                        <li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
+                        <li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
+                        <li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
+                        <li><a href="#" class="icon icon-envelope-alt"><span>Email</span></a></li>
+                    </ul>
+                    <div id="copyright">
+                        &copy; Rightcode LTD. Design: <a href="http://html5up.net/">HTML5 UP</a>
+                    </div>
+                </div>
+            </div>
 
-		</div>
+        </div>
 
-		<!-- Leap integration-->
-		<canvas id="pointer" width="54px" height="54px" style="position:absolute;top:0px;z-index:1999;display:none;pointer-events:none"></canvas>	
-		<!-- Leap integration end-->
+    <!-- Leap integration - start-->
+        <!-- Define the leap motion pointer -->
+        <canvas id="pointer" width="54px" height="54px" style="position:absolute;top:0px;z-index:1999;display:none;pointer-events:none"></canvas>   
 
-		<div class="tips" >
-		    <span></span>
-		</div>
+        <!-- Display the tips -->
+        <div class="tips" >
+            <span></span>
+        </div>
 
+        <!-- Define a hidden div to contain the preloading iframe -->
+        <div id="preloadDiv" style="display:none">
+            <!--While the "src" is empty, the page can not be displayed correctly, images in reel can not be displayed. So use"www.google.com" as a default value
+            -->
+            <iframe src="www.google.com"></iframe>
+        </div>
+        
+        <!-- Below 'productData' section contains all product data, the entire ".popupContent" will be dynamically replace the ".popupContent" in  ".custom-poptrox-popup"-->
+        <div id="productData" style="display:none">
+            <!-- Do not edit the "error" block-->
+            <div class="custom-poptrox-popup-wrapper" style="background-color:white" id="error">
+                <div class="popupContent">
+                    <h2 class="caption">Error</h2>
+                    <hr>
+                    <div class="top">
+                        <p>Attribute "data-productid" is not configured properly</p>
+                    </div>
+                    <div class="main"> 
+                        <div class="center">
+                            <div class="pic" ></div>
+                        </div>
+                        <div class="clearfloat"></div>
+                    </div>
+                    <div class="bottom">
+                    </div>
+                </div>
+            </div>
 
-		<div id="preloadDiv" style="display:none">
-			<iframe src="http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=1"></iframe>
-		</div>
+            <!--Product Data Start From Here-->
+            <div class="custom-poptrox-popup-wrapper" style="background-color:white" id="lcdtv">
+                   <div class="popupContent">
+                         <h2 class="caption"><!--Will be automatically filled up--></h2>
+                         <hr>
+                         <div class="top">
+                       <p>LCD TV Television Flat 32" HDTV</p>
+                       </div>
+                         <div class="main"> 
+                             <div class="left">
+                             <h3 class="primary"><span>Chosen for you</span></h3>
+                             <p>We are tailoring the right product for the customer needs.</p>            
+                             <h3><span>For private room</span></h3>
+                             <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
+                             <h3><span>LCD Screen, 5ms response time</span></h3>
+                             <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
+                             <h3><span>32 Inches, with lots of Plugs</span></h3>
+                             <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
+                         </div>
+                       <div class="right">
+                             <h3><span>Supports Full HD 1080p Resolution</span></h3>
+                             <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
+                             <h3><span>Price drop last year: 5%</span></h3>
+                             <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
+                             <h3><span>80% of TV's lasted longer than 10 years</span></h3>
+                             <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
+                           
+                         </div>      
+                             <div class="center">
+                           <div class="pic"></div>
+                           <h3><span>Only 199$</span></h3>
+                           <p>We are making our products affordable to everyone</p>              
+                           </div>
+                             <div class="clearfloat"></div>
+                         </div>
+                         <!-- <div class="bottom">
+                                 <h3><span>BLOCK 10</span></h3>
+                                 <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+                                 <h3><span>BLOCK 11</span></h3>
+                                 <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+                         </div>
+                       -->
+                     </div>
+            </div>
+            <div class="custom-poptrox-popup-wrapper" style="background-color:white" id="galaxys4">
+                <div class="popupContent">
+                      <h2 class="caption"></h2>
+                      <hr>
+                      <div class="top">
+                    <p>GALAXY S4</p>
+                    </div>
+                      <div class="main"> 
+                          <div class="left">
+                          <h3 class="primary"><span>Chosen for you</span></h3>
+                          <p>We are tailoring the right product for the customer needs.</p>            
+                          <h3><span>For private room</span></h3>
+                          <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
+                          <h3><span>LCD Screen, 5ms response time</span></h3>
+                          <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
+                          <h3><span>32 Inches, with lots of Plugs</span></h3>
+                          <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
+                      </div>
+                    <div class="right">
+                          <h3><span>Supports Full HD 1080p Resolution</span></h3>
+                          <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
+                          <h3><span>Price drop last year: 5%</span></h3>
+                          <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
+                          <h3><span>80% of TV's lasted longer than 10 years</span></h3>
+                          <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
+                        
+                      </div>      
+                          <div class="center">
+                        <div class="pic"></div>
+                        <h3><span>Only 199$</span></h3>
+                        <p>We are making our products affordable to everyone</p>              
+                        </div>
+                          <div class="clearfloat"></div>
+                      </div>
+                      <!-- <div class="bottom">
+                              <h3><span>BLOCK 10</span></h3>
+                              <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+                              <h3><span>BLOCK 11</span></h3>
+                              <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+                      </div>
+                    -->
+                  </div>
+            </div>               
+            <div class="custom-poptrox-popup-wrapper" style="background-color:white" id="pilotController">
+              <div class="popupContent">
+                    <h2 class="caption"></h2>
+                    <hr>
+                    <div class="top">
+                  <p>LCD TV Television Flat 32" HDTV</p>
+                  </div>
+                    <div class="main"> 
+                        <div class="left">
+                        <h3 class="primary"><span>Chosen for you</span></h3>
+                        <p>We are tailoring the right product for the customer needs.</p>            
+                        <h3><span>For private room</span></h3>
+                        <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
+                        <h3><span>LCD Screen, 5ms response time</span></h3>
+                        <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
+                        <h3><span>32 Inches, with lots of Plugs</span></h3>
+                        <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
+                    </div>
+                  <div class="right">
+                        <h3><span>Supports Full HD 1080p Resolution</span></h3>
+                        <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
+                        <h3><span>Price drop last year: 5%</span></h3>
+                        <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
+                        <h3><span>80% of TV's lasted longer than 10 years</span></h3>
+                        <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
+                      
+                    </div>      
+                        <div class="center">
+                      <div class="pic"></div>
+                      <h3><span>Only 199$</span></h3>
+                      <p>We are making our products affordable to everyone</p>              
+                      </div>
+                        <div class="clearfloat"></div>
+                    </div>
+                    <!-- <div class="bottom">
+                            <h3><span>BLOCK 10</span></h3>
+                            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+                            <h3><span>BLOCK 11</span></h3>
+                            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+                    </div>
+                  -->
+                </div>
+            </div>
+            <div class="custom-poptrox-popup-wrapper" style="background-color:white" id="guitar">
+              <div class="popupContent">
+                    <h2 class="caption"></h2>
+                    <hr>
+                    <div class="top">
+                  <p>LCD TV Television Flat 32" HDTV</p>
+                  </div>
+                    <div class="main"> 
+                        <div class="left">
+                        <h3 class="primary"><span>Chosen for you</span></h3>
+                        <p>We are tailoring the right product for the customer needs.</p>            
+                        <h3><span>For private room</span></h3>
+                        <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
+                        <h3><span>LCD Screen, 5ms response time</span></h3>
+                        <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
+                        <h3><span>32 Inches, with lots of Plugs</span></h3>
+                        <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
+                    </div>
+                  <div class="right">
+                        <h3><span>Supports Full HD 1080p Resolution</span></h3>
+                        <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
+                        <h3><span>Price drop last year: 5%</span></h3>
+                        <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
+                        <h3><span>80% of TV's lasted longer than 10 years</span></h3>
+                        <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
+                      
+                    </div>      
+                        <div class="center">
+                      <div class="pic"></div>
+                      <h3><span>Only 199$</span></h3>
+                      <p>We are making our products affordable to everyone</p>              
+                      </div>
+                        <div class="clearfloat"></div>
+                    </div>
+                    <!-- <div class="bottom">
+                            <h3><span>BLOCK 10</span></h3>
+                            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+                            <h3><span>BLOCK 11</span></h3>
+                            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+                    </div>
+                  -->
+                </div>
+            </div>
+            <div class="custom-poptrox-popup-wrapper" style="background-color:white" id="patrickAndSponge">
+              <div class="popupContent">
+                    <h2 class="caption"></h2>
+                    <hr>
+                    <div class="top">
+                  <p>LCD TV Television Flat 32" HDTV</p>
+                  </div>
+                    <div class="main"> 
+                        <div class="left">
+                        <h3 class="primary"><span>Chosen for you</span></h3>
+                        <p>We are tailoring the right product for the customer needs.</p>            
+                        <h3><span>For private room</span></h3>
+                        <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
+                        <h3><span>LCD Screen, 5ms response time</span></h3>
+                        <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
+                        <h3><span>32 Inches, with lots of Plugs</span></h3>
+                        <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
+                    </div>
+                  <div class="right">
+                        <h3><span>Supports Full HD 1080p Resolution</span></h3>
+                        <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
+                        <h3><span>Price drop last year: 5%</span></h3>
+                        <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
+                        <h3><span>80% of TV's lasted longer than 10 years</span></h3>
+                        <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
+                      
+                    </div>      
+                        <div class="center">
+                      <div class="pic"></div>
+                      <h3><span>Only 199$</span></h3>
+                      <p>We are making our products affordable to everyone</p>              
+                      </div>
+                        <div class="clearfloat"></div>
+                    </div>
+                    <!-- <div class="bottom">
+                            <h3><span>BLOCK 10</span></h3>
+                            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
+                            <h3><span>BLOCK 11</span></h3>
+                            <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
+                    </div>
+                  -->
+                </div>
+            </div>                      
+            <!--Product Data Start From Here-->
+        </div>
 
-		<div id="productData" style="display:none">
-			<!-- Do not edit the "error" block-->
-			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="error">
-				<div class="popupContent">
-			        <h2 class="caption">Error</h2>
-			        <hr>
-			        <div class="top">
-			            <p>Attribute "data-productid" is not configured properly</p>
-			        </div>
-			        <div class="main"> 
-			            <div class="center">
-			                <div class="pic" ></div>
-			            </div>
-			            <div class="clearfloat"></div>
-			        </div>
-			        <div class="bottom">
-			        </div>
-			    </div>
-			</div>
-
-			<!--Product Data Start From Here-->
-			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="lcdtv">
-			       <div class="popupContent">
-			             <h2 class="caption"><!--Will be automatically filled up--></h2>
-			             <hr>
-			             <div class="top">
-			           <p>LCD TV Television Flat 32" HDTV</p>
-			           </div>
-			             <div class="main"> 
-			                 <div class="left">
-			                 <h3 class="primary"><span>Chosen for you</span></h3>
-			                 <p>We are tailoring the right product for the customer needs.</p>            
-			                 <h3><span>For private room</span></h3>
-			                 <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
-			                 <h3><span>LCD Screen, 5ms response time</span></h3>
-			                 <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
-			                 <h3><span>32 Inches, with lots of Plugs</span></h3>
-			                 <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
-			             </div>
-			           <div class="right">
-			                 <h3><span>Supports Full HD 1080p Resolution</span></h3>
-			                 <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
-			                 <h3><span>Price drop last year: 5%</span></h3>
-			                 <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
-			                 <h3><span>80% of TV's lasted longer than 10 years</span></h3>
-			                 <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
-			               
-			             </div>      
-			                 <div class="center">
-			               <div class="pic"></div>
-			               <h3><span>Only 199$</span></h3>
-			               <p>We are making our products affordable to everyone</p>              
-			               </div>
-			                 <div class="clearfloat"></div>
-			             </div>
-			             <!-- <div class="bottom">
-			                     <h3><span>BLOCK 10</span></h3>
-			                     <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
-			                     <h3><span>BLOCK 11</span></h3>
-			                     <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-			             </div>
-			           -->
-			         </div>
-			</div>
-			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="galaxys4">
-			    <div class="popupContent">
-			          <h2 class="caption"></h2>
-			          <hr>
-			          <div class="top">
-			        <p>GALAXY S4</p>
-			        </div>
-			          <div class="main"> 
-			              <div class="left">
-			              <h3 class="primary"><span>Chosen for you</span></h3>
-			              <p>We are tailoring the right product for the customer needs.</p>            
-			              <h3><span>For private room</span></h3>
-			              <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
-			              <h3><span>LCD Screen, 5ms response time</span></h3>
-			              <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
-			              <h3><span>32 Inches, with lots of Plugs</span></h3>
-			              <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
-			          </div>
-			        <div class="right">
-			              <h3><span>Supports Full HD 1080p Resolution</span></h3>
-			              <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
-			              <h3><span>Price drop last year: 5%</span></h3>
-			              <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
-			              <h3><span>80% of TV's lasted longer than 10 years</span></h3>
-			              <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
-			            
-			          </div>      
-			              <div class="center">
-			            <div class="pic"></div>
-			            <h3><span>Only 199$</span></h3>
-			            <p>We are making our products affordable to everyone</p>              
-			            </div>
-			              <div class="clearfloat"></div>
-			          </div>
-			          <!-- <div class="bottom">
-			                  <h3><span>BLOCK 10</span></h3>
-			                  <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
-			                  <h3><span>BLOCK 11</span></h3>
-			                  <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-			          </div>
-			        -->
-			      </div>
-			</div>			     
-			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="pilotController">
-			  <div class="popupContent">
-			        <h2 class="caption"></h2>
-			        <hr>
-			        <div class="top">
-			      <p>LCD TV Television Flat 32" HDTV</p>
-			      </div>
-			        <div class="main"> 
-			            <div class="left">
-			            <h3 class="primary"><span>Chosen for you</span></h3>
-			            <p>We are tailoring the right product for the customer needs.</p>            
-			            <h3><span>For private room</span></h3>
-			            <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
-			            <h3><span>LCD Screen, 5ms response time</span></h3>
-			            <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
-			            <h3><span>32 Inches, with lots of Plugs</span></h3>
-			            <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
-			        </div>
-			      <div class="right">
-			            <h3><span>Supports Full HD 1080p Resolution</span></h3>
-			            <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
-			            <h3><span>Price drop last year: 5%</span></h3>
-			            <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
-			            <h3><span>80% of TV's lasted longer than 10 years</span></h3>
-			            <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
-			          
-			        </div>      
-			            <div class="center">
-			          <div class="pic"></div>
-			          <h3><span>Only 199$</span></h3>
-			          <p>We are making our products affordable to everyone</p>              
-			          </div>
-			            <div class="clearfloat"></div>
-			        </div>
-			        <!-- <div class="bottom">
-			                <h3><span>BLOCK 10</span></h3>
-			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
-			                <h3><span>BLOCK 11</span></h3>
-			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-			        </div>
-			      -->
-			    </div>
-			</div>
-			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="guitar">
-			  <div class="popupContent">
-			        <h2 class="caption"></h2>
-			        <hr>
-			        <div class="top">
-			      <p>LCD TV Television Flat 32" HDTV</p>
-			      </div>
-			        <div class="main"> 
-			            <div class="left">
-			            <h3 class="primary"><span>Chosen for you</span></h3>
-			            <p>We are tailoring the right product for the customer needs.</p>            
-			            <h3><span>For private room</span></h3>
-			            <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
-			            <h3><span>LCD Screen, 5ms response time</span></h3>
-			            <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
-			            <h3><span>32 Inches, with lots of Plugs</span></h3>
-			            <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
-			        </div>
-			      <div class="right">
-			            <h3><span>Supports Full HD 1080p Resolution</span></h3>
-			            <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
-			            <h3><span>Price drop last year: 5%</span></h3>
-			            <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
-			            <h3><span>80% of TV's lasted longer than 10 years</span></h3>
-			            <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
-			          
-			        </div>      
-			            <div class="center">
-			          <div class="pic"></div>
-			          <h3><span>Only 199$</span></h3>
-			          <p>We are making our products affordable to everyone</p>              
-			          </div>
-			            <div class="clearfloat"></div>
-			        </div>
-			        <!-- <div class="bottom">
-			                <h3><span>BLOCK 10</span></h3>
-			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
-			                <h3><span>BLOCK 11</span></h3>
-			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-			        </div>
-			      -->
-			    </div>
-			</div>
-			<div class="custom-poptrox-popup-wrapper" style="background-color:white" id="patrickAndSponge">
-			  <div class="popupContent">
-			        <h2 class="caption"></h2>
-			        <hr>
-			        <div class="top">
-			      <p>LCD TV Television Flat 32" HDTV</p>
-			      </div>
-			        <div class="main"> 
-			            <div class="left">
-			            <h3 class="primary"><span>Chosen for you</span></h3>
-			            <p>We are tailoring the right product for the customer needs.</p>            
-			            <h3><span>For private room</span></h3>
-			            <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>
-			            <h3><span>LCD Screen, 5ms response time</span></h3>
-			            <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>
-			            <h3><span>32 Inches, with lots of Plugs</span></h3>
-			            <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 
-			        </div>
-			      <div class="right">
-			            <h3><span>Supports Full HD 1080p Resolution</span></h3>
-			            <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            
-			            <h3><span>Price drop last year: 5%</span></h3>
-			            <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>
-			            <h3><span>80% of TV's lasted longer than 10 years</span></h3>
-			            <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            
-			          
-			        </div>      
-			            <div class="center">
-			          <div class="pic"></div>
-			          <h3><span>Only 199$</span></h3>
-			          <p>We are making our products affordable to everyone</p>              
-			          </div>
-			            <div class="clearfloat"></div>
-			        </div>
-			        <!-- <div class="bottom">
-			                <h3><span>BLOCK 10</span></h3>
-			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            
-			                <h3><span>BLOCK 11</span></h3>
-			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>
-			        </div>
-			      -->
-			    </div>
-			</div>						
-			<!--Product Data Start From Here-->
-		</div>		
-	</body>
+    <!-- Leap integration - end-->
+    </body>
 </html>

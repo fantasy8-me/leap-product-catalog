@@ -408,7 +408,7 @@
 						
 						if (x.type != 'image'){
 							_x.height(_x.width()); //Eric set height equals width after _popup css is set.
-							preLoad(x.src);//preload the model
+							globalUtil.preLoad(x.src);//preload the model
 						}
 						_x.load(function() {
 							_x.unbind('load');

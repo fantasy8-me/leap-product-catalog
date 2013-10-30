@@ -1,110 +1,160 @@
-        nav span{
-            position: absolute;
-            top: 50%;
-            height: 40px;
-            width: 40px;
-            background-color: #d64760;
-            cursor: pointer;
-        }
-        nav span:after{
-            position: absolute;
-            content: '';
-            width: 20px;
-            height: 20px;
-            top: 10px;
-            left: 10px;
-            background: transparent url("../../images/arrows.png") no-repeat;
-        }
-        nav span.nav-previous:after{
-            background-position:top left
-        }   
-        nav span.nav-next:after{
-            background-position:top right
-        }       
+body{
+    /*To avoid sreen shaking while leap cursor move out of screen*/
+    overflow: hidden !important;
+}
+
+/*footer css - reduce the font size to allow more content in footer*/
+#footer .left{
+    padding-bottom: 1.5em;
+    font-size:13px;
+    line-height:18px;
+    padding-left:250px;
+/*  font-size:15px;
+    line-height:20px;*/
+    text-transform: none
+}    
 
 
-        .custom-poptrox-popup{
-            text-transform: none;
-            color: #888;
-            background-color:white
-        }    
-        .custom-poptrox-popup div.pic{
-            width: 100%;
-        }
-        .custom-poptrox-popup div.pic iframe,img{
-            width: 100% !important;
-        }
-        .popupContent{
-            height:100%;
-            overflow:auto;
-            padding:65px
-        }
-        .popupContent h2{
-            color: #777;
-            font-size: 46px;
-            white-space: nowrap;
-            font-weight: 300;
-            font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
-            line-height: 1.1;
-        }
+/*Product Popup - start*/
 
-        .popupContent h3{
-            color: #777;
-            font-size: 22px;
-            /*white-space: nowrap;*/
-            font-weight: 300;
-            font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
-            line-height: 1.5;
+    /*Navigation Button - start*/
+    nav span{
+        position: absolute;
+        top: 50%;
+        height: 40px;
+        width: 40px;
+        background-color: #d64760;
+        cursor: pointer;
+    }
+    nav span:after{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        left: 10px;
+        background: transparent url("../../images/arrows.png") no-repeat;
+    }
+    nav span.nav-previous:after{
+        background-position:top left
+    }   
+    nav span.nav-next:after{
+        background-position:top right
+    }       
 
-        }
-        .popupContent h3 span{
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-            /*border-bottom: 2px solid #eee;*/
-            text-shadow: 1px 1px black;
-        }
-        .popupContent h3.primary span{
-            text-shadow: 1px 1px green;
-        }
-        .popupContent p{
-            color: #888;
-            font-size: 15px;
-            line-height: 26px;
-            overflow: hidden;
-            font-weight: 400;
-            font-style: italic;
-            margin-bottom:15px;
-        }
+    /* Navigation Button -end*/
 
-        /*custom popup layout*/
-        .popupContent .main {
-            margin:20px 0px;
-        }
-        .popupContent .main .left {
-            width:25%; 
-            float:left; 
-            padding:10px; 
-            /*background:green;*/
-        }
-        .popupContent .main .center {
-            width:50%; 
-            /*float:left; */
-            margin:0 auto;
-            padding-left:10px; 
-            padding-right:10px; 
-            padding-bottom:10px; 
-        } 
-        .popupContent .main .right {
-            width:25%;  
-            float:right; 
-            padding:10px; 
-            /*background:orange;*/
-        }
+    /* Custome popup general control - start*/
+    .custom-poptrox-popup{
+        text-transform: none;
+        color: #888;
+        background-color:white
+    }    
+    .custom-poptrox-popup div.pic{
+        width: 100%;
+    }
+    /*make the iframe/image fill up the pic div*/
+    .custom-poptrox-popup div.pic iframe,img{
+        width: 100% !important;
+    }
+    .popupContent{
+        height:100%;
+        overflow:auto;
+        padding:65px
+    }
+    .popupContent h2{
+        color: #777;
+        font-size: 46px;
+        white-space: nowrap;
+        font-weight: 300;
+        font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+        line-height: 1.1;
+    }
 
-        .popupContent .main .clearfloat {
-            clear:both;
-            height:1px;
-            overflow:hidden;
-            margin-top:-1px;
-        }
-        /*custom popup layout*/
+    .popupContent h3{
+        color: #777;
+        font-size: 22px;
+        /*white-space: nowrap;*/
+        font-weight: 300;
+        font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
+        line-height: 1.5;
+
+    }
+    .popupContent h3 span{
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        /*border-bottom: 2px solid #eee;*/
+        text-shadow: 1px 1px black;
+    }
+    .popupContent h3.primary span{
+        text-shadow: 1px 1px green;
+    }
+    .popupContent p{
+        color: #888;
+        font-size: 15px;
+        line-height: 26px;
+        overflow: hidden;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom:15px;
+    }
+    /* Custome popup general control - end*/
+
+    /*custom popup layout -start*/
+    .popupContent .main {
+        margin:20px 0px;
+    }
+    .popupContent .main .left {
+        width:25%; 
+        float:left; 
+        padding:10px; 
+    }
+    .popupContent .main .center {
+        width:50%; 
+        margin:0 auto;
+        padding-left:10px; 
+        padding-right:10px; 
+        padding-bottom:10px; 
+    } 
+    .popupContent .main .right {
+        width:25%;  
+        float:right; 
+        padding:10px; 
+    }
+
+    .popupContent .main .clearfloat {
+        clear:both;
+        height:1px;
+        overflow:hidden;
+        margin-top:-1px;
+    }
+    /*custom popup layout -end*/
+/*Product Popup -end*/
+
+
+/*Help tips css - start*/
+    .tips {
+        position: absolute;
+        height: 80px;
+        width: 220px;
+        left: 10px;
+        bottom: 20px;
+        color: white;
+        border-radius: 8px;
+        font-size: 15px;
+        line-height:22px;
+        font-weight: 300
+        text-transform: none;
+        z-index:1200;
+        padding: 5px;
+        background: rgba(51, 51, 51, 0.95);
+        text-transform: none;
+    }
+
+    div.quickfix{
+        top:auto !important;
+        margin-top:0px !important
+    }
+/*Help tips css - end*/
+
+    

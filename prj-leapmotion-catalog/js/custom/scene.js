@@ -383,7 +383,7 @@ var createProductScene = function($){
                         selectFromPoint: function(x,y){
                           $selectedElement = $(document.elementFromPoint(x,y));
                           if($selectedElement[0].tagName === "IFRAME"){
-                            if(!ifModelStarted($selectedElement.attr("src")))
+                            if(!globalUtil.ifModelStarted($selectedElement.attr("src")))
                                 return $selectedElement
                           }else if($selectedElement.hasClass("nav-next") || $selectedElement.hasClass("nav-previous")){
                             return $selectedElement
@@ -393,7 +393,7 @@ var createProductScene = function($){
                         },
                         onSelected: function($selectedElement){
                           if($selectedElement[0].tagName === "IFRAME"){
-                            startModel($selectedElement)
+                            globalUtil.startModel($selectedElement)
                           }else{
                             $selectedElement.click(); //navigate
                           }

@@ -520,66 +520,13 @@
 	"buffers":
 	[
 		{
+			"contents": "<!DOCTYPE HTML>\n<!--\n\n	Parallelism 1.0 by HTML5 UP\n	html5up.net | @n33co\n	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n\n-->\n<html>\n	<head>\n		<title>Product Catalog Showcase</title>\n		<meta name=\"viewport\" content=\"width=1120,user-scalable=no\" />\n		<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />\n		<meta name=\"description\" content=\"\" />\n		<meta name=\"keywords\" content=\"\" />\n		<link href=\"http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400\" rel=\"stylesheet\" type=\"text/css\" />\n		<!--[if lte IE 8]><script src=\"js/html5shiv.js\"></script>-->\n		<script src=\"js/jquery.min.js\"></script>\n		<script src=\"js/jquery.poptrox-2.1.js\"></script>\n		<script src=\"js/config.js\"></script>\n		<script src=\"js/skel.min.js\"></script>\n\n		<!-- Leap integration start-->\n		<script src=\"js/leap.js\"></script>\n		<script src=\"js/app.js\"></script>\n		<script src=\"js/leaphandler.js\"></script>\n		<script src=\"js/scene.js\"></script>\n		\n\n		<script type=\"text/javascript\">\n\n		jQuery(document).ready(function() {\n			initLeap();\n			initScene(jQuery);\n			window.onresize=function(){\n				sceneSwitch(SCENES.APP_MAIN_SCENE);\n				console.log(\"resize\");\n			}\n\n		});\n\n		</script>\n		<!-- Leap integration end-->\n\n		<noscript>\n			<link rel=\"stylesheet\" href=\"css/skel-noscript.css\" />\n			<link rel=\"stylesheet\" href=\"css/style.css\" />\n			<link rel=\"stylesheet\" href=\"css/style-desktop.css\" />\n			<link rel=\"stylesheet\" href=\"css/style-noscript.css\" />\n		</noscript>\n		<!--[if lte IE 8]><link rel=\"stylesheet\" href=\"css/ie8.css\" /><![endif]-->\n\n		<link rel=\"stylesheet\" href=\"css/custom/app.css\" />\n		<style type=\"text/css\">\n\n		.tips {\n			position: absolute;\n			height: 80px;\n			width: 220px;\n			left: 10px;\n			bottom: 20px;\n			color: white;\n			border-radius: 8px;\n			font-size: 15px;\n			line-height:22px;\n			font-weight: 300\n			text-transform: none;\n			z-index:1200;\n			padding: 5px;\n			background: rgba(51, 51, 51, 0.95);\n			text-transform: none;\n		}\n		body{\n			/*To avoid sreen shaking while leap cursor move out of screen*/\n			overflow: hidden !important;\n		}\n		div.quickfix{\n 			top:auto !important;\n 			margin-top:0px !important\n		}\n		#footer .left{\n			padding-bottom: 1.5em;\n			font-size:13px;\n			line-height:18px;\n			padding-left:250px;\n/*			font-size:15px;\n			line-height:20px;*/\n			text-transform: none\n		}shi\n		</style>\n	</head>\n	<body>\n\n		<div class=\"custom-poptrox-popup\">\n			<div class=\"loader\">\n			</div>\n		  	<div class=\"popupContent\">\n			</div>\n			<nav>\n			    <span class=\"nav-previous\" style=\"left:15px\"></span>\n			    <span class=\"nav-next\" style=\"right:15px\"></span>\n			</nav>\n		</div>\n		<div id=\"wrapper\">\n				<div id=\"header-image\">\n					<div id=\"header\">\n						<h1>NUI (Natural User Interface) Showcase</h1>\n						<h1>An Immersive Product Catalog / eCommerce site</h1>\n					</div>\n				</div>\n			<div id=\"main\" class=\"quickfix\">\n				<div id=\"reel\">\n				<Browse Products Below>\n				<!-- ******************************************************************************************** -->\n				<!-- ******************************************************************************************** -->\n				\n\n					<!-- Header Item -->\n					\n<!--						<div id=\"header\" class=\"item\" data-width=\"600\">\n							<h1>NUI (Natural User Interface) Showcase</h1>\n							<h1>An Immersive Product Catalog / eCommerce site</h1>\n						</div>\n	-->				\n					<!-- Thumb Items -->\n						<article class=\"item thumb\" data-width=\"400\">\n							<h2>LCD TV</h2>\n							<a href=\"http://sketchfab.com/embed/bdbeeb38e74a4b4db97e4aa04767a4fb?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0\" data-productid=\"lcdtv\"><img src=\"images/thumbs/lcdtv.png\" alt=\"\"></a>\n						</article>\n						<article class=\"item thumb\" data-width=\"400\">\n							<h2>GALAXY S4</h2>\n							<a href=\"http://sketchfab.com/embed/oEvfp6AGCDFnCiwPvXyJ2INWRMt?autostart=0&transparent=1&autospin=0&controls=0\" data-productid=\"galaxys4\"><img src=\"images/thumbs/galaxys4.png\" alt=\"\"></a>\n						</article>\n						<article class=\"item thumb\" data-width=\"400\">\n							<h2>Pilot Controller</h2>\n							<a href=\"http://sketchfab.com/m5l2f1c0b?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0\" data-productid=\"pilotController\"><img src=\"images/thumbs/pilot.png\" alt=\"\"></a>\n						</article>\n						<article class=\"item thumb\" data-width=\"300\">\n							<h2>Billie Joe Armstrong Guitar</h2>\n							<a href=\"http://sketchfab.com/nji3hg2f?autostart=0&transparent=1&autospin=0&controls=0\" data-productid=\"guitar\"><img src=\"images/thumbs/guitar.png\" alt=\"\"></a>\n						</article>\n						<article class=\"item thumb\" data-width=\"250\">\n							<h2>Patrick and Sponge Minion</h2>\n							<a href=\"http://sketchfab.com/m54ji3hecb?autostart=0&transparent=1&autospin=0&controls=0\" data-productid=\"patrickAndSponge\"><img src=\"images/thumbs/minions.png\" alt=\"\"></a>\n						</article>\n\n\n						\n				<!-- ******************************************************************************************** -->\n				<!-- ******************************************************************************************** -->\n				</div>\n			</div>\n		\n			<div id=\"footer\">\n				<div class=\"left\">\n					<p>An Immersive Product Catalog <b>Sample</b> Controlled by Leap Motion.<br/>\n					<strong>Catalog Screen:</strong>  Scroll the products by circling your 2 fingertips , point and hold to view a product<br>\n					<strong>Product Screen:</strong>  Scroll the product by circling your 2 fingertips , horizontally swipe to escape, point at the navigation button to navigate,<br>Point at the static image to start 3d model<br>\n					<strong>Sketchfab:</strong> Point one finger and turn left or right to rotate the model,  point two separate fingers and turn right or left to pan the model, <br>point your open hand and move up and down to zoom in or out.\n					</p>\n				</div>\n				<div class=\"right\">\n					<ul class=\"contact\">\n						<li><a href=\"#\" class=\"icon icon-twitter\"><span>Twitter</span></a></li>\n						<li><a href=\"#\" class=\"icon icon-facebook\"><span>Facebook</span></a></li>\n						<li><a href=\"#\" class=\"icon icon-google-plus\"><span>Google+</span></a></li>\n						<li><a href=\"#\" class=\"icon icon-dribbble\"><span>Dribbble</span></a></li>\n						<li><a href=\"#\" class=\"icon icon-pinterest\"><span>Pinterest</span></a></li>\n						<li><a href=\"#\" class=\"icon icon-envelope-alt\"><span>Email</span></a></li>\n					</ul>\n					<div id=\"copyright\">\n						&copy; Rightcode LTD. Design: <a href=\"http://html5up.net/\">HTML5 UP</a>\n					</div>\n				</div>\n			</div>\n\n		</div>\n\n		<!-- Leap integration-->\n		<canvas id=\"pointer\" width=\"54px\" height=\"54px\" style=\"position:absolute;top:0px;z-index:1999;display:none;pointer-events:none\"></canvas>	\n		<!-- Leap integration end-->\n\n		<div class=\"tips\" >\n		    <span></span>\n		</div>\n\n\n		<div id=\"preloadDiv\" style=\"display:none\">\n			<iframe src=\"http://sketchfab.com/embed/yE9lP6VfikWNix9SR0pM1TcSeGX?autostart=1\"></iframe>\n		</div>\n\n		<div id=\"productData\" style=\"display:none\">\n			<!-- Do not edit the \"error\" block-->\n			<div class=\"custom-poptrox-popup-wrapper\" style=\"background-color:white\" id=\"error\">\n				<div class=\"popupContent\">\n			        <h2 class=\"caption\">Error</h2>\n			        <hr>\n			        <div class=\"top\">\n			            <p>Attribute \"data-productid\" is not configured properly</p>\n			        </div>\n			        <div class=\"main\"> \n			            <div class=\"center\">\n			                <div class=\"pic\" ></div>\n			            </div>\n			            <div class=\"clearfloat\"></div>\n			        </div>\n			        <div class=\"bottom\">\n			        </div>\n			    </div>\n			</div>\n\n			<!--Product Data Start From Here-->\n			<div class=\"custom-poptrox-popup-wrapper\" style=\"background-color:white\" id=\"lcdtv\">\n			       <div class=\"popupContent\">\n			             <h2 class=\"caption\"><!--Will be automatically filled up--></h2>\n			             <hr>\n			             <div class=\"top\">\n			           <p>LCD TV Television Flat 32\" HDTV</p>\n			           </div>\n			             <div class=\"main\"> \n			                 <div class=\"left\">\n			                 <h3 class=\"primary\"><span>Chosen for you</span></h3>\n			                 <p>We are tailoring the right product for the customer needs.</p>            \n			                 <h3><span>For private room</span></h3>\n			                 <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>\n			                 <h3><span>LCD Screen, 5ms response time</span></h3>\n			                 <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>\n			                 <h3><span>32 Inches, with lots of Plugs</span></h3>\n			                 <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 \n			             </div>\n			           <div class=\"right\">\n			                 <h3><span>Supports Full HD 1080p Resolution</span></h3>\n			                 <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            \n			                 <h3><span>Price drop last year: 5%</span></h3>\n			                 <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>\n			                 <h3><span>80% of TV's lasted longer than 10 years</span></h3>\n			                 <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            \n			               \n			             </div>      \n			                 <div class=\"center\">\n			               <div class=\"pic\"></div>\n			               <h3><span>Only 199$</span></h3>\n			               <p>We are making our products affordable to everyone</p>              \n			               </div>\n			                 <div class=\"clearfloat\"></div>\n			             </div>\n			             <!-- <div class=\"bottom\">\n			                     <h3><span>BLOCK 10</span></h3>\n			                     <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            \n			                     <h3><span>BLOCK 11</span></h3>\n			                     <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>\n			             </div>\n			           -->\n			         </div>\n			</div>\n			<div class=\"custom-poptrox-popup-wrapper\" style=\"background-color:white\" id=\"galaxys4\">\n			    <div class=\"popupContent\">\n			          <h2 class=\"caption\"></h2>\n			          <hr>\n			          <div class=\"top\">\n			        <p>GALAXY S4</p>\n			        </div>\n			          <div class=\"main\"> \n			              <div class=\"left\">\n			              <h3 class=\"primary\"><span>Chosen for you</span></h3>\n			              <p>We are tailoring the right product for the customer needs.</p>            \n			              <h3><span>For private room</span></h3>\n			              <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>\n			              <h3><span>LCD Screen, 5ms response time</span></h3>\n			              <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>\n			              <h3><span>32 Inches, with lots of Plugs</span></h3>\n			              <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 \n			          </div>\n			        <div class=\"right\">\n			              <h3><span>Supports Full HD 1080p Resolution</span></h3>\n			              <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            \n			              <h3><span>Price drop last year: 5%</span></h3>\n			              <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>\n			              <h3><span>80% of TV's lasted longer than 10 years</span></h3>\n			              <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            \n			            \n			          </div>      \n			              <div class=\"center\">\n			            <div class=\"pic\"></div>\n			            <h3><span>Only 199$</span></h3>\n			            <p>We are making our products affordable to everyone</p>              \n			            </div>\n			              <div class=\"clearfloat\"></div>\n			          </div>\n			          <!-- <div class=\"bottom\">\n			                  <h3><span>BLOCK 10</span></h3>\n			                  <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            \n			                  <h3><span>BLOCK 11</span></h3>\n			                  <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>\n			          </div>\n			        -->\n			      </div>\n			</div>			     \n			<div class=\"custom-poptrox-popup-wrapper\" style=\"background-color:white\" id=\"pilotController\">\n			  <div class=\"popupContent\">\n			        <h2 class=\"caption\"></h2>\n			        <hr>\n			        <div class=\"top\">\n			      <p>LCD TV Television Flat 32\" HDTV</p>\n			      </div>\n			        <div class=\"main\"> \n			            <div class=\"left\">\n			            <h3 class=\"primary\"><span>Chosen for you</span></h3>\n			            <p>We are tailoring the right product for the customer needs.</p>            \n			            <h3><span>For private room</span></h3>\n			            <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>\n			            <h3><span>LCD Screen, 5ms response time</span></h3>\n			            <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>\n			            <h3><span>32 Inches, with lots of Plugs</span></h3>\n			            <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 \n			        </div>\n			      <div class=\"right\">\n			            <h3><span>Supports Full HD 1080p Resolution</span></h3>\n			            <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            \n			            <h3><span>Price drop last year: 5%</span></h3>\n			            <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>\n			            <h3><span>80% of TV's lasted longer than 10 years</span></h3>\n			            <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            \n			          \n			        </div>      \n			            <div class=\"center\">\n			          <div class=\"pic\"></div>\n			          <h3><span>Only 199$</span></h3>\n			          <p>We are making our products affordable to everyone</p>              \n			          </div>\n			            <div class=\"clearfloat\"></div>\n			        </div>\n			        <!-- <div class=\"bottom\">\n			                <h3><span>BLOCK 10</span></h3>\n			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            \n			                <h3><span>BLOCK 11</span></h3>\n			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>\n			        </div>\n			      -->\n			    </div>\n			</div>\n			<div class=\"custom-poptrox-popup-wrapper\" style=\"background-color:white\" id=\"guitar\">\n			  <div class=\"popupContent\">\n			        <h2 class=\"caption\"></h2>\n			        <hr>\n			        <div class=\"top\">\n			      <p>LCD TV Television Flat 32\" HDTV</p>\n			      </div>\n			        <div class=\"main\"> \n			            <div class=\"left\">\n			            <h3 class=\"primary\"><span>Chosen for you</span></h3>\n			            <p>We are tailoring the right product for the customer needs.</p>            \n			            <h3><span>For private room</span></h3>\n			            <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>\n			            <h3><span>LCD Screen, 5ms response time</span></h3>\n			            <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>\n			            <h3><span>32 Inches, with lots of Plugs</span></h3>\n			            <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 \n			        </div>\n			      <div class=\"right\">\n			            <h3><span>Supports Full HD 1080p Resolution</span></h3>\n			            <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            \n			            <h3><span>Price drop last year: 5%</span></h3>\n			            <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>\n			            <h3><span>80% of TV's lasted longer than 10 years</span></h3>\n			            <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            \n			          \n			        </div>      \n			            <div class=\"center\">\n			          <div class=\"pic\"></div>\n			          <h3><span>Only 199$</span></h3>\n			          <p>We are making our products affordable to everyone</p>              \n			          </div>\n			            <div class=\"clearfloat\"></div>\n			        </div>\n			        <!-- <div class=\"bottom\">\n			                <h3><span>BLOCK 10</span></h3>\n			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            \n			                <h3><span>BLOCK 11</span></h3>\n			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>\n			        </div>\n			      -->\n			    </div>\n			</div>\n			<div class=\"custom-poptrox-popup-wrapper\" style=\"background-color:white\" id=\"patrickAndSponge\">\n			  <div class=\"popupContent\">\n			        <h2 class=\"caption\"></h2>\n			        <hr>\n			        <div class=\"top\">\n			      <p>LCD TV Television Flat 32\" HDTV</p>\n			      </div>\n			        <div class=\"main\"> \n			            <div class=\"left\">\n			            <h3 class=\"primary\"><span>Chosen for you</span></h3>\n			            <p>We are tailoring the right product for the customer needs.</p>            \n			            <h3><span>For private room</span></h3>\n			            <p>Because we know your room colors &amp; design stlye, accessories type, and best placement place on your room's wall</p>\n			            <h3><span>LCD Screen, 5ms response time</span></h3>\n			            <p>You usually don't have more than 2 hrs/day to watch TV, thats why we chose this TV, so you can enjoy the best view &amp; fastest response time when you spend it watching TV. </p>\n			            <h3><span>32 Inches, with lots of Plugs</span></h3>\n			            <p>Because you are usually like to sit in a distance of about 3 meters from your TV, and for the tech savvy inside you, you like to plug everything to it: Hard drives, streamers, smart TV dongles, computers, etc</p>                 \n			        </div>\n			      <div class=\"right\">\n			            <h3><span>Supports Full HD 1080p Resolution</span></h3>\n			            <p>You are using your TV mostly to watch movies, TV series and play games, so we offer you the best experience you can get for these needs, without compormising.</p>            \n			            <h3><span>Price drop last year: 5%</span></h3>\n			            <p>We know that you are moving apartments every year, so we ensured that we chosen a product you can re-sell next year and save money for your new TV.</p>\n			            <h3><span>80% of TV's lasted longer than 10 years</span></h3>\n			            <p>Because this is not a new model, we want to make sure that you will encounter no errors using your device. You got a long way to go with this TV, if you want.</p>            \n			          \n			        </div>      \n			            <div class=\"center\">\n			          <div class=\"pic\"></div>\n			          <h3><span>Only 199$</span></h3>\n			          <p>We are making our products affordable to everyone</p>              \n			          </div>\n			            <div class=\"clearfloat\"></div>\n			        </div>\n			        <!-- <div class=\"bottom\">\n			                <h3><span>BLOCK 10</span></h3>\n			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>            \n			                <h3><span>BLOCK 11</span></h3>\n			                <p>Curabitur sollicitudin molestie arcu sed accumsan. Nullam dapibus ligula nec porta rutrum. Integer euismod mauris a magna tincidunt, vel aliquet arcu aliquam</p>\n			        </div>\n			      -->\n			    </div>\n			</div>						\n			<!--Product Data Start From Here-->\n		</div>		\n	</body>\n</html>",
 			"file": "prj-leapmotion-catalog/index.html",
+			"file_size": 22932,
+			"file_write_time": 1382691509000000,
 			"settings":
 			{
-				"buffer_size": 22976,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/scene.js",
-			"settings":
-			{
-				"buffer_size": 13530,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
-			"settings":
-			{
-				"buffer_size": 20123,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/css/custom/app.css",
-			"settings":
-			{
-				"buffer_size": 2948,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/app.js",
-			"settings":
-			{
-				"buffer_size": 1020,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/zyx.tmp/notes",
-			"settings":
-			{
-				"buffer_size": 11542,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/leaphandler.js",
-			"settings":
-			{
-				"buffer_size": 9639,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/config.js",
-			"settings":
-			{
-				"buffer_size": 18455,
+				"buffer_size": 22935,
 				"line_ending": "Unix"
 			}
 		}
@@ -660,18 +607,22 @@
 	},
 	"file_history":
 	[
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/notes",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/app.css",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/productData.html",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/productData_test.html",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/scene.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/app.css",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/app.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/notes",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/leaphandler.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/config.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/screen.css",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/blank.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample_files/images.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample_files/main.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample.bak.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/productData.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/productData_test.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.release/milestone1/changes.txt",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/screen.css",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/product.html",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1 copy.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/leap.js",
@@ -783,11 +734,7 @@
 		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/js/readability/js/readability-port.js",
 		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/css-layout.html",
 		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/dummy.html",
-		"/Users/me/Desktop/wastest.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/readability-node.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/jsdom-demo.js",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/main.html",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/css/readability/css/readability.css"
+		"/Users/me/Desktop/wastest.html"
 	],
 	"find":
 	{
@@ -795,9 +742,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample_files",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog",
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js",
@@ -824,6 +772,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"data/",
+			"Warning: Needs to be online to load image!",
+			"require.config",
+			"define(",
+			"myZoomHandler",
 			"quickfix",
 			"ske",
 			"appear",
@@ -946,12 +899,7 @@
 			"Nav\nusePopupNav",
 			"event",
 			"articleReaderFrame",
-			"readerfr",
-			"globalMsgManager.disable",
-			"MSG_TYPE.error",
-			"exitAdminScene",
-			"HelpScene",
-			"$currentToolTipContainer"
+			"readerfr"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -959,6 +907,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"http://www.3d-viz.com/global/3dviewers/knifezt/html/data/",
 			".popupContent",
 			"#popupContent",
 			"#popupContent #header",
@@ -1035,7 +984,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1043,15 +992,15 @@
 					"file": "prj-leapmotion-catalog/index.html",
 					"settings":
 					{
-						"buffer_size": 22976,
+						"buffer_size": 22935,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1950,
-								1950
+								2350,
+								2350
 							]
 						],
 						"settings":
@@ -1060,201 +1009,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1012.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "prj-leapmotion-catalog/js/scene.js",
-					"settings":
-					{
-						"buffer_size": 13530,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6998,
-								7004
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
-					"settings":
-					{
-						"buffer_size": 20123,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11385,
-								11385
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "prj-leapmotion-catalog/css/custom/app.css",
-					"settings":
-					{
-						"buffer_size": 2948,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								717,
-								696
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "prj-leapmotion-catalog/js/app.js",
-					"settings":
-					{
-						"buffer_size": 1020,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1020,
-								1020
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "prj-leapmotion-catalog/zyx.tmp/notes",
-					"settings":
-					{
-						"buffer_size": 11542,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11540,
-								10365
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 916.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "prj-leapmotion-catalog/js/leaphandler.js",
-					"settings":
-					{
-						"buffer_size": 9639,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								346,
-								346
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "prj-leapmotion-catalog/js/config.js",
-					"settings":
-					{
-						"buffer_size": 18455,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16346,
-								16348
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 8418.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
