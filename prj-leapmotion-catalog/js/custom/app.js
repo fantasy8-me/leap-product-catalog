@@ -1,3 +1,12 @@
+/*
+    1.Define global variables
+    2.Define global functions
+*/
+
+var global = {
+
+}
+
 var tutorialManager = (function($){
 
     var gestureDes = {
@@ -10,8 +19,8 @@ var tutorialManager = (function($){
         $(".tips span").css("color","rgb(194, 223, 156)").html(gestureDes[key] + submsg);
     }
     var displayTips = function(key){
-
-        $(".tips span").css("color","white").html(currentScene.getTips());
+        if(sceneExport)
+            $(".tips span").css("color","white").html(sceneExport.getCurrentScene().getTips());
     }    
     return {
         displayGesture:displayGesture,
@@ -39,6 +48,8 @@ var globalUtil = (function(){
             $theIFrame.attr("src",preLoadUrl);
         }
     }
+
+
     return{
         preLoad:preLoad,
         ifModelStarted:ifModelStarted,

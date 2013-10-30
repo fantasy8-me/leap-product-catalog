@@ -298,8 +298,10 @@
 					_popup
 						.css('position', __pos)
 						.css('z-index', settings.baseZIndex + 1)
-						.css('width', settings.popupWidth + 'px')
-						.css('height', settings.popupHeight + 'px')
+						// .css('width', settings.popupWidth + 'px')
+						.css('width', settings.popupWidth) //Eric.change to support %
+						// .css('height', settings.popupHeight + 'px')
+						.css('height', settings.popupHeight) //Eric.change to support %
 						.css('left', (windowWidth / 2) + 'px')
 						.css('top', (windowHeight / 2) + 'px')
 						.css('top', (windowHeight / 2) + 'px')
@@ -339,11 +341,35 @@
 							_x.attr('src', '');
 						_x.detach();
 					
+
 					// Activate new object
 						x = queue[index];
 						_x = x.object;
 						_x.unbind('load');
 					
+						/*
+							Eric. load product data div
+						*/
+
+						var $productContent = $("#"+x.productid+ " .popupContent");
+						var $currentContent = $(".custom-poptrox-popup .popupContent");	
+						$currentContent.detach();
+						if($productContent.length===0){
+							$productContent = $("#error .popupContent")
+						}
+						$productContent.clone().appendTo(_popup);
+
+
+						_pic = _popup.find(	'.pic');
+						_caption = _popup.find(settings.popupCaptionSelector);
+						_caption
+							.bind('update', function(e, s) {
+								if (!s || s.length == 0)
+									s = settings.popupBlankCaptionText;
+								_caption.html(s);
+							});
+						/*load product data div*/
+
 						_pic
 							.css('text-indent', '-9999em')
 							.show()
@@ -351,13 +377,22 @@
 
 						_x.attr('src', x.src);
 						
-						if (x.type != 'image')
+						if (x.type != 'image'){
 							_x
 								.css('position', 'relative')
 								.css('outline', '0')
 								.css('z-index', settings.baseZIndex + 100)
 								.width(x.width)
 								.height(x.height);
+							/* Eric To fix the nav buttons are hid while x.type!=img*/
+							_nav_next.css('z-index', settings.baseZIndex + 100);
+							_nav_previous.css('z-index', settings.baseZIndex + 100);
+							/* Eric To fix the nav buttons are hidden while x.type!=img*/
+						}else{
+							/* Eric.To remove the z-index while x.type==img to avoid affecting existing logic*/
+							_nav_next.css('z-index', '');
+							_nav_previous.css('z-index', '');
+						}
 
 					// Initialize
 						_loader.trigger('startSpinning').fadeIn(300);
@@ -370,7 +405,11 @@
 							.height(settings.popupHeight)
 							.css('margin-left', (-1 * (_popup.innerWidth() / 2)) + 'px')
 							.css('margin-top', (-1 * (_popup.innerHeight() / 2)) + 'px');
-
+						
+						if (x.type != 'image'){
+							_x.height(_x.width()); //Eric set height equals width after _popup css is set.
+							globalUtil.preLoad(x.src);//preload the model
+						}
 						_x.load(function() {
 							_x.unbind('load');
 							_loader.hide().trigger('stopSpinning');
@@ -498,14 +537,16 @@
 					width:			a.attr('width'),
 					height:			a.attr('height'),
 					type:			null,
-					object:			null
+					object:			null,
+					productid: 		null,
 				};
 
 				tmp = x.src.match(/http[s]?:\/\/([a-z0-9\.]+)\/(.*)/);
 
 				if (!tmp || tmp.length < 3)
 					tmp = [false, false];
-					
+				x.productid = a.data("productid");
+
 				switch (tmp[1])
 				{
 					// Audio (Soundcloud)
@@ -543,6 +584,10 @@
 						x.type = 'sketchfab';
 						x.object = jQuery('<iframe src="" frameborder="0" allowFullScreen="1"></iframe>');
 						x.src = 'http://sketchfab.com/' + tmp[2];
+
+						// x.object.attr('src', x.src);
+						// $("#preloadDiv").append(x.object);
+
 						x.width = '600';
 						x.height = '600';
 

@@ -16,8 +16,8 @@
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" type="text/css" />
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script>-->
         <script src="js/jquery.min.js"></script>
-        <script src="js/jquery.poptrox-2.1.js"></script>
-        <script src="js/config.js"></script>
+        <script src="js/custom/jquery.poptrox-2.1_updated.js"></script>
+        <script src="js/custom/config_updated.js"></script>
         <script src="js/skel.min.js"></script>
 
         <!-- Leap integration part 1 - start-->
@@ -31,9 +31,9 @@
 
         jQuery(document).ready(function() {
             initLeap();
-            initScene(jQuery);
+            sceneExport.initScene(jQuery);
             window.onresize=function(){
-                sceneSwitch(SCENES.APP_MAIN_SCENE);
+                sceneExport.sceneSwitch(sceneExport.SCENES.APP_MAIN_SCENE);
             }
         });
 

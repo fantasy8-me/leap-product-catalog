@@ -17,6 +17,8 @@ $(function() { h5u_parallelism.init({
 		Refer to README.txt for details.
 
 	*/
+	maxRows:			1,
+	itemHeight:			210,		// Height (in px) of items
 
 });});
 
@@ -481,7 +483,11 @@ $(function() { h5u_parallelism.init({
 							usePopupCaption: true,
 							usePopupCloser: false,
 							usePopupDefaultStyling: false,
-							usePopupNav: true
+							usePopupNav: true,
+							popupSelector:".custom-poptrox-popup",
+							popupWidth:"90%",
+							popupHeight:"65%",
+							popupIsFixed:true
 						});
 
 					// Trigger resize event

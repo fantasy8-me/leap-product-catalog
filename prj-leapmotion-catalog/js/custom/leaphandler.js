@@ -130,19 +130,19 @@ var initLeap = (function(){
             if(!prePrimaryPointer && primaryPointable){
                 if(primaryPointablePos){
                     //console.debug("apprear:"+ primaryPointable.id);
-                    currentScene.onPointerAppear(event);
+                    sceneExport.getCurrentScene().onPointerAppear(event);
                     prePrimaryPointer = primaryPointable;
                 }           
             }else if(prePrimaryPointer && !primaryPointable){
                 prePrimaryPointer = undefined;
-                currentScene.onPointerDisappear();
+                sceneExport.getCurrentScene().onPointerDisappear();
             }else if(prePrimaryPointer && primaryPointable){
                 if(primaryPointablePos){
-                    currentScene.onMove(event);
+                    sceneExport.getCurrentScene().onMove(event);
                     prePrimaryPointer = primaryPointable;
                 }else{
                     prePrimaryPointer = undefined;
-                    currentScene.onPointerDisappear();
+                    sceneExport.getCurrentScene().onPointerDisappear();
                 }
             }
 
@@ -201,7 +201,7 @@ var initLeap = (function(){
                             } else if(angleBetweenVectors(dir, gesture.normal) > (Math.PI / 4)){
                               event.clockwise = false;
                             }
-                            currentScene.onCircle(event);
+                            sceneExport.getCurrentScene().onCircle(event);
                         }
                     }
                     var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" : "1 finger";
@@ -211,7 +211,7 @@ var initLeap = (function(){
                   var direction = "unknown";
                       if(gesture.direction[1] < -0.7){// && gesture.pointableIds[0] == prePrimaryPointer.id
                         if(frame.hands.length ==2 && (gesture.state==="stop" || gesture.state==="start")){
-                            currentScene.onHelpAppear(event);
+                            sceneExport.getCurrentScene().onHelpAppear(event);
                         }else if(primaryPointablePos && gesture.state==="stop"){
                             if(validPointables.length >=3){
                                 direction = "down"
@@ -233,7 +233,7 @@ var initLeap = (function(){
                       if(direction !== "unknown"){
                         event.direction = direction;
                         tutorialManager.displayGesture("SWIPE", event.direction);
-                        currentScene.onSwipe(event);
+                        sceneExport.getCurrentScene().onSwipe(event);
                       }
                   break;
                 }
@@ -241,14 +241,15 @@ var initLeap = (function(){
                 case "keyTap":{
                     if(validPointables.length >= 2){
                         tutorialManager.displayGesture("KEYTAB");
-                        currentScene.onKeyTap(event);
+                        sceneExport.getCurrentScene().onKeyTap(event);
                     }
                   break;
                 }
               }
             }
         }catch(e){
-            console.error("leap motion exception:" + e.message);
+            //console.error("leap motion exception:" + e.message);
+            throw e;
         }
     });
 
