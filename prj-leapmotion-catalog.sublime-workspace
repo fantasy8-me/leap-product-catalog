@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pri",
+				"primaryFingerPos"
+			],
+			[
 				"e",
 				"event"
 			],
@@ -510,10 +514,6 @@
 			[
 				"pub",
 				"pubDate"
-			],
-			[
-				"loc",
-				"localStorage"
 			]
 		]
 	},
@@ -539,7 +539,7 @@
 			"file": "prj-leapmotion-catalog/js/custom/app.js",
 			"settings":
 			{
-				"buffer_size": 1370,
+				"buffer_size": 1353,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "prj-leapmotion-catalog/js/custom/scene.js",
 			"settings":
 			{
-				"buffer_size": 14749,
+				"buffer_size": 14899,
 				"line_ending": "Unix"
 			}
 		},
@@ -563,7 +563,23 @@
 			"file": "prj-leapmotion-catalog/js/custom/leaphandler.js",
 			"settings":
 			{
-				"buffer_size": 10226,
+				"buffer_size": 10864,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/custom/jquery.poptrox-2.1_updated.js",
+			"settings":
+			{
+				"buffer_size": 20210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "prj-leapmotion-catalog/js/custom/config_updated.js",
+			"settings":
+			{
+				"buffer_size": 18493,
 				"line_ending": "Unix"
 			}
 		}
@@ -779,7 +795,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/custom",
@@ -812,6 +828,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"validPointables",
+			"primaryFingerPos",
+			"===",
+			"==",
 			"pri",
 			"primaryPointable",
 			"ges",
@@ -935,11 +955,7 @@
 			"\"pic\"",
 			"'pic'",
 			"height",
-			"z-index",
-			"popupNavPreviousSelector",
-			"nav-previous",
-			"z-index",
-			"Scroll"
+			"z-index"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1028,13 +1044,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1056,10 +1072,11 @@
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 169.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1097,15 +1114,15 @@
 					"file": "prj-leapmotion-catalog/js/custom/app.js",
 					"settings":
 					{
-						"buffer_size": 1370,
+						"buffer_size": 1353,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								537,
-								537
+								555,
+								555
 							]
 						],
 						"settings":
@@ -1125,15 +1142,15 @@
 					"file": "prj-leapmotion-catalog/js/custom/scene.js",
 					"settings":
 					{
-						"buffer_size": 14749,
+						"buffer_size": 14899,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13974,
-								13974
+								563,
+								563
 							]
 						],
 						"settings":
@@ -1143,7 +1160,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6698.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1180,15 +1197,15 @@
 					"file": "prj-leapmotion-catalog/js/custom/leaphandler.js",
 					"settings":
 					{
-						"buffer_size": 10226,
+						"buffer_size": 10864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6597,
-								6597
+								1323,
+								1328
 							]
 						],
 						"settings":
@@ -1198,7 +1215,61 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3031.0,
+						"translation.y": 4914.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "prj-leapmotion-catalog/js/custom/jquery.poptrox-2.1_updated.js",
+					"settings":
+					{
+						"buffer_size": 20210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14770,
+								14770
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1603.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "prj-leapmotion-catalog/js/custom/config_updated.js",
+					"settings":
+					{
+						"buffer_size": 18493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

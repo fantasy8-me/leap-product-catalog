@@ -1,0 +1,31 @@
+########################################New Files########################################
+
+js/custom/config_updated.js
+js/custom/jquery.poptrox-2.1_updated.js
+    The updated version of "config.js" and "jquery.poptrox-2.1.js", keep both old and new version for easy identify the changes
+
+js/custom/leap.js
+js/custom/leap.min.js
+    Offical Leap javascript sdk, both are the same, "min" one is for production use
+
+js/custom/app.js
+    Define global util methods, modules.
+
+js/custom/leaphandler.js
+    File which is responsible for starting the Leap controller and processing the data from Leap controller
+
+js/custom/scene.js
+    Define the "Scene" class and "Scene" object, which used to separate the existing page flow to allow better integration with Leap
+
+
+css/custom/app.css
+    All newly added CSS
+
+images/arrows.png
+    The arrow used by navigation button in product popup page.
+
+
+########################################Updated Files########################################
+index.html
+js/config.js (A separated copy[custom/config_updated.js] is used to contain the change)
+js/jquery.poptrox-2.1.js (A separated copy[custom/jquery.poptrox-2.1_updated.js] is used to contain the change)

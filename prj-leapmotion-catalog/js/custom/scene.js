@@ -100,13 +100,17 @@ var sceneExport = (function(){
     this.selecting = false;
     this.selectedElement = undefined;
   }
+
   Scene.SELECT_MODE = {
-    click : "click",
-    press : "press"
+    click : "click",  //cursor will be restored after the select animation is done
+    press : "press"  //cursor will not be restored after the select animation is done
   }
 
-  /*To define the common methods in prototype of Scene class*/
-  var defineSceneClass = function(){//called after dom model is ready
+  /*
+    To define the common methods in prototype of Scene class
+    Must be called after dom model is ready
+  */
+  var defineSceneClass = function(){
 
     Scene.prototype.onMove = function(event){
       if(this.supportPointer){
@@ -145,7 +149,9 @@ var sceneExport = (function(){
         this.pointer.disappear();
       }
     }
-
+    /*
+      Circle gestrue will be used for scrolling by default.
+    */
     Scene.prototype.onCircle = function(event){
       var ori;
       if(this.getScrollObject){
@@ -193,7 +199,9 @@ var sceneExport = (function(){
       }
     }
 
-    /*Stub method, do nothing if not overwritten by child*/
+    /*
+      Stub method, do nothing if not overwritten by child
+    */
     Scene.prototype.onSwipe = function(event){
     } 
 
@@ -203,13 +211,17 @@ var sceneExport = (function(){
     Scene.prototype.onHelpAppear = function(event){
     }    
 
-    /*Define the pointer, */
+    /*
+      Define the pointer(cursor) object
+    */
     Scene.prototype.pointer = (function(){
       var center = {x:27,y:27};
       var canvasEm = document.getElementById("pointer");
       var baseRadius = 19;
 
-
+      /*
+        Init the pointer.
+      */
       var init = function(event,colorStr){
         var ctx = canvasEm.getContext("2d");
         ctx.beginPath();
@@ -240,14 +252,21 @@ var sceneExport = (function(){
         init(event);
       };
 
-      /*initialize the pointer with different color before start the selectin animation*/
+      /*Initialize the pointer with different color before start the selecttion animation*/
       var initSelect = function(){
         var ctx = canvasEm.getContext("2d");
         ctx.clearRect(0,0,center.x * 2,center.y*2);
         init(null,"#0066ff");
       };
 
+      /*
+        timer used to control the selection animation, will be cleared in method "stopSelectAnimation"
+      */
       var timer;
+
+      /*
+        Implement a clock count down animation
+      */
       var startSelectAnimation = function(callback,selectMode,event,step){
         if(!step) 
           step = 0;
@@ -316,10 +335,10 @@ var sceneExport = (function(){
 
 
   /* 
-   * Method to create the main scene, that is, the catalog main page
-   *   Circling(clockwise) -  scroll right
-   *   Circling(counter clockwise) -  scroll left
-   *   Point at the thumb image and hold to select product
+    Method to create the main scene, that is, the catalog main page
+      Circling(clockwise) -  scroll right
+      Circling(counter clockwise) -  scroll left
+      Point at the thumb image and hold to select product
   */
   var createAppMainScene = function($){
     var stub = new Scene({
@@ -363,14 +382,15 @@ var sceneExport = (function(){
         
         if(event.numOfPointable >= 4){
           if(oriScrollLeft === document.getElementById("main").scrollLeft){
-            // isClockWise = !isClockWise
             offest = document.getElementById("main").scrollWidth * (isClockWise ? -1 : 1);
           }
           window.dispatchEvent(createScrollEvent(offest));  
         }   
     }
 
-    /*simulate the dom scroll event*/
+    /*
+      Simulate the dom scroll event
+    */
     var createScrollEvent = function(offest){
       var evt = document.createEvent("MouseEvents");
       evt.initMouseEvent(
@@ -398,12 +418,12 @@ var sceneExport = (function(){
 
 
   /* 
-   * Method to create the product popup scene. Below gestures are supported in this scene
-   *  Circling(clockwise) -  scroll down
-   *  Circling(counter clockwise) -  scroll up
-   *  Point at the navigation button hold to navigate between products.
-   *  Point at the product image(if it is static) hold to start the 3d model
-   *  Horizontally swipe to exit the page
+    Method to create the product popup scene. Below gestures are supported in this scene
+     Circling(clockwise) -  scroll down
+     Circling(counter clockwise) -  scroll up
+     Point at the navigation button hold to navigate between products.
+     Point at the product image(if it is static) hold to start the 3d model
+     Horizontally swipe to exit the page
   */
   var createProductScene = function($){
     var stub = new Scene({
@@ -446,6 +466,7 @@ var sceneExport = (function(){
       this.selectedElement = undefined;
     }
     stub.init = function(){
+      /*Reserve for any Initialization logic*/
     }
     stub.getTips = function(){
       return "Swipe horizontally to escape <br> Point and hold to navigate or start 3d model"

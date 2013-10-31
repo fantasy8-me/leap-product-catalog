@@ -1,6 +1,9 @@
 /*
- *  1.Define global unti methods
- *  2.Define tutorialManger.
+ *  Module Usage:
+ *  1.Define global util methods
+ *  2.Define util moodul, e.g. tutorialManger.
+ *  3.Define global params if any
+ *  
 */
 
 var tutorialManager = (function($){

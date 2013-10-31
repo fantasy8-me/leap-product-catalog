@@ -18,7 +18,7 @@ $(function() { h5u_parallelism.init({
 
 	*/
 	maxRows:			1,
-	itemHeight:			210,		// Height (in px) of items
+	itemHeight:			210,		// Eric, change to 210 for small screen, Height (in px) of items
 
 });});
 

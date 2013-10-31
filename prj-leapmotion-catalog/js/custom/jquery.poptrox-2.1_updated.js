@@ -368,7 +368,7 @@
 									s = settings.popupBlankCaptionText;
 								_caption.html(s);
 							});
-						/*load product data div*/
+						/*load product data div - end*/
 
 						_pic
 							.css('text-indent', '-9999em')
@@ -406,10 +406,13 @@
 							.css('margin-left', (-1 * (_popup.innerWidth() / 2)) + 'px')
 							.css('margin-top', (-1 * (_popup.innerHeight() / 2)) + 'px');
 						
+						//Eric set height equals width after _popup css is set.
 						if (x.type != 'image'){
-							_x.height(_x.width()); //Eric set height equals width after _popup css is set.
+							_x.height(_x.width()); 
 							globalUtil.preLoad(x.src);//preload the model
 						}
+						//Set height equals width - end
+
 						_x.load(function() {
 							_x.unbind('load');
 							_loader.hide().trigger('stopSpinning');
@@ -538,14 +541,14 @@
 					height:			a.attr('height'),
 					type:			null,
 					object:			null,
-					productid: 		null,
+					productid: 		null, //Eric, add productid to support prodcut data loading
 				};
 
 				tmp = x.src.match(/http[s]?:\/\/([a-z0-9\.]+)\/(.*)/);
 
 				if (!tmp || tmp.length < 3)
 					tmp = [false, false];
-				x.productid = a.data("productid");
+				x.productid = a.data("productid");	//Eric, add productid to support prodcut data loading
 
 				switch (tmp[1])
 				{
@@ -584,10 +587,6 @@
 						x.type = 'sketchfab';
 						x.object = jQuery('<iframe src="" frameborder="0" allowFullScreen="1"></iframe>');
 						x.src = 'http://sketchfab.com/' + tmp[2];
-
-						// x.object.attr('src', x.src);
-						// $("#preloadDiv").append(x.object);
-
 						x.width = '600';
 						x.height = '600';
 
