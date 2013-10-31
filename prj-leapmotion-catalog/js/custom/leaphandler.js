@@ -302,8 +302,7 @@ var initLeap = (function(){
                 }
             }
         }catch(e){
-            //console.error("leap motion exception:" + e.message);
-            throw e;
+            console.error("leap motion exception:" + e.message);
         }
     });
 
