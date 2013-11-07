@@ -1,11 +1,11 @@
 ########################################New Files########################################
 
-js/custom/config_updated.js
-js/custom/jquery.poptrox-2.1_updated.js
+js/config_updated.js
+js/jquery.poptrox-2.1_updated.js
     The updated version of "config.js" and "jquery.poptrox-2.1.js", keep both old and new version for easy identify the changes
 
-js/custom/leap.js
-js/custom/leap.min.js
+js/leap.js
+js/leap.min.js
     Offical Leap javascript sdk, both are the same, "min" one is for production use
 
 js/custom/app.js
@@ -27,5 +27,5 @@ images/arrows.png
 
 ########################################Updated Files########################################
 index.html
-js/config.js (A separated copy[custom/config_updated.js] is used to contain the change)
-js/jquery.poptrox-2.1.js (A separated copy[custom/jquery.poptrox-2.1_updated.js] is used to contain the change)
+js/config.js (A separated copy[js/config_updated.js] is used to contain the change)
+js/jquery.poptrox-2.1.js (A separated copy[js/jquery.poptrox-2.1_updated.js] is used to contain the change)

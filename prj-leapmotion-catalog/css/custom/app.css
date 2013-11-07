@@ -105,19 +105,19 @@ body{
         margin:20px 0px;
     }
     .popupContent .main .left {
-        width:25%; 
+        width:33%; 
         float:left; 
         padding:10px; 
     }
     .popupContent .main .center {
-        width:50%; 
+        width:34%; 
         margin:0 auto;
         padding-left:10px; 
         padding-right:10px; 
         padding-bottom:10px; 
     } 
     .popupContent .main .right {
-        width:25%;  
+        width:33%;  
         float:right; 
         padding:10px; 
     }

@@ -523,7 +523,7 @@
 			"file": "prj-leapmotion-catalog/index.html",
 			"settings":
 			{
-				"buffer_size": 26402,
+				"buffer_size": 25093,
 				"line_ending": "Unix"
 			}
 		},
@@ -536,51 +536,20 @@
 			}
 		},
 		{
-			"file": "prj-leapmotion-catalog/js/custom/app.js",
+			"file": "prj-leapmotion-catalog/Leap-Integration-Changes.txt",
 			"settings":
 			{
-				"buffer_size": 1353,
+				"buffer_size": 1156,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "prj-leapmotion-catalog/js/custom/scene.js",
+			"contents": "Product Page - Sketchfab Model Positioning And Visibility \n\nScroll bars",
 			"settings":
 			{
-				"buffer_size": 14899,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
-			"settings":
-			{
-				"buffer_size": 18544,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/custom/leaphandler.js",
-			"settings":
-			{
-				"buffer_size": 10864,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/custom/jquery.poptrox-2.1_updated.js",
-			"settings":
-			{
-				"buffer_size": 20210,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "prj-leapmotion-catalog/js/custom/config_updated.js",
-			"settings":
-			{
-				"buffer_size": 18493,
-				"line_ending": "Unix"
+				"buffer_size": 71,
+				"line_ending": "Unix",
+				"name": "Product Page - Sketchfab Model Positioning And Vis"
 			}
 		}
 	],
@@ -660,17 +629,26 @@
 	},
 	"file_history":
 	[
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/index2.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/app.css",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/custom/app.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/custom/scene.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/custom/leaphandler.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/Leap-Integration-Changes.txt",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/custom/jquery.poptrox-2.1_updated.js",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/blank.html",
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/custom/config_updated.js",
 		"/Users/me/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/me/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/me/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
 		"/Users/me/Library/Application Support/Sublime Text 2/Packages/User/JavaScript.sublime-settings",
 		"/Users/me/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/scene.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/css/custom/app.css",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/app.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/notes",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/leaphandler.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/js/config.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/blank.html",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample_files/images.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample_files/main.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-catalog-repo/prj-leapmotion-catalog/zyx.tmp/3d-viz/3D-VIZ-Sample.html",
@@ -778,16 +756,7 @@
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/template.html",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/js/appjs/test.js",
 		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/css/appcss/test.css",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/simpletest",
-		"/Users/me/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/me/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/res/rwm_pin_page/index.html",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/js/masonry-3.1.1/masonry.pkgd.js",
-		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/res/jquery-ui-1.10.3/README.md",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/rwm_pin_page/js/script.js",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/mylog.log",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/node-webkit-app/package.json",
-		"/Users/me/Work/WS/sublime-master-ws/fs-leapmotion-js/js/readability/js/readability-port.js"
+		"/Users/me/Work/WS/sublime-master-ws/prj-leapmotion-rssreader/simpletest"
 	],
 	"find":
 	{
@@ -828,6 +797,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"centerPosition",
+			"popupContent",
+			"super+shift+e",
+			"super+shift+d",
+			"super+e",
+			"super+m",
+			"popupContent",
+			" \n",
+			"popupContent",
+			"script",
 			"validPointables",
 			"primaryFingerPos",
 			"===",
@@ -945,17 +924,7 @@
 			"articleSummaryScene",
 			"articleReaderScene",
 			"chooseProtocol",
-			"options",
-			"Sketchfab(",
-			"Sketchfab",
-			"poptrox_switch",
-			"z-index",
-			"poptrox",
-			"_pic",
-			"\"pic\"",
-			"'pic'",
-			"height",
-			"z-index"
+			"options"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -963,6 +932,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"popupContent",
 			"primaryFinger",
 			"primaryFingerPos",
 			"preNumOfFinger",
@@ -1050,7 +1020,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1058,15 +1028,15 @@
 					"file": "prj-leapmotion-catalog/index.html",
 					"settings":
 					{
-						"buffer_size": 26402,
+						"buffer_size": 25093,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1152,
-								1152
+								806,
+								806
 							]
 						],
 						"settings":
@@ -1076,7 +1046,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1093,8 +1063,8 @@
 						"selection":
 						[
 							[
-								388,
-								388
+								2544,
+								2544
 							]
 						],
 						"settings":
@@ -1104,32 +1074,30 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2180.0,
+						"translation.y": 1690.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "prj-leapmotion-catalog/js/custom/app.js",
+					"file": "prj-leapmotion-catalog/Leap-Integration-Changes.txt",
 					"settings":
 					{
-						"buffer_size": 1353,
+						"buffer_size": 1156,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								555,
-								555
+								1093,
+								1093
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1139,134 +1107,23 @@
 				},
 				{
 					"buffer": 3,
-					"file": "prj-leapmotion-catalog/js/custom/scene.js",
 					"settings":
 					{
-						"buffer_size": 14899,
+						"buffer_size": 71,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								563,
-								563
+								71,
+								71
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "prj-leapmotion-catalog/js/jquery.poptrox-2.1.js",
-					"settings":
-					{
-						"buffer_size": 18544,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15169,
-								15169
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 7014.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "prj-leapmotion-catalog/js/custom/leaphandler.js",
-					"settings":
-					{
-						"buffer_size": 10864,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1323,
-								1328
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4914.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "prj-leapmotion-catalog/js/custom/jquery.poptrox-2.1_updated.js",
-					"settings":
-					{
-						"buffer_size": 20210,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14770,
-								14770
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1603.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "prj-leapmotion-catalog/js/custom/config_updated.js",
-					"settings":
-					{
-						"buffer_size": 18493,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								345,
-								345
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_name": "Product Page - Sketchfab Model Positioning And Vis",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
