@@ -73,6 +73,9 @@ body{
         font-family: "Open Sans",Calibri,Candara,Arial,sans-serif;
         line-height: 1.1;
     }
+    .popupContent>span{
+        margin-left: 5px; 
+    }
 
     .popupContent h3{
         color: #777;

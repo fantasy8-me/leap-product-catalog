@@ -351,13 +351,13 @@
 							Eric. load product data div
 						*/
 
-						var $productContent = $("#"+x.productid+ " .popupContent");
+						var $productContent = $(productData[x.productid]);
 						var $currentContent = $(".custom-poptrox-popup .popupContent");	
 						$currentContent.detach();
 						if($productContent.length===0){
 							$productContent = $("#error .popupContent")
 						}
-						$productContent.clone().appendTo(_popup);
+						$productContent.appendTo(_popup);
 
 
 						_pic = _popup.find(	'.pic');
