@@ -232,10 +232,14 @@ var initLeap = (function(){
         }
         if(direction !== "unknown"){
           event.direction = direction;
-          tutorialManager.displayGesture("SWIPE", event.direction);
+          if(direction === "right" || direction ==="left"){ 
+            if(event.numOfPointable >=3) //To align the logic of mothod on onSwipe in scene.js for horizontal swipe
+                tutorialManager.displayGesture("SWIPE", "horizontally");
+          }else{
+            tutorialManager.displayGesture("SWIPE", "vertically");
+          }
           sceneExport.getCurrentScene().onSwipe(event);
         }
-
     }
     /*
         Process keytab gesture
@@ -278,28 +282,23 @@ var initLeap = (function(){
             showHidePointer(primaryFinger,event)
 
             var validGestures = filterGesture(frame);
+            for (var i = 0; i < validGestures.length; i++) {
+              var gesture = validGestures[i];
 
-            if(validGestures.length === 0){
-                tutorialManager.displayTips();
-            }else{
-                for (var i = 0; i < validGestures.length; i++) {
-                  var gesture = validGestures[i];
-
-                  switch (gesture.type) {
-                    case "circle":{
-                        processCircleGesture(frame,gesture,event);
-                        break;
-                    }
-                    case "swipe":{
-                        processSwipeGesture(frame,gesture,event);
-                        break;
-                    }
-                    case "keyTap":{
-                        processKeyTabGesture(event);
-                        break;
-                    }
-                  }
+              switch (gesture.type) {
+                case "circle":{
+                    processCircleGesture(frame,gesture,event);
+                    break;
                 }
+                case "swipe":{
+                    processSwipeGesture(frame,gesture,event);
+                    break;
+                }
+                case "keyTap":{
+                    processKeyTabGesture(event);
+                    break;
+                }
+              }
             }
         }catch(e){
             console.error("leap motion exception:" + e.message);

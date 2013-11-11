@@ -21,19 +21,21 @@ body{
     nav span{
         position: absolute;
         top: 50%;
-        height: 40px;
-        width: 40px;
+        height: 60px;
+        width: 60px;
         background-color: #d64760;
         cursor: pointer;
     }
     nav span:after{
         position: absolute;
         content: '';
-        width: 20px;
-        height: 20px;
-        top: 10px;
-        left: 10px;
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        left: 15px;
         background: transparent url("../../images/arrows.png") no-repeat;
+        background-size:200% 100%;
+
     }
     nav span.nav-previous:after{
         background-position:top left
@@ -61,7 +63,7 @@ body{
         height:100%;
         overflow-y:scroll;
         overflow-x:auto;
-        padding:65px
+        padding:45px 85px
     }
     .popupContent h2{
         color: #777;
@@ -103,22 +105,22 @@ body{
 
     /*custom popup layout -start*/
     .popupContent .main {
-        margin:20px 0px;
+        margin:10px 0px;
     }
     .popupContent .main .left {
-        width:33%; 
+        width:28%; 
         float:left; 
         padding:10px; 
     }
     .popupContent .main .center {
-        width:34%; 
+        width:44%; 
         margin:0 auto;
         padding-left:10px; 
         padding-right:10px; 
         padding-bottom:10px; 
     } 
     .popupContent .main .right {
-        width:33%;  
+        width:28%;  
         float:right; 
         padding:10px; 
     }
@@ -134,7 +136,7 @@ body{
 
 
 /*Help tips css - start*/
-    .tips {
+/*    .tips {
         position: absolute;
         height: 80px;
         width: 220px;
@@ -144,13 +146,67 @@ body{
         border-radius: 8px;
         font-size: 15px;
         line-height:22px;
-        font-weight: 300
+        font-weight: 300;
         text-transform: none;
         z-index:1200;
         padding: 5px;
         background: rgba(51, 51, 51, 0.95);
-        text-transform: none;
+    }*/
+
+
+    #tipsBox{
+      position: absolute;
+      color: white;
+      border-radius: 8px;
+      font-size: 17px;
+      line-height:22px;
+      padding: 5px 10px;
+      background: rgba(51, 51, 51, 0.7);
+      bottom: 10px;
+      z-index:1200;
+      text-transform: none;
     }
+    #tipsBox strong{
+        color: #66ffcc;
+    }
+    #tipsBox #gesture{
+        font-weight: 900;
+        color: #66aacc;
+        font-style: italic;
+    }    
+
+    #tipsBox.long {
+        left: 10px;
+    }
+
+    #tipsBox.long div#gesture{
+        display: inline-block;
+        border-left: solid 2px #d64760;
+        vertical-align: top;
+        padding: 0px 10px;
+        height: 44px;
+    }
+    #tipsBox.long div#tips{
+        display: inline-block;
+        padding: 0px 10px
+    }
+
+    #tipsBox.short {
+        width: 220px;
+        left: 10px;
+        bottom: 20px;
+    }
+
+    #tipsBox.short div#gesture{
+        border-top: solid 2px #d64760;
+        padding: 10px 0px;
+        height: 36px;
+    }
+    #tipsBox.short div#tips{
+        padding: 10px 0px
+    }    
+
+
 /*Help tips css - end*/
 
 div.quickfix{

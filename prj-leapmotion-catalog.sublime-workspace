@@ -531,8 +531,17 @@
 			"file": "prj-leapmotion-catalog/css/custom/app.css",
 			"settings":
 			{
-				"buffer_size": 3633,
+				"buffer_size": 3713,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Product Page - Sketchfab Model Positioning And Visibility \nProduct Page - Arrows - needs to be lot bigger\nScroll bars - both for Main page and Product page\nMain Page, Product Page Tips - too small\n\n0) please make sure the structure of the project is reasonable (3rd party you use, please make sure sit in a 3dparty location etc.\n\n1) separation of data and html, currently the product data is defined \nin some particular way inside Index.html (what is index2.html btw?) \nit is not maintainable this way, product data should be some json structure, \n\n2) I have some issues with the leap integration and error handling (do not swallow errors please, pick them the at the top most level and report than in a way that we can understand,",
+			"settings":
+			{
+				"buffer_size": 731,
+				"line_ending": "Unix",
+				"name": "Product Page - Sketchfab Model Positioning And Vis"
 			}
 		},
 		{
@@ -797,6 +806,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<p>Loving it is easy, That's why so many people do</p>",
 			"centerPosition",
 			"popupContent",
 			"super+shift+e",
@@ -923,8 +933,7 @@
 			"init(",
 			"articleSummaryScene",
 			"articleReaderScene",
-			"chooseProtocol",
-			"options"
+			"chooseProtocol"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1020,7 +1029,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1035,8 +1044,8 @@
 						"selection":
 						[
 							[
-								806,
-								806
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1046,7 +1055,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6.0,
+						"translation.y": 899.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1056,15 +1065,15 @@
 					"file": "prj-leapmotion-catalog/css/custom/app.css",
 					"settings":
 					{
-						"buffer_size": 3633,
+						"buffer_size": 3713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2544,
-								2544
+								3704,
+								3704
 							]
 						],
 						"settings":
@@ -1074,13 +1083,39 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1690.0,
+						"translation.y": 2288.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								328
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Product Page - Sketchfab Model Positioning And Vis",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "prj-leapmotion-catalog/Leap-Integration-Changes.txt",
 					"settings":
 					{
@@ -1106,7 +1141,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"settings":
 					{
 						"buffer_size": 71,

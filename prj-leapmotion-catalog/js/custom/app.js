@@ -7,7 +7,7 @@
 */
 
 var tutorialManager = (function($){
-
+    var msgCloseTimer = null;
     var gestureDes = {
         "CIRCLE":"Circling with ",
         "SWIPE":"Swipe ",
@@ -15,15 +15,34 @@ var tutorialManager = (function($){
     }
 
     var displayGesture = function(key,submsg){
-        $(".tips span").css("color","rgb(194, 223, 156)").html(gestureDes[key] + submsg);
+        $("#tipsBox").find("div#gesture").html(gestureDes[key] + (submsg ? submsg : ""));
+        window.clearTimeout(msgCloseTimer);
+        msgCloseTimer = window.setTimeout(function(){
+            $("#tipsBox").find("div#gesture").html("No gesture detected");
+        }, 2000);
+
     }
-    var displayTips = function(key){
-        if(sceneExport)
-            $(".tips span").css("color","white").html(sceneExport.getCurrentScene().getTips());
-    }    
+    var hideTips = function(key){
+        $("#tipsBox").hide();
+    }
+    var displayTips = function(){
+        $("#tipsBox").show();
+        if(sceneExport){
+            $("#tipsBox").removeClass();
+                var className = sceneExport.getCurrentScene().getTipClass ? sceneExport.getCurrentScene().getTipClass() : "short";
+                var tips = sceneExport.getCurrentScene().getTips ? sceneExport.getCurrentScene().getTips() : ""
+            if(tips !== ""){
+                $("#tipsBox").css("display","inline-block")
+                $("#tipsBox").addClass(className).find("div#tips").html(tips);
+            }else{
+                $("#tipsBox").css("display","none")
+            }
+        }
+    }      
     return {
         displayGesture:displayGesture,
-        displayTips:displayTips
+        displayTips:displayTips,
+        hideTips:hideTips
     }
 })(jQuery);
 
@@ -57,3 +76,20 @@ var globalUtil = (function(){
 })();
 
 
+
+var tipsManager = (function($){
+    var displayTips = function(){
+      $("#tipsBox").removeClass();
+      var className = currentScene.getTipClass ? currentScene.getTipClass() : "long";
+      var tips = currentScene.getTips ? currentScene.getTips() : ""
+      if(tips !== ""){
+        $("#tipsBox").css("display","inline-block")
+        $("#tipsBox").addClass(className).html(tips);
+      }else{
+        $("#tipsBox").css("display","none")
+      }
+    }    
+    return {
+        displayTips:displayTips
+    }
+})(jQuery);

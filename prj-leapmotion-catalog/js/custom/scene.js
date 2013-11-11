@@ -41,6 +41,7 @@ var sceneExport = (function(){
       }
     }
     currentScene.init();
+    tutorialManager.displayTips();
   }
 
   /*
@@ -354,6 +355,7 @@ var sceneExport = (function(){
                           },
 
                           onSelected: function($selectedElement){
+                            tutorialManager.hideTips();
                             $selectedElement.click();
                           },
                         });
@@ -362,9 +364,16 @@ var sceneExport = (function(){
       this.selecting = false;
       this.selectedElement = undefined;
     }
-    stub.getTips = function(){
-      return "2 Fingertips circle to scroll<br>Point and hold to open product"
+
+    stub.getTipClass = function(){
+      return "short";
     }
+    stub.getTips = function(){
+      return "<strong>Twirl 2 fingertips</strong> to scroll\
+              <br>\
+              <strong>Point and hold</strong> to open product"
+    }  
+
     stub.init = function(){
       /*Reserve for any Initialization logic*/
     }
@@ -468,8 +477,18 @@ var sceneExport = (function(){
     stub.init = function(){
       /*Reserve for any Initialization logic*/
     }
-    stub.getTips = function(){
-      return "Swipe horizontally to escape <br> Point and hold to navigate or start 3d model"
+
+    stub.getTipClass = function(){
+      return "long";
     }
+    stub.getTips = function(){
+      return "<strong>Point and hold</strong> to navigate or start 3d model\
+              <br>\
+              <strong>Swipe horizontally</strong> to escape"
+    }  
+
+    // stub.getTips = function(){
+    //   return "Swipe horizontally to escape <br> Point and hold to navigate or start 3d model"
+    // }
     return stub;
   };
