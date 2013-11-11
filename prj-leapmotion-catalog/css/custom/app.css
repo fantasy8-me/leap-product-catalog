@@ -139,23 +139,6 @@ body{
 
 
 /*Help tips css - start*/
-/*    .tips {
-        position: absolute;
-        height: 80px;
-        width: 220px;
-        left: 10px;
-        bottom: 20px;
-        color: white;
-        border-radius: 8px;
-        font-size: 15px;
-        line-height:22px;
-        font-weight: 300;
-        text-transform: none;
-        z-index:1200;
-        padding: 5px;
-        background: rgba(51, 51, 51, 0.95);
-    }*/
-
 
     #tipsBox{
       position: absolute;
@@ -165,7 +148,6 @@ body{
       line-height:22px;
       padding: 5px 10px;
       background: rgba(51, 51, 51, 0.7);
-      bottom: 10px;
       z-index:1200;
       text-transform: none;
     }
@@ -180,6 +162,7 @@ body{
 
     #tipsBox.long {
         left: 10px;
+        bottom: 15px;
     }
 
     #tipsBox.long div#gesture{
@@ -206,7 +189,7 @@ body{
         height: 36px;
     }
     #tipsBox.short div#tips{
-        padding: 10px 0px
+        padding-bottom: 10px
     }    
 
 
