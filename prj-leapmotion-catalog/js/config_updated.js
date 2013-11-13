@@ -486,7 +486,7 @@ $(function() { h5u_parallelism.init({
 							usePopupNav: true,
 							popupSelector:".custom-poptrox-popup",
 							popupWidth:"90%",
-							popupHeight:"75%",
+							popupHeight:"90%",
 							popupIsFixed:true
 						});
 

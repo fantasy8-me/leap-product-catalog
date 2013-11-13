@@ -483,7 +483,6 @@ var sceneExport = (function(){
     }
     stub.getTips = function(){
       return "<strong>Point and hold</strong> to navigate or start 3d model\
-              <br>\
               <strong>Swipe horizontally</strong> to escape"
     }  
 

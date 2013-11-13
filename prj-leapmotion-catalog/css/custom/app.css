@@ -143,10 +143,10 @@ body{
     #tipsBox{
       position: absolute;
       color: white;
-      border-radius: 8px;
-      font-size: 17px;
+      border-radius: 6px;
+      font-size: 20px;
       line-height:22px;
-      padding: 5px 10px;
+      padding: 3px 10px;
       background: rgba(51, 51, 51, 0.7);
       z-index:1200;
       text-transform: none;
@@ -161,35 +161,33 @@ body{
     }    
 
     #tipsBox.long {
-        left: 10px;
-        bottom: 15px;
+        right: 5%;
+        bottom: 0px;
     }
 
     #tipsBox.long div#gesture{
         display: inline-block;
         border-left: solid 2px #d64760;
-        vertical-align: top;
-        padding: 0px 10px;
-        height: 44px;
+        padding: 0px 3px;
     }
     #tipsBox.long div#tips{
         display: inline-block;
-        padding: 0px 10px
+        padding: 0px 3px
     }
 
     #tipsBox.short {
-        width: 220px;
-        left: 10px;
+        width: 240px;
+        left: 0px;
         bottom: 20px;
     }
 
     #tipsBox.short div#gesture{
         border-top: solid 2px #d64760;
-        padding: 10px 0px;
+        padding: 5px 0px;
         height: 36px;
     }
     #tipsBox.short div#tips{
-        padding-bottom: 10px
+        padding-bottom: 5px
     }    
 
 
