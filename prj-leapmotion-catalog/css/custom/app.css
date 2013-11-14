@@ -1,3 +1,21 @@
+div#main::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 12px;
+}
+div#main::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(255,255,255,.6);
+}
+
+div.popupContent::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px;
+}
+div.popupContent::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(0,0,0,.3);
+}
+
 body{
     /*To avoid sreen shaking while leap cursor move out of screen*/
     overflow: hidden !important;
@@ -160,6 +178,15 @@ body{
         font-style: italic;
     }    
 
+    #tipsBox div#systemerror{
+        border-radius: 8px;
+        color: white;
+        background-color:red;
+        text-align: center;
+        padding: 2px 10px ;
+        cursor: pointer;
+    }
+
     #tipsBox.long {
         right: 5%;
         bottom: 0px;
@@ -175,6 +202,15 @@ body{
         padding: 0px 3px
     }
 
+    #tipsBox.long div#systemerror{
+        display: none;
+        margin-left: 15px;
+    }
+
+    #tipsBox.long div#systemerror.show{
+        display: inline-block;
+    }
+
     #tipsBox.short {
         width: 240px;
         left: 0px;
@@ -186,9 +222,18 @@ body{
         padding: 5px 0px;
         height: 36px;
     }
+
     #tipsBox.short div#tips{
         padding-bottom: 5px
     }    
+    #tipsBox.short div#systemerror{
+        display: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #tipsBox.short div#systemerror.show{
+        display: block;
+    }
 
 
 /*Help tips css - end*/

@@ -30,13 +30,20 @@
         
 
         <script type="text/javascript">
-
+        window.onerror = function(msg, url, lineNo)  {
+            console.error("Global Error Found:" + msg + " - " + url + " - " + lineNo);
+            globalUtil.displayError();
+            return true;
+        }
         jQuery(document).ready(function() {
             initLeap();
             sceneExport.initScene(jQuery);
             window.onresize=function(){
                 sceneExport.sceneSwitch(sceneExport.SCENES.APP_MAIN_SCENE);
             }
+            $("#systemerror").click(function(){
+                $(this).removeClass();
+            });
         });
 
         </script>
@@ -143,6 +150,7 @@
         <div id="tipsBox">
             <div id="tips"></div>
             <div id="gesture">No gesture detected</div>
+            <div id="systemerror"></div>
         </div>
 
         <!-- Define a hidden div to contain the preloading iframe -->

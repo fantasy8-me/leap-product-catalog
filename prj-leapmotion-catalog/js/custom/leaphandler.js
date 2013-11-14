@@ -301,12 +301,11 @@ var initLeap = (function(){
               }
             }
         }catch(e){
-            console.error("leap motion exception:" + e.message);
+            throw e;
         }
     });
 
     controller.connect();
-
     return{
         controller:controller
     }

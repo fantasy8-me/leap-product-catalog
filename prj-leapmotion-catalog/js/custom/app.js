@@ -38,7 +38,7 @@ var tutorialManager = (function($){
                 $("#tipsBox").css("display","none")
             }
         }
-    }      
+    }
     return {
         displayGesture:displayGesture,
         displayTips:displayTips,
@@ -66,12 +66,15 @@ var globalUtil = (function(){
             $theIFrame.attr("src",preLoadUrl);
         }
     }
-
+    var displayError = function(){
+        $("#systemerror").html("Error Occurs").addClass("show");
+    }
 
     return{
         preLoad:preLoad,
         ifModelStarted:ifModelStarted,
-        startModel:startModel
+        startModel:startModel,
+        displayError:displayError
     }
 })();
 
