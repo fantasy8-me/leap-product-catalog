@@ -387,13 +387,13 @@ var sceneExport = (function(){
         var isClockWise = event.clockwise;
         var offest = 1 * (isClockWise ? 1 : -1);
         var oriScrollLeft = document.getElementById("main").scrollLeft;
-        window.dispatchEvent(createScrollEvent(offest));  
+        document.getElementById("reel").dispatchEvent(createScrollEvent(offest));  
         
         if(event.numOfPointable >= 4){
           if(oriScrollLeft === document.getElementById("main").scrollLeft){
             offest = document.getElementById("main").scrollWidth * (isClockWise ? -1 : 1);
           }
-          window.dispatchEvent(createScrollEvent(offest));  
+          document.getElementById("reel").dispatchEvent(createScrollEvent(offest));  
         }   
     }
 
