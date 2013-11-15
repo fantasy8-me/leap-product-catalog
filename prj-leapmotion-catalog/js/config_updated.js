@@ -19,6 +19,7 @@ $(function() { h5u_parallelism.init({
 	*/
 	maxRows:			1,
 	itemHeight:			210,		// Eric, change to 210 for small screen, Height (in px) of items
+	scrollWheelTarget:  "reel"
 
 });});
 
@@ -100,7 +101,7 @@ $(function() { h5u_parallelism.init({
 						resetScroll:		true,		// If true, reel scroll will reset on page refresh
 						scrollFactor:		1,			// Scales the scroll delta (1 = normal, 2 = double, 0.5 = half, etc.)
 						scrollKeyAmount:	50,			// Scroll amount when using keys
-						scrollWheelTarget:	'reel',	// Determines where scrollwheel events should be captured ('window' or 'reel')
+						scrollWheelTarget:	'window',	// Determines where scrollwheel events should be captured ('window' or 'reel')
 						scrollZoneAmount:	10,			// Scroll amount when using scroll zones
 						scrollZoneDelay:	20,			// Time (in ms) to wait between scrolls when the cursor is in a scroll zone
 						scrollZoneWidth:	40,			// Width of scroll zones
