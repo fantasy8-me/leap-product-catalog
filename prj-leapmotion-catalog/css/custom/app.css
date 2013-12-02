@@ -245,6 +245,7 @@ div.quickfix{
 div#main{
     overflow-y:hidden;
     overflow-x:auto !important;
+    height: auto !important
 }
 
     
