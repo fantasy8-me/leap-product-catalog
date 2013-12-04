@@ -251,7 +251,7 @@ var initLeap = (function(){
     */
     var processKeyTabGesture = function(event){
         if(event.numOfPointable >= 2){
-            tutorialManager.displayGesture("KEYTAB");
+            tutorialManager.displayGesture("KEYTAP");
             sceneExport.getCurrentScene().onKeyTap(event);
         }
     }
@@ -260,7 +260,7 @@ var initLeap = (function(){
         Process keytab gesture
     */
     var processScreenTabGesture = function(event){
-        tutorialManager.displayGesture("SCREENTAB");
+        tutorialManager.displayGesture("SCREENTAP");
         sceneExport.getCurrentScene().onScreenTab(event);
     }
 
