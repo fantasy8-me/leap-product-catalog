@@ -113,28 +113,41 @@ var sceneExport = (function(){
   */
   var defineSceneClass = function(){
 
+    Scene.prototype.onScreenTab = function(event){
+      if(this.selectFromPoint){
+        var tmpEm = this.selectFromPoint(event.x,event.y);
+        if(tmpEm){
+            this.selectedElement = tmpEm;
+            // this.pointer.startSelectAnimation((function(){
+            //   this.onSelected.bind(this)(this.selectedElement);
+            // }).bind(this),this.selectMode,event);
+            this.onSelected.bind(this)(this.selectedElement);
+        }
+      }
+    }
+
     Scene.prototype.onMove = function(event){
       if(this.supportPointer){
         if(event.numOfPointableChanged && !this.selecting){
           this.pointer.refresh(event);
         }
         this.pointer.moveTo(event.x,event.y);
-        if(this.selectFromPoint){
-          var tmpEm = this.selectFromPoint(event.x,event.y);
-          if(tmpEm){
-            if(!event.gestureFound && !this.selecting){
-              this.selecting = true;
-              this.selectedElement = tmpEm;
-              this.pointer.initSelect();
-              this.pointer.startSelectAnimation((function(){
-                this.onSelected.bind(this)(this.selectedElement);
-              }).bind(this),this.selectMode,event);
-            }
-          }else if(this.selecting){
-            this.selecting = false;
-            this.pointer.stopSelectAnimation(event);
-          }
-        }
+        // if(this.selectFromPoint){
+        //   var tmpEm = this.selectFromPoint(event.x,event.y);
+        //   if(tmpEm){
+        //     if(!event.gestureFound && !this.selecting){
+        //       this.selecting = true;
+        //       this.selectedElement = tmpEm;
+        //       this.pointer.initSelect();
+        //       this.pointer.startSelectAnimation((function(){
+        //         this.onSelected.bind(this)(this.selectedElement);
+        //       }).bind(this),this.selectMode,event);
+        //     }
+        //   }else if(this.selecting){
+        //     this.selecting = false;
+        //     this.pointer.stopSelectAnimation(event);
+        //   }
+        // }
 
       }
     }
@@ -347,7 +360,11 @@ var sceneExport = (function(){
 
                           selectFromPoint: function(x,y){
                             $selectedElement = $(document.elementFromPoint(x,y));
-                              if($selectedElement.parent().parent().parent().hasClass("item thumb")){
+                              var outsideElement = $selectedElement.parent().parent();
+                              if(outsideElement.hasClass("item thumb")){
+                                return outsideElement.find("a");
+                              }else if(outsideElement.parent().hasClass("item thumb")){
+                                console.debug($selectedElement);
                                 return $selectedElement;
                               }else{
                                 return undefined;

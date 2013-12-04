@@ -144,7 +144,12 @@ var initLeap = (function(){
                     }                               
                     break;
                 }
-                case "screenTap":
+                case "screenTap":{
+                    if(!foundCircle && !foundSwipe){
+                        console.log("screen tap -------------");
+                        tmpGesture.push(gesture);
+                    }
+                }
                 case "keyTap":{
                     if(!foundCircle && !foundSwipe){
                         if(!foundTab){
@@ -251,6 +256,14 @@ var initLeap = (function(){
         }
     }
 
+    /*
+        Process keytab gesture
+    */
+    var processScreenTabGesture = function(event){
+        tutorialManager.displayGesture("SCREENTAB");
+        sceneExport.getCurrentScene().onScreenTab(event);
+    }
+
     var controller = new Leap.Controller(controllerOptions);
     
     /* 
@@ -294,6 +307,12 @@ var initLeap = (function(){
                     processSwipeGesture(frame,gesture,event);
                     break;
                 }
+                case "screenTap":{
+                    console.log("screen tab");
+                    processScreenTabGesture(event);
+                    
+                    break;
+                }                
                 case "keyTap":{
                     processKeyTabGesture(event);
                     break;

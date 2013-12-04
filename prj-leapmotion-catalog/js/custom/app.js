@@ -12,6 +12,7 @@ var tutorialManager = (function($){
         "CIRCLE":"Circling with ",
         "SWIPE":"Swipe ",
         "KEYTAB":"Keytab detected",
+        "SCREENTAB":"Screentab detected"
     }
 
     var displayGesture = function(key,submsg){
