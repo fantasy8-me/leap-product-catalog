@@ -33,7 +33,7 @@
         window.onerror = function(msg, url, lineNo)  {
             console.error("Global Error Found:" + msg + " - " + url + " - " + lineNo);
             globalUtil.displayError();
-            return true;
+            return false;
         }
         jQuery(document).ready(function() {
             initLeap();
@@ -81,7 +81,10 @@
                 box-shadow:none !important;
             }
             div#main article:hover{
-                
+                border:solid 10px #d64760 !important;
+            }
+
+            div#main article.fakehover{
                 border:solid 10px #d64760 !important;
             }
             div#main div#reel{
@@ -142,6 +145,23 @@
                         <a href="http://sketchfab.com/embed/65acec54759b46c5a1006a1cd55908e8?autostart=0&transparent=1&autospin=0&controls=0" data-productid="barbieroom"><img src="images/thumbs/BarbieRoom.png" alt=""></a>
                     </article>
 
+
+                    <article class="item thumb" data-width="400">
+                        <h2>Samsung TV</h2>
+                        <a href="http://sketchfab.com/embed/d2715f3a7ab94c0ba9c7c50d4a909488?autostart=0&transparent=1&autospin=0&controls=0&watermark=0&desc_button=0&stop_button=0" data-productid="lcdtv"><img src="images/thumbs/samsungtv.png" alt=""></a>
+                    </article>
+                    <article class="item thumb" data-width="400">
+                        <h2>iPhone 5</h2>
+                        <a href="http://sketchfab.com/embed/befd702813154ac99054cfe946d48b6f?autostart=0&transparent=1&autospin=0&controls=0" data-productid="iphone5"><img src="images/thumbs/iphone5.png" alt=""></a>
+                    </article>
+                    <article class="item thumb" data-width="400">
+                        <h2>Lego Gas Station</h2>
+                        <a href="http://sketchfab.com/embed/c54e0bdcf536457fbf9a8411eac61ca5?autostart=0&transparent=1&autospin=0&controls=0&desc_button=0&stop_button=0&watermark=0" data-productid="legogasstation"><img src="images/thumbs/LegoGasStation.png" alt=""></a>
+                    </article>
+                    <article class="item thumb" data-width="400">
+                        <h2>Barbie Room</h2>
+                        <a href="http://sketchfab.com/embed/65acec54759b46c5a1006a1cd55908e8?autostart=0&transparent=1&autospin=0&controls=0" data-productid="barbieroom"><img src="images/thumbs/BarbieRoom.png" alt=""></a>
+                    </article>
 
                         
                 <!-- ******************************************************************************************** -->

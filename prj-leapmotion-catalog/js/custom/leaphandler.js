@@ -202,7 +202,7 @@ var initLeap = (function(){
                 } else if(angleBetweenVectors(dir, gesture.normal) > (Math.PI / 4)){
                   event.clockwise = false;
                 }
-                sceneExport.getCurrentScene().onCircle(event);
+                // sceneExport.getCurrentScene().onCircle(event);
             }
         }
         var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" : "1 finger";

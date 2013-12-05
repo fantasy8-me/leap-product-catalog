@@ -90,6 +90,8 @@ var sceneExport = (function(){
     this.name = options.name || "";
     this.selectFromPoint = options.selectFromPoint || undefined;
     this.onSelected = options.onSelected || undefined;
+    this.onHover = options.onHover || undefined;
+    this.offHover = options.offHover || undefined;
     this.selectMode = options.selectMode || Scene.SELECT_MODE.click; 
 
     this.scrollObject = options.scrollObject || document.body;
@@ -99,7 +101,8 @@ var sceneExport = (function(){
     this.getScrollObject = options.getScrollObject || undefined;
 
     this.selecting = false;
-    this.selectedElement = undefined;
+    //this.selectedElement = undefined;
+    this.hoverElement = undefined;
   }
 
   Scene.SELECT_MODE = {
@@ -117,11 +120,11 @@ var sceneExport = (function(){
       if(this.selectFromPoint){
         var tmpEm = this.selectFromPoint(event.x,event.y);
         if(tmpEm){
-            this.selectedElement = tmpEm;
+            // this.selectedElement = tmpEm;
             // this.pointer.startSelectAnimation((function(){
             //   this.onSelected.bind(this)(this.selectedElement);
             // }).bind(this),this.selectMode,event);
-            this.onSelected.bind(this)(this.selectedElement);
+            this.onSelected.bind(this)(tmpEm);
         }
       }
     }
@@ -132,6 +135,25 @@ var sceneExport = (function(){
           this.pointer.refresh(event);
         }
         this.pointer.moveTo(event.x,event.y);
+
+        this.scrollByPosition(event);
+        if(this.selectFromPoint){
+          var $tmpEm = this.selectFromPoint(event.x,event.y);
+          if(this.onHover && this.offHover){
+            if($tmpEm){
+              if(this.hoverElement)
+                this.offHover.bind(this)(this.hoverElement);
+              this.hoverElement = $tmpEm;
+              this.onHover.bind(this)(this.hoverElement);
+            }else{
+              if(this.hoverElement){
+                this.offHover.bind(this)(this.hoverElement);
+                this.hoverElement = undefined;
+              }
+            }
+          }
+        }
+
         // if(this.selectFromPoint){
         //   var tmpEm = this.selectFromPoint(event.x,event.y);
         //   if(tmpEm){
@@ -151,6 +173,38 @@ var sceneExport = (function(){
 
       }
     }
+
+    Scene.prototype.scrollByPosition = function(event){
+      // if(event.numOfPointable < 2){
+      //   return
+      // }
+      if(this.getScrollObject){
+        var tmpCache = this.getScrollObject(event.x,event.y);
+        if(!tmpCache){
+          return;
+        }
+        this.scrollObject = tmpCache.object;
+        this.scrollDirection = tmpCache.direction || "vetical";
+      }
+      var relativePostionX = event.x/window.innerWidth;
+      var relativePostionY = event.y/window.innerHeight;
+      // if(relativePostionX > 0.9 || relativePostionX < 0.1){
+      //   pace = this.scrollPace * 2;
+      // }
+      if(this.scrollDirection === "vetical"){
+        if(relativePostionY > 0.7){
+          this.scrollObject.scrollTop += this.scrollPace + (relativePostionY - 0.7) * 5;  
+        }else if(relativePostionY < 0.3){
+          this.scrollObject.scrollTop -= this.scrollPace + (0.3 - relativePostionY) * 5;
+        }
+      }else{
+        if(relativePostionX > 0.7){
+          this.scrollObject.scrollLeft += this.scrollPace + (relativePostionX - 0.7) * 5;
+        }else if(relativePostionX < 0.3){
+          this.scrollObject.scrollLeft -= this.scrollPace + (0.3 - relativePostionX) * 5;
+        }
+      }
+    }    
 
     Scene.prototype.onPointerAppear = function(event){
       if(this.supportPointer){
@@ -362,19 +416,25 @@ var sceneExport = (function(){
                             $selectedElement = $(document.elementFromPoint(x,y));
                               var outsideElement = $selectedElement.parent().parent();
                               if(outsideElement.hasClass("item thumb")){
-                                return outsideElement.find("a");
+                                return outsideElement.find("a img");
                               }else if(outsideElement.parent().hasClass("item thumb")){
-                                console.debug($selectedElement);
                                 return $selectedElement;
                               }else{
                                 return undefined;
                               }
                           },
-
+                          scrollPace: 1,
                           onSelected: function($selectedElement){
                             tutorialManager.hideTips();
                             $selectedElement.click();
                           },
+                          onHover: function($selectedElement){
+                            $selectedElement.parent().parent().parent().addClass('fakehover');
+                          },
+                          offHover: function($selectedElement){
+                            $selectedElement.parent().parent().parent().removeClass('fakehover');
+                          },                                                    
+                          
                         });
     stub.onExit = function(){
       this.pointer.stopSelectAnimation();
@@ -413,6 +473,22 @@ var sceneExport = (function(){
           document.getElementById("reel").dispatchEvent(createScrollEvent(offest));  
         }   
     }
+
+    stub.scrollByPosition = function(event){
+      // if(event.numOfPointable < 2){
+      //   return
+      // }
+      var offset =0 ;
+      var relativePostionX = event.x/window.innerWidth;
+
+      if(relativePostionX > 0.7){
+        offset = this.scrollPace + (relativePostionX - 0.7) * 5;
+      }else if(relativePostionX < 0.3){
+        offset = -1 * (this.scrollPace + (0.3 - relativePostionX) * 5);
+      }
+      if(offset !== 0)
+        document.getElementById("reel").dispatchEvent(createScrollEvent(offset));  
+    }   
 
     /*
       Simulate the dom scroll event
