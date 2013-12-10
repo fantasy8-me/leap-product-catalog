@@ -36,7 +36,6 @@ var initLeap = (function(){
     var LEAP_MAX_Y = 160;
     var LEAP_MIN_Y = 40;
 
-    var triggeredCircleId;
 
     /*
         Method to identify the primary finger, whose coordinates will be used to draw the pointer(cursor).
@@ -203,10 +202,9 @@ var initLeap = (function(){
                 } else if(angleBetweenVectors(dir, gesture.normal) > (Math.PI / 4)){
                   event.clockwise = false;
                 }
-                if(gesture.id !== triggeredCircleId && (gesture.state==="stop" || gesture.state==="start")){
-                    sceneExport.getCurrentScene().onCircle(event);
-                    triggeredCircleId = gesture.id;
-                }
+                event.circleId = gesture.id;
+                sceneExport.getCurrentScene().onCircle(event);
+                
             }
         }
         var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" + " radius:" + event.radius: "1 finger" + " radius:" + event.radius;

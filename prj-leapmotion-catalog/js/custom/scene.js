@@ -103,6 +103,8 @@ var sceneExport = (function(){
     this.selecting = false;
     //this.selectedElement = undefined;
     this.hoverElement = undefined;
+    this.triggeredCircleId = undefined;
+
   }
 
   Scene.SELECT_MODE = {
@@ -222,12 +224,15 @@ var sceneExport = (function(){
       Circle gestrue will be used for scrolling by default.
     */
     Scene.prototype.onCircle = function(event){
-
-      var tmpEm = this.selectFromPoint(event.x,event.y);
-      if(tmpEm && event.radius < 8){
-        this.onSelected.bind(this)(tmpEm);
+      if(event.circleId !== this.triggeredCircleId){
+        var tmpEm = this.selectFromPoint(event.x,event.y);
+        if(tmpEm && event.radius <= 7){
+          this.onSelected.bind(this)(tmpEm);
+          this.triggeredCircleId = event.circleId;
+        }
       }
       return;
+
       /* TODO.Eric Remove below logic later */ 
       var ori;
       if(this.getScrollObject){
