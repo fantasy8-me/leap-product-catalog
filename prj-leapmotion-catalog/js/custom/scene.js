@@ -117,22 +117,23 @@ var sceneExport = (function(){
   var defineSceneClass = function(){
 
     Scene.prototype.onScreenTab = function(event){
-      if(this.selectFromPoint){
-        var tmpEm = this.selectFromPoint(event.x,event.y);
-        if(tmpEm){
-            // this.selectedElement = tmpEm;
-            // this.pointer.startSelectAnimation((function(){
-            //   this.onSelected.bind(this)(this.selectedElement);
-            // }).bind(this),this.selectMode,event);
-            this.onSelected.bind(this)(tmpEm);
-        }
-      }
+      // if(this.selectFromPoint){
+      //   var tmpEm = this.selectFromPoint(event.x,event.y);
+      //   if(tmpEm){
+      //       this.onSelected.bind(this)(tmpEm);
+      //   }
+      // }
     }
 
     Scene.prototype.onMove = function(event){
       if(this.supportPointer){
         if(event.numOfPointableChanged && !this.selecting){
           this.pointer.refresh(event);
+          if(event.numOfPointable >=3 && event.numOfPointable > event.preNumOfFinger)
+              var tmpEm = this.selectFromPoint(event.x,event.y);
+              if(tmpEm){
+              this.onSelected.bind(this)(tmpEm);
+          }
         }
         this.pointer.moveTo(event.x,event.y);
 
@@ -221,6 +222,13 @@ var sceneExport = (function(){
       Circle gestrue will be used for scrolling by default.
     */
     Scene.prototype.onCircle = function(event){
+
+      var tmpEm = this.selectFromPoint(event.x,event.y);
+      if(tmpEm && event.radius < 8){
+        this.onSelected.bind(this)(tmpEm);
+      }
+      return;
+      /* TODO.Eric Remove below logic later */ 
       var ori;
       if(this.getScrollObject){
         var tmpCache = this.getScrollObject(event.x,event.y);
@@ -459,7 +467,7 @@ var sceneExport = (function(){
       The scrolling function in the website template is a little bit complicated, to avoid breaking any it's logic,
       we simulate the mouse scroll event to trigger the scrolling, instead of scrolling the reel directly.
     */
-    stub.onCircle =function(event){
+    stub.onCircle2 =function(event){
         
         var isClockWise = event.clockwise;
         var offest = 1 * (isClockWise ? 1 : -1);

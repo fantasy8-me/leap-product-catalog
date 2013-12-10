@@ -36,6 +36,7 @@ var initLeap = (function(){
     var LEAP_MAX_Y = 160;
     var LEAP_MIN_Y = 40;
 
+    var triggeredCircleId;
 
     /*
         Method to identify the primary finger, whose coordinates will be used to draw the pointer(cursor).
@@ -192,7 +193,7 @@ var initLeap = (function(){
         Determine whether it is clockwise circle, result will be inject to event object
     */ 
     var processCircleGesture = function(frame,gesture,event){
-        if(event.numOfPointable >=2){
+        if(event.numOfPointable <= 2){//TODO.Eric Remove the restriction
             var id = gesture.pointableIds[0];
             var dir = frame.finger(id).direction; // get direction of the Pointable used for the circle     
             if(dir){
@@ -202,10 +203,13 @@ var initLeap = (function(){
                 } else if(angleBetweenVectors(dir, gesture.normal) > (Math.PI / 4)){
                   event.clockwise = false;
                 }
-                // sceneExport.getCurrentScene().onCircle(event);
+                if(gesture.id !== triggeredCircleId && (gesture.state==="stop" || gesture.state==="start")){
+                    sceneExport.getCurrentScene().onCircle(event);
+                    triggeredCircleId = gesture.id;
+                }
             }
         }
-        var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" : "1 finger";
+        var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" + " radius:" + event.radius: "1 finger" + " radius:" + event.radius;
         tutorialManager.displayGesture("CIRCLE",submsg);
 
     }
@@ -278,6 +282,7 @@ var initLeap = (function(){
             var event = {
                 gestureFound: frame.gestures.length > 0,
                 numOfPointable: validPointables.length,
+                preNumOfFinger:preNumOfFinger,
                 numOfPointableChanged: isNumOfPointableChanged(validPointables)
             }
             
