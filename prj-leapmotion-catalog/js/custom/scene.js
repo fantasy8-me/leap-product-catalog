@@ -131,11 +131,11 @@ var sceneExport = (function(){
       if(this.supportPointer){
         if(event.numOfPointableChanged && !this.selecting){
           this.pointer.refresh(event);
-          if(event.numOfPointable >=3 && event.numOfPointable > event.preNumOfFinger)
-              var tmpEm = this.selectFromPoint(event.x,event.y);
-              if(tmpEm){
-              this.onSelected.bind(this)(tmpEm);
-          }
+          // if(event.numOfPointable >=3 && event.numOfPointable > event.preNumOfFinger)
+          //     var tmpEm = this.selectFromPoint(event.x,event.y);
+          //     if(tmpEm){
+          //     this.onSelected.bind(this)(tmpEm);
+          // }
         }
         this.pointer.moveTo(event.x,event.y);
 
@@ -323,6 +323,8 @@ var sceneExport = (function(){
           ctx.fillStyle = "#d64760";
           ctx.font="25px Arial";
           ctx.fillText(event.numOfPointable,20,35);
+        }else{
+          console.debug("no event----");
         }
       };
 
@@ -450,7 +452,7 @@ var sceneExport = (function(){
                           
                         });
     stub.onExit = function(){
-      this.pointer.stopSelectAnimation();
+      // this.pointer.stopSelectAnimation();
       this.selecting = false;
       this.selectedElement = undefined;
     }
@@ -549,7 +551,10 @@ var sceneExport = (function(){
                             if($selectedElement[0] && $selectedElement[0].tagName === "IFRAME"){
                               if(!globalUtil.ifModelStarted($selectedElement.attr("src")))
                                   return $selectedElement;
-                            }else if($selectedElement.hasClass("nav-next") || $selectedElement.hasClass("nav-previous")){
+                            }else if($selectedElement.hasClass("nav-next") || 
+                                     $selectedElement.hasClass("nav-previous") || 
+                                     $selectedElement.hasClass("viewbutton")
+                                     ){
                               return $selectedElement;
                             }else{
                               return undefined;
@@ -566,7 +571,22 @@ var sceneExport = (function(){
                           
                           getScrollObject: function(){
                             return {object:$(".custom-poptrox-popup .popupContent")[0]}
-                          }
+                          },
+                          onHover: function($selectedElement){
+                            if($selectedElement.parent().hasClass("pic")){
+                              $selectedElement.parent().addClass('fakehover');  
+                            }else{
+                              $selectedElement.addClass('fakehover');
+                            }
+                            
+                          },
+                          offHover: function($selectedElement){
+                            if($selectedElement.parent().hasClass("pic")){
+                              $selectedElement.parent().removeClass('fakehover');  
+                            }else{
+                              $selectedElement.removeClass('fakehover');
+                            }
+                          }                         
                         });
 
     stub.onSwipe = function(event){
@@ -576,7 +596,7 @@ var sceneExport = (function(){
     };
 
     stub.onExit = function(){
-      this.pointer.stopSelectAnimation();
+      // this.pointer.stopSelectAnimation();
       this.selecting = false;
       this.selectedElement = undefined;
     }

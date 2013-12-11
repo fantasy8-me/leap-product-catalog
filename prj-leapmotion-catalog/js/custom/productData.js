@@ -44,38 +44,38 @@ var productData = {
                   </div>\
             </div>",
 
-    iphone5:
-            "<div class='popupContent'>\
-                <h2 class='caption'></h2>\
-                <span>Loving it is easy, That's why so many people do</span>\
-                <hr>\
-                <div class='main'>\
-                    <div class='left'>\
-                        <h3 class='primary'><span>Chosen for you</span></h3>\
-                        <p>We are tailoring the right product for the customer needs.</p>\
-                        <h3><span>For Young Audience</span></h3>\
-                        <p>Young people need young & fashionable phones, thats why we chose the most beautiful phone designed to date</p>\
-                        <h3><span>Full Network Coverage</span></h3>\
-                        <p>You like to surf the web and download content from the internet at high-speeds, and because you are located on New York, we provided you a device with LTE capabilities </p>\
-                        <h3><span>Light & Thin</span></h3>\
-                        <p>We know that you are usually keeping your products safe, so we won't compormise on bigger & thicker device which can be more safe, maybe, but less comfortable to use.</p>\
-                    </div>\
-                    <div class='right'>\
-                        <h3><span>iOS is simple</span></h3>\
-                        <p>You had a bad experiment with Android devices before, the iPhone runs iOS operating system, which is very easy to use & operate</p>\
-                        <h3><span>Save 200$ off the next phone you buy</span></h3>\
-                        <p>We predict, according to market valuation and price drop rates in recent years, that the price of this iPhone will be around 200$ 3 years from now. Sell it in the 2nd hand market and get a new phone, 200$ off</p>\
-                        <h3><span>Socially Active</span></h3>\
-                        <p>You can connect to your accounts at Facebook, Twitter, Google Plus, LinkedIn, Vine & Instagram, or any other network using the iPhone 5, and stay updated with everything that is going on with your friends</p>\
-                    </div>\
-                    <div class='center'>\
-                        <div class='pic'></div>\
-                        <h3><span>Only 450$</span></h3>\
-                        <p>Not a cheap phone, but not that expensive as well. you can afford it for yourself and enjoy 1 time every 3 years</p>\
-                    </div>\
-                    <div class='clearfloat'></div>\
-                  </div>\
-            </div>",
+    // iphone5a:
+    //         "<div class='popupContent'>\
+    //             <h2 class='caption'></h2>\
+    //             <span>Loving it is easy, That's why so many people do</span>\
+    //             <hr>\
+    //             <div class='main'>\
+    //                 <div class='left'>\
+    //                     <h3 class='primary'><span>Chosen for you</span></h3>\
+    //                     <p>We are tailoring the right product for the customer needs.</p>\
+    //                     <h3><span>For Young Audience</span></h3>\
+    //                     <p>Young people need young & fashionable phones, thats why we chose the most beautiful phone designed to date</p>\
+    //                     <h3><span>Full Network Coverage</span></h3>\
+    //                     <p>You like to surf the web and download content from the internet at high-speeds, and because you are located on New York, we provided you a device with LTE capabilities </p>\
+    //                     <h3><span>Light & Thin</span></h3>\
+    //                     <p>We know that you are usually keeping your products safe, so we won't compormise on bigger & thicker device which can be more safe, maybe, but less comfortable to use.</p>\
+    //                 </div>\
+    //                 <div class='right'>\
+    //                     <h3><span>iOS is simple</span></h3>\
+    //                     <p>You had a bad experiment with Android devices before, the iPhone runs iOS operating system, which is very easy to use & operate</p>\
+    //                     <h3><span>Save 200$ off the next phone you buy</span></h3>\
+    //                     <p>We predict, according to market valuation and price drop rates in recent years, that the price of this iPhone will be around 200$ 3 years from now. Sell it in the 2nd hand market and get a new phone, 200$ off</p>\
+    //                     <h3><span>Socially Active</span></h3>\
+    //                     <p>You can connect to your accounts at Facebook, Twitter, Google Plus, LinkedIn, Vine & Instagram, or any other network using the iPhone 5, and stay updated with everything that is going on with your friends</p>\
+    //                 </div>\
+    //                 <div class='center'>\
+    //                     <div class='pic'></div>\
+    //                     <h3><span>Only 450$</span></h3>\
+    //                     <p>Not a cheap phone, but not that expensive as well. you can afford it for yourself and enjoy 1 time every 3 years</p>\
+    //                 </div>\
+    //                 <div class='clearfloat'></div>\
+    //               </div>\
+    //         </div>",
     
     legogasstation:
             "<div class='popupContent'>\
@@ -134,6 +134,59 @@ var productData = {
                     <div class='clearfloat'></div>\
                 </div>\
             </div>",
+    iphone5:
+        "<div class='popupContent'>\
+            <h2 class='caption'></h2>\
+            <span>Loving it is easy, That's why so many people do</span>\
+            <hr>\
+            <div class='main'>\
+                <div class='left-2cols'>\
+                    <div class='viewbutton' style='background-image: url(images/products/iphone_sketchfab.jpg)'></div>\
+                    <div class='viewbutton' style='background-image: url(images/products/iphone1.jpg)'></div>\
+                    <div class='viewbutton' style='background-image: url(images/products/iphone2.jpg)'></div>\
+                    <div class='viewbutton' style='background-image: url(images/products/iphone3.jpg)'></div>\
+                </div>\
+                <div class='right-2cols'>\
+                  <h3 class='primary'><span>Chosen for you</span></h3>\
+                  <p>We are tailoring the right product for the customer needs.</p>\
+                  <h3><span>For Young Audience</span></h3>\
+                  <p>Young people need young & fashionable phones, thats why we chose the most beautiful phone designed to date</p>\
+                  <h3><span>Full Network Coverage</span></h3>\
+                  <p>You like to surf the web and download content from the internet at high-speeds, and because you are located on New York, we provided you a device with LTE capabilities </p>\
+                  <h3><span>Light & Thin</span></h3>\
+                  <p>We know that you are usually keeping your products safe, so we won't compormise on bigger & thicker device which can be more safe, maybe, but less comfortable to use.</p>\
+                </div>\
+                <div class='center-2cols'>\
+                  <div class='pic' ></div>\
+                </div>\
+                <div class='clearfloat'></div>\
+            </div>\
+            <div class='main'>\
+                <div class='left'>\
+                    <h3 class='primary'><span>Chosen for you</span></h3>\
+                    <p>We are tailoring the right product for the customer needs.</p>\
+                    <h3><span>For Young Audience</span></h3>\
+                    <p>Young people need young & fashionable phones, thats why we chose the most beautiful phone designed to date</p>\
+                    <h3><span>Full Network Coverage</span></h3>\
+                    <p>You like to surf the web and download content from the internet at high-speeds, and because you are located on New York, we provided you a device with LTE capabilities </p>\
+                    <h3><span>Light & Thin</span></h3>\
+                    <p>We know that you are usually keeping your products safe, so we won't compormise on bigger & thicker device which can be more safe, maybe, but less comfortable to use.</p>\
+                </div>\
+                <div class='right'>\
+                    <h3><span>iOS is simple</span></h3>\
+                    <p>You had a bad experiment with Android devices before, the iPhone runs iOS operating system, which is very easy to use & operate</p>\
+                    <h3><span>Save 200$ off the next phone you buy</span></h3>\
+                    <p>We predict, according to market valuation and price drop rates in recent years, that the price of this iPhone will be around 200$ 3 years from now. Sell it in the 2nd hand market and get a new phone, 200$ off</p>\
+                    <h3><span>Socially Active</span></h3>\
+                    <p>You can connect to your accounts at Facebook, Twitter, Google Plus, LinkedIn, Vine & Instagram, or any other network using the iPhone 5, and stay updated with everything that is going on with your friends</p>\
+                </div>\
+                <div class='center'>\
+                    <h3><span>Only 450$</span></h3>\
+                    <p>Not a cheap phone, but not that expensive as well. you can afford it for yourself and enjoy 1 time every 3 years</p>\
+                </div>\
+                <div class='clearfloat'></div>\
+              </div>\
+        </div>",
     error:
             "<div class='popupContent'>\
                 <h2 class='caption'>Error</h2>\

@@ -39,18 +39,25 @@ body{
     nav span{
         position: absolute;
         top: 50%;
-        height: 60px;
-        width: 60px;
-        background-color: #d64760;
+        height: 80px;
+        width: 80px;
+        background-color: #aacccc;
         cursor: pointer;
+        border-radius: 50%;
+    }
+    nav span:hover{
+        background-color: #d64760;
+    }
+    nav span.fakehover{
+        background-color: #d64760;
     }
     nav span:after{
         position: absolute;
         content: '';
-        width: 30px;
-        height: 30px;
-        top: 15px;
-        left: 15px;
+        width: 40px;
+        height: 40px;
+        top: 20px;
+        left: 20px;
         background: transparent url("../../images/arrows.png") no-repeat;
         background-size:200% 100%;
 
@@ -71,7 +78,14 @@ body{
         background-color:white
     }    
     .custom-poptrox-popup div.pic{
+        border: solid 6px white;
         width: 100%;
+    }
+    .custom-poptrox-popup div.pic:hover{
+        border: solid 6px #d64760;
+    }
+    .custom-poptrox-popup div.pic.fakehover{
+        border: solid 6px #d64760;
     }
     /*make the iframe/image fill up the pic div*/
     .custom-poptrox-popup div.pic iframe,img{
@@ -81,7 +95,7 @@ body{
         height:100%;
         overflow-y:auto;
         overflow-x:auto;
-        padding:45px 85px
+        padding:45px 95px
     }
     .popupContent h2{
         color: #777;
@@ -122,6 +136,27 @@ body{
         font-style: italic;
         margin-bottom:15px;
     }
+    
+    .popupContent .main .left-2cols .viewbutton:first-child {
+        margin-top:30px;
+    }
+    .popupContent .main .left-2cols .viewbutton{
+        /*border:solid 6px #66aacc;*/
+        border:solid 6px white;
+        width:90px; 
+        height:90px; 
+        margin:20px auto;
+        background-size:100%;
+        border-radius: 50%;
+    }
+
+    .popupContent .main .left-2cols .viewbutton:hover{
+        border:solid 6px #d64760;
+    }
+    .popupContent .main .left-2cols .viewbutton.fakehover{
+        border:solid 6px #d64760;
+    }
+
     /* Custome popup general control - end*/
 
     /*custom popup layout -start*/
@@ -152,6 +187,34 @@ body{
         overflow:hidden;
         margin-top:-1px;
     }
+
+
+
+    .popupContent .main .left-2cols {
+        /*border:solid 1px green;*/
+        width:15%; 
+        float:left; 
+        padding-top:10px;
+        padding-left: 15px;
+    }
+
+    .popupContent .main .center-2cols {
+        /*border:solid 1px green;*/
+        width:48%; 
+        /*margin:0 auto;*/
+        margin-left:15%;
+        padding-left:10px; 
+        padding-right:10px; 
+        padding-bottom:10px; 
+    } 
+    .popupContent .main .right-2cols {
+        /*border:solid 1px green; Eric.TODO Remove*/
+        width:37%;  
+        float:right; 
+        padding-left:10px; 
+        padding-top:10px; 
+        padding-bottom:10px; 
+    }                
     /*custom popup layout -end*/
 /*Product Popup -end*/
 

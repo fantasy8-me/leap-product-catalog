@@ -64,6 +64,10 @@
 			var _window = jQuery(window);
 			var windowWidth, windowHeight, queue = [], navPos = 0;
 
+			/*Eric Cached the sketchfab iframe*/ 
+			var cachedSketchfab;
+			/*Eric Cached the sketchfab iframe*/ 
+
 			function updateWH()
 			{
 				windowWidth = jQuery(window).width();
@@ -368,6 +372,29 @@
 									s = settings.popupBlankCaptionText;
 								_caption.html(s);
 							});
+
+						// var $cachedIframe = $("div.pic iframe");
+						$(".viewbutton").click(function(){
+						    console.debug($(this).css("background-image"));
+						    console.debug($("div.pic iframe").length);
+						    if($(this).is('.viewbutton:first') === true){
+						    	if($("div.pic img").length === 1){
+						    		$("div.pic").empty().append(cachedSketchfab.attr("src",x.src));
+						    	}
+						    }else{
+						    	$imgTag = $("div.pic img");
+						    	var imgUrlInCSS = $(this).css("background-image");
+						    	var imgUrl = imgUrlInCSS.substring(imgUrlInCSS.indexOf("(")+1, imgUrlInCSS.indexOf(")"));
+						    	if($imgTag.length === 1){
+						    		$imgTag.attr("src",imgUrl);
+						    	}else{
+						    		//Remove the src to avoid the sketchfab loading in background
+						    		cachedSketchfab = $("div.pic iframe").attr("src","").clone(); 
+						    		$("div.pic").empty().append("<img src='"+ imgUrl+"'></img>");
+						    	}
+						    }
+						});
+
 						/*load product data div - end*/
 
 						_pic

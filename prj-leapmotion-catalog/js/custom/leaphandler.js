@@ -192,7 +192,7 @@ var initLeap = (function(){
         Determine whether it is clockwise circle, result will be inject to event object
     */ 
     var processCircleGesture = function(frame,gesture,event){
-        if(event.numOfPointable <= 2){//TODO.Eric Remove the restriction
+        if(event.numOfPointable === 1){//TODO.Eric Confirm the restriction
             var id = gesture.pointableIds[0];
             var dir = frame.finger(id).direction; // get direction of the Pointable used for the circle     
             if(dir){
