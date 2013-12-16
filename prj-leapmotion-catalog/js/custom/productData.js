@@ -147,43 +147,20 @@ var productData = {
                     <div class='viewbutton' style='background-image: url(images/products/iphone3.jpg)'></div>\
                 </div>\
                 <div class='right-2cols'>\
-                  <h3 class='primary'><span>Chosen for you</span></h3>\
-                  <p>We are tailoring the right product for the customer needs.</p>\
-                  <h3><span>For Young Audience</span></h3>\
-                  <p>Young people need young & fashionable phones, thats why we chose the most beautiful phone designed to date</p>\
-                  <h3><span>Full Network Coverage</span></h3>\
-                  <p>You like to surf the web and download content from the internet at high-speeds, and because you are located on New York, we provided you a device with LTE capabilities </p>\
-                  <h3><span>Light & Thin</span></h3>\
-                  <p>We know that you are usually keeping your products safe, so we won't compormise on bigger & thicker device which can be more safe, maybe, but less comfortable to use.</p>\
-                </div>\
+                  <h3><span>09/21/2012, The Verge:</span></h3>\
+                  <img src='http://www.allthingsroot.co.il/Catalog/images/products/iPhone5TheVerge.jpg' height='89' width='100' align='left'>\
+                  <p>''The iPhone 5 is unquestionably the best iPhone ever made, and for the mass market, it's the best smartphone, period. Between the new design, blazing fast LTE, and excellent battery life, there's little to not like here. It's a competent, confident, slick package''</p>\
+                  <h3><span>09/18/2012, Engadget:</span></h3>\
+                  <img src='http://www.allthingsroot.co.il/Catalog/images/products/iPhone5Engadget.gif' height='103' width='100' align='left'>\
+                  <p>''Will it wow you? Hold it in your hand -- you might be surprised. For the iOS faithful this is a no-brainer upgrade. This is without a doubt the best iPhone yet. This is a hallmark of design. This is the one you've been waiting for.''</p>\
+                  </div>\
                 <div class='center-2cols'>\
                   <div class='pic' ></div>\
                 </div>\
                 <div class='clearfloat'></div>\
             </div>\
             <div class='main'>\
-                <div class='left'>\
-                    <h3 class='primary'><span>Chosen for you</span></h3>\
-                    <p>We are tailoring the right product for the customer needs.</p>\
-                    <h3><span>For Young Audience</span></h3>\
-                    <p>Young people need young & fashionable phones, thats why we chose the most beautiful phone designed to date</p>\
-                    <h3><span>Full Network Coverage</span></h3>\
-                    <p>You like to surf the web and download content from the internet at high-speeds, and because you are located on New York, we provided you a device with LTE capabilities </p>\
-                    <h3><span>Light & Thin</span></h3>\
-                    <p>We know that you are usually keeping your products safe, so we won't compormise on bigger & thicker device which can be more safe, maybe, but less comfortable to use.</p>\
-                </div>\
-                <div class='right'>\
-                    <h3><span>iOS is simple</span></h3>\
-                    <p>You had a bad experiment with Android devices before, the iPhone runs iOS operating system, which is very easy to use & operate</p>\
-                    <h3><span>Save 200$ off the next phone you buy</span></h3>\
-                    <p>We predict, according to market valuation and price drop rates in recent years, that the price of this iPhone will be around 200$ 3 years from now. Sell it in the 2nd hand market and get a new phone, 200$ off</p>\
-                    <h3><span>Socially Active</span></h3>\
-                    <p>You can connect to your accounts at Facebook, Twitter, Google Plus, LinkedIn, Vine & Instagram, or any other network using the iPhone 5, and stay updated with everything that is going on with your friends</p>\
-                </div>\
-                <div class='center'>\
-                    <h3><span>Only 450$</span></h3>\
-                    <p>Not a cheap phone, but not that expensive as well. you can afford it for yourself and enjoy 1 time every 3 years</p>\
-                </div>\
+                    <img id='image' src='http://www.allthingsroot.co.il/Catalog/images/products/iPhone5Infographic.png'/>\
                 <div class='clearfloat'></div>\
               </div>\
         </div>",

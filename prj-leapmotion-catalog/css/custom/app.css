@@ -88,9 +88,12 @@ body{
         border: solid 6px #d64760;
     }
     /*make the iframe/image fill up the pic div*/
-    .custom-poptrox-popup div.pic iframe,img{
+    .custom-poptrox-popup div.pic iframe{
         width: 100% !important;
     }
+    .custom-poptrox-popup div.pic img{
+        width: 100% !important;
+    }    
     .popupContent{
         height:100%;
         overflow-y:auto;
