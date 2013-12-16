@@ -465,7 +465,7 @@
 						
 						//Eric set height equals width after _popup css is set.
 						if (x.type != 'image'){
-							_x.width(_x.height()); 
+							//_x.width(_x.height()); 
 							//_x.height(_x.width()); 
 							//globalUtil.preLoad(x.src);//preload the model Eric.TODO, enable later
 						}
