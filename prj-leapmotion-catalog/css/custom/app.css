@@ -38,7 +38,7 @@ body{
     /*Navigation Button - start*/
     nav span{
         position: absolute;
-        top: 50%;
+        top: 45%;
         height: 80px;
         width: 80px;
         background-color: #aacccc;
@@ -78,22 +78,38 @@ body{
         background-color:white
     }    
     .custom-poptrox-popup div.pic{
+        width: 100%;
+        height: 100%;
+    }
+
+    /*make the iframe/image fill up the pic div*/
+
+    .custom-poptrox-popup div.pic iframe{
+        height: 100% !important;
+        margin: 0px auto !important;
+        display:block !important
+    }
+
+
+    .custom-poptrox-popup div.picblock{
         border: solid 6px white;
         width: 100%;
     }
-    .custom-poptrox-popup div.pic:hover{
+    .custom-poptrox-popup div.picblock.sketchimg:hover{
         border: solid 6px #d64760;
     }
-    .custom-poptrox-popup div.pic.fakehover{
+    .custom-poptrox-popup div.picblock.fakehover{
         border: solid 6px #d64760;
     }
-    /*make the iframe/image fill up the pic div*/
-    .custom-poptrox-popup div.pic iframe{
-        width: 100% !important;
-    }
-    .custom-poptrox-popup div.pic img{
-        width: 100% !important;
-    }    
+    /*make the image fill up the picblock div*/
+/*    .custom-poptrox-popup div.picblock iframe{
+        width: 100%;
+    }*/
+    .custom-poptrox-popup div.picblock img{
+        width: 100%;
+    } 
+
+
     .popupContent{
         height:100%;
         overflow-y:auto;
@@ -228,7 +244,7 @@ body{
       position: absolute;
       color: white;
       border-radius: 6px;
-      font-size: 20px;
+      font-size: 18px;
       line-height:22px;
       padding: 3px 10px;
       background: rgba(51, 51, 51, 0.7);

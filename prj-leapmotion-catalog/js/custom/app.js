@@ -71,11 +71,16 @@ var globalUtil = (function(){
         $("#systemerror").html("Error Occurs").addClass("show");
     }
 
+    var reloadModel = function($theIFrame){
+        $theIFrame.attr("src",$theIFrame.attr("src"));
+    }
+
     return{
         preLoad:preLoad,
         ifModelStarted:ifModelStarted,
         startModel:startModel,
-        displayError:displayError
+        displayError:displayError,
+        reloadModel:reloadModel
     }
 })();
 

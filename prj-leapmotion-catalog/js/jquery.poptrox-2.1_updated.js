@@ -45,8 +45,8 @@
 					popupLoaderSelector:			'.loader',						// (Advanced) Popup Loader selector
 					popupCloserSelector:			'.closer',						// (Advanced) Popup Closer selector
 					popupCaptionSelector:			'.caption',						// (Advanced) Popup Caption selector
-					popupNavPreviousSelector:		'.nav-previous',				// (Advanced) Popup Nav Previous selector
-					popupNavNextSelector:			'.nav-next',					// (Advanced) Popup Nav Next selector
+					//popupNavPreviousSelector:		'.nav-previous',				// (Advanced) Popup Nav Previous selector
+					//popupNavNextSelector:			'.nav-next',					// (Advanced) Popup Nav Next selector
 					onPopupClose:					null,							// On Popup Close Callback
 					onPopupOpen:					null							// On Popup Open Callback
 			}, options);
@@ -373,27 +373,57 @@
 								_caption.html(s);
 							});
 
-						// var $cachedIframe = $("div.pic iframe");
+						//Logic to handle pic display block
+						$("div.picblock").addClass("sketchimg");
 						$(".viewbutton").click(function(){
 						    console.debug($(this).css("background-image"));
-						    console.debug($("div.pic iframe").length);
+						    console.debug($("div.picblock iframe").length);
 						    if($(this).is('.viewbutton:first') === true){
-						    	if($("div.pic img").length === 1){
-						    		$("div.pic").empty().append(cachedSketchfab.attr("src",x.src));
+						    	// if($("div.picblock img").length === 1){
+						    	// 	$("div.picblock").empty().append(cachedSketchfab.attr("src",x.src));
+						    	// }
+						    	if(!$("div.picblock").hasClass("sketchimg")){
+						    		$("div.picblock").addClass("sketchimg");
 						    	}
 						    }else{
-						    	$imgTag = $("div.pic img");
-						    	var imgUrlInCSS = $(this).css("background-image");
-						    	var imgUrl = imgUrlInCSS.substring(imgUrlInCSS.indexOf("(")+1, imgUrlInCSS.indexOf(")"));
-						    	if($imgTag.length === 1){
-						    		$imgTag.attr("src",imgUrl);
-						    	}else{
-						    		//Remove the src to avoid the sketchfab loading in background
-						    		cachedSketchfab = $("div.pic iframe").attr("src","").clone(); 
-						    		$("div.pic").empty().append("<img src='"+ imgUrl+"'></img>");
-						    	}
+						    	$("div.picblock").removeClass("sketchimg");
 						    }
+					    	$imgTag = $("div.picblock img");
+					    	var imgUrlInCSS = $(this).css("background-image");
+					    	var imgUrl = imgUrlInCSS.substring(imgUrlInCSS.indexOf("(")+1, imgUrlInCSS.indexOf(")"));
+					    	$imgTag.attr("src",imgUrl);
+					    	// if($imgTag.length === 1){
+					    	// 	$imgTag.attr("src",imgUrl);
+					    	// }else{
+					    	// 	//Remove the src to avoid the sketchfab loading in background
+					    	// 	cachedSketchfab = $("div.picblock iframe").attr("src","").clone(); 
+					    	// 	$("div.picblock").empty().append("<img src='"+ imgUrl+"'></img>");
+					    	// }
 						});
+						//Logic to handle pic display block - end
+
+						//Enable the navigation button to switch between product details and sketchfab model
+						$(".nav-previous").hide(); //Hide prevous in the beginning
+						$(".nav-next").show(); //Show next in the beginning
+
+						$(".nav-next").click(function(){
+							globalUtil.reloadModel($(".custom-poptrox-popup div.popupContent div.pic iframe"))
+							$(".nav-previous").show();
+							$(".nav-next").hide();
+							$(".custom-poptrox-popup div.popupContent").children().fadeOut("slow", function(){
+								$(".custom-poptrox-popup div.popupContent div.pic").slideDown("slow");	
+							});
+							
+						})
+						$(".nav-previous").click(function(){
+							$(".nav-next").show();
+							$(".nav-previous").hide();
+							$(".custom-poptrox-popup div.popupContent div.pic").slideUp("slow", function(){
+								$(".custom-poptrox-popup div.popupContent").children().show();
+								$(".custom-poptrox-popup div.popupContent div.pic").hide();
+							});
+						})
+						//Enable the navigation ... end
 
 						/*load product data div - end*/
 
@@ -435,8 +465,9 @@
 						
 						//Eric set height equals width after _popup css is set.
 						if (x.type != 'image'){
-							_x.height(_x.width()); 
-							globalUtil.preLoad(x.src);//preload the model
+							_x.width(_x.height()); 
+							//_x.height(_x.width()); 
+							//globalUtil.preLoad(x.src);//preload the model Eric.TODO, enable later
 						}
 						//Set height equals width - end
 
@@ -448,6 +479,7 @@
 							_pic.css('text-indent', 0).hide().fadeIn(settings.fadeSpeed, function() { isLocked = false; });
 							navPos = index;
 							_nav.fadeIn(settings.fadeSpeed);
+							_pic.hide(); //Eric hide the pic in the beginning
 						});
 					}
 					else

@@ -88,7 +88,9 @@ var sceneExport = (function(){
   var Scene = function (options){
     this.supportPointer = options.supportPointer === undefined ? true : options.supportPointer;
     this.name = options.name || "";
-    this.selectFromPoint = options.selectFromPoint || undefined;
+    // this.selectFromPoint = options.selectFromPoint || undefined;
+    this.elementForCirlceSelect = options.elementForCirlceSelect || undefined;
+    this.elementForTimerSelect = options.elementForTimerSelect || undefined;
     this.onSelected = options.onSelected || undefined;
     this.onHover = options.onHover || undefined;
     this.offHover = options.offHover || undefined;
@@ -119,61 +121,54 @@ var sceneExport = (function(){
   var defineSceneClass = function(){
 
     Scene.prototype.onScreenTab = function(event){
-      // if(this.selectFromPoint){
-      //   var tmpEm = this.selectFromPoint(event.x,event.y);
-      //   if(tmpEm){
-      //       this.onSelected.bind(this)(tmpEm);
-      //   }
-      // }
+
     }
 
     Scene.prototype.onMove = function(event){
       if(this.supportPointer){
         if(event.numOfPointableChanged && !this.selecting){
           this.pointer.refresh(event);
-          // if(event.numOfPointable >=3 && event.numOfPointable > event.preNumOfFinger)
-          //     var tmpEm = this.selectFromPoint(event.x,event.y);
-          //     if(tmpEm){
-          //     this.onSelected.bind(this)(tmpEm);
-          // }
         }
         this.pointer.moveTo(event.x,event.y);
 
         this.scrollByPosition(event);
-        if(this.selectFromPoint){
-          var $tmpEm = this.selectFromPoint(event.x,event.y);
+
+        if(this.elementForCirlceSelect || this.elementForTimerSelect){
+          var $element = $(document.elementFromPoint(event.x,event.y));
+          var $elementForCirlceSelect = this.elementForCirlceSelect ? this.elementForCirlceSelect($element) : undefined;
+          var $elementForTimerSelect = this.elementForTimerSelect ? this.elementForTimerSelect($element) : undefined;
+
+          var $tmpEm = $elementForCirlceSelect || $elementForTimerSelect
           if(this.onHover && this.offHover){
             if($tmpEm){
               if(this.hoverElement)
-                this.offHover.bind(this)(this.hoverElement);
+                this.offHover(this.hoverElement);
               this.hoverElement = $tmpEm;
-              this.onHover.bind(this)(this.hoverElement);
+              this.onHover(this.hoverElement);
             }else{
               if(this.hoverElement){
-                this.offHover.bind(this)(this.hoverElement);
+                this.offHover(this.hoverElement);
                 this.hoverElement = undefined;
               }
             }
           }
+
+          if($elementForTimerSelect){
+            if(!event.gestureFound && !this.selecting){
+              this.selecting = true;
+              this.selectedElement = $elementForTimerSelect;
+              this.pointer.initSelect();
+              this.pointer.startSelectAnimation((function(){
+                this.onSelected(this.selectedElement);
+                this.selectedElement = undefined;
+              }).bind(this),this.selectMode,event);
+            }
+          }else if(this.selecting){
+            this.selecting = false;
+            this.pointer.stopSelectAnimation(event);
+          }
+
         }
-
-        // if(this.selectFromPoint){
-        //   var tmpEm = this.selectFromPoint(event.x,event.y);
-        //   if(tmpEm){
-        //     if(!event.gestureFound && !this.selecting){
-        //       this.selecting = true;
-        //       this.selectedElement = tmpEm;
-        //       this.pointer.initSelect();
-        //       this.pointer.startSelectAnimation((function(){
-        //         this.onSelected.bind(this)(this.selectedElement);
-        //       }).bind(this),this.selectMode,event);
-        //     }
-        //   }else if(this.selecting){
-        //     this.selecting = false;
-        //     this.pointer.stopSelectAnimation(event);
-        //   }
-        // }
-
       }
     }
 
@@ -196,15 +191,15 @@ var sceneExport = (function(){
       // }
       if(this.scrollDirection === "vetical"){
         if(relativePostionY > 0.7){
-          this.scrollObject.scrollTop += this.scrollPace + (relativePostionY - 0.7) * 5;  
+          this.scrollObject.scrollTop += this.scrollPace + (relativePostionY - 0.7) * 20;  
         }else if(relativePostionY < 0.3){
-          this.scrollObject.scrollTop -= this.scrollPace + (0.3 - relativePostionY) * 5;
+          this.scrollObject.scrollTop -= this.scrollPace + (0.3 - relativePostionY) * 20;
         }
       }else{
         if(relativePostionX > 0.7){
-          this.scrollObject.scrollLeft += this.scrollPace + (relativePostionX - 0.7) * 5;
+          this.scrollObject.scrollLeft += this.scrollPace + (relativePostionX - 0.7) * 20;
         }else if(relativePostionX < 0.3){
-          this.scrollObject.scrollLeft -= this.scrollPace + (0.3 - relativePostionX) * 5;
+          this.scrollObject.scrollLeft -= this.scrollPace + (0.3 - relativePostionX) * 20;
         }
       }
     }    
@@ -225,59 +220,60 @@ var sceneExport = (function(){
     */
     Scene.prototype.onCircle = function(event){
       if(event.circleId !== this.triggeredCircleId){
-        var tmpEm = this.selectFromPoint(event.x,event.y);
-        if(tmpEm && event.radius <= 7){
-          this.onSelected.bind(this)(tmpEm);
+        var $element = $(document.elementFromPoint(event.x,event.y));
+        var $tmpEm = this.elementForCirlceSelect && this.elementForCirlceSelect.bind(this)($element);
+        if($tmpEm && event.radius <= 7){
+          this.onSelected.bind(this)($tmpEm);
           this.triggeredCircleId = event.circleId;
         }
       }
       return;
 
       /* TODO.Eric Remove below logic later */ 
-      var ori;
-      if(this.getScrollObject){
-        var tmpCache = this.getScrollObject(event.x,event.y);
-        if(!tmpCache){
-          return;
-        }
-        this.scrollObject = tmpCache.object;
-        this.scrollDirection = tmpCache.direction || "vetical";
-      }
-      if(this.scrollDirection === "vetical"){
-        ori = this.scrollObject.scrollTop;
-        if(event.clockwise){
-          this.scrollObject.scrollTop += this.scrollPace + event.radius * 0.2;
-          if(event.numOfPointable >= 4){
-            if(this.scrollObject.scrollTop === ori){
-              this.scrollObject.scrollTop = 0;  
-            }  
-          }
-        }else{
-          this.scrollObject.scrollTop -= this.scrollPace + event.radius * 0.2;
-          if(event.numOfPointable >= 4){
-            if(this.scrollObject.scrollTop === 0){
-              this.scrollObject.scrollTop = this.scrollObject.scrollHeight;
-            }  
-          }
-        }
-      }else{
-        ori = this.scrollObject.scrollLeft;
-        if(event.clockwise){
-          this.scrollObject.scrollLeft += this.scrollPace + event.radius * 0.2;
-          if(event.numOfPointable >= 4){
-            if(this.scrollObject.scrollLeft === ori){
-              this.scrollObject.scrollLeft = 0;  
-            }  
-          }
-        }else{
-          this.scrollObject.scrollLeft -= this.scrollPace + event.radius * 0.2;
-          if(event.numOfPointable >= 4){
-            if(this.scrollObject.scrollLeft === 0){
-              this.scrollObject.scrollLeft = this.scrollObject.scrollWidth;
-            }  
-          }
-        }
-      }
+      // var ori;
+      // if(this.getScrollObject){
+      //   var tmpCache = this.getScrollObject(event.x,event.y);
+      //   if(!tmpCache){
+      //     return;
+      //   }
+      //   this.scrollObject = tmpCache.object;
+      //   this.scrollDirection = tmpCache.direction || "vetical";
+      // }
+      // if(this.scrollDirection === "vetical"){
+      //   ori = this.scrollObject.scrollTop;
+      //   if(event.clockwise){
+      //     this.scrollObject.scrollTop += this.scrollPace + event.radius * 0.2;
+      //     if(event.numOfPointable >= 4){
+      //       if(this.scrollObject.scrollTop === ori){
+      //         this.scrollObject.scrollTop = 0;  
+      //       }  
+      //     }
+      //   }else{
+      //     this.scrollObject.scrollTop -= this.scrollPace + event.radius * 0.2;
+      //     if(event.numOfPointable >= 4){
+      //       if(this.scrollObject.scrollTop === 0){
+      //         this.scrollObject.scrollTop = this.scrollObject.scrollHeight;
+      //       }  
+      //     }
+      //   }
+      // }else{
+      //   ori = this.scrollObject.scrollLeft;
+      //   if(event.clockwise){
+      //     this.scrollObject.scrollLeft += this.scrollPace + event.radius * 0.2;
+      //     if(event.numOfPointable >= 4){
+      //       if(this.scrollObject.scrollLeft === ori){
+      //         this.scrollObject.scrollLeft = 0;  
+      //       }  
+      //     }
+      //   }else{
+      //     this.scrollObject.scrollLeft -= this.scrollPace + event.radius * 0.2;
+      //     if(event.numOfPointable >= 4){
+      //       if(this.scrollObject.scrollLeft === 0){
+      //         this.scrollObject.scrollLeft = this.scrollObject.scrollWidth;
+      //       }  
+      //     }
+      //   }
+      // }
     }
 
     /*
@@ -427,16 +423,15 @@ var sceneExport = (function(){
     var stub = new Scene({
                           name:sceneExport.SCENES.APP_MAIN_SCENE,
 
-                          selectFromPoint: function(x,y){
-                            $selectedElement = $(document.elementFromPoint(x,y));
-                              var outsideElement = $selectedElement.parent().parent();
-                              if(outsideElement.hasClass("item thumb")){
-                                return outsideElement.find("a img");
-                              }else if(outsideElement.parent().hasClass("item thumb")){
-                                return $selectedElement;
-                              }else{
-                                return undefined;
-                              }
+                          elementForCirlceSelect: function($element){
+                            var outsideElement = $element.parent().parent();
+                            if(outsideElement.hasClass("item thumb")){
+                              return outsideElement.find("a img");
+                            }else if(outsideElement.parent().hasClass("item thumb")){
+                              return $element;
+                            }else{
+                              return undefined;
+                            }
                           },
                           scrollPace: 1,
                           onSelected: function($selectedElement){
@@ -461,9 +456,9 @@ var sceneExport = (function(){
       return "short";
     }
     stub.getTips = function(){
-      return "<strong>Twirl 2 fingertips</strong> to scroll\
+      return "<strong>Twirl fingertip</strong> within prodcut image to open\
               <br>\
-              <strong>Point and hold</strong> to open product"
+              <strong>Move cursor</strong> to edge of screen to scroll"
     }  
 
     stub.init = function(){
@@ -545,27 +540,30 @@ var sceneExport = (function(){
   var createProductScene = function($){
     var stub = new Scene({
                           name:sceneExport.SCENES.PRODUCT_SCENE,
-                          
-                          selectFromPoint: function(x,y){
-                            $selectedElement = $(document.elementFromPoint(x,y));
-                            if($selectedElement[0] && $selectedElement[0].tagName === "IFRAME"){
-                              if(!globalUtil.ifModelStarted($selectedElement.attr("src")))
-                                  return $selectedElement;
-                            }else if($selectedElement.hasClass("nav-next") || 
-                                     $selectedElement.hasClass("nav-previous") || 
-                                     $selectedElement.hasClass("viewbutton")
+                          elementForCirlceSelect: function($element){
+                            if($element.parent().hasClass("sketchimg")){
+                                return $element;
+                            }else{
+                                return undefined;
+                            }
+                          },
+                          elementForTimerSelect: function($element){
+                            if($element.hasClass("nav-next") || 
+                                     $element.hasClass("nav-previous") || 
+                                     $element.hasClass("viewbutton")
                                      ){
-                              return $selectedElement;
+                              return $element;
                             }else{
                               return undefined;
                             }
                           },
-                          
                           onSelected: function($selectedElement){
-                            if($selectedElement[0] && $selectedElement[0].tagName === "IFRAME"){
-                              globalUtil.startModel($selectedElement)
-                            }else{
-                              $selectedElement.click(); //navigate
+                            if($selectedElement){
+                              if($selectedElement.parent().hasClass("sketchimg")){
+                                $(".nav-next").click();
+                              }else{
+                                $selectedElement.click();
+                              }
                             }
                           },
                           
@@ -573,22 +571,20 @@ var sceneExport = (function(){
                             return {object:$(".custom-poptrox-popup .popupContent")[0]}
                           },
                           onHover: function($selectedElement){
-                            if($selectedElement.parent().hasClass("pic")){
+                            if($selectedElement.parent().hasClass("sketchimg")){
                               $selectedElement.parent().addClass('fakehover');  
                             }else{
                               $selectedElement.addClass('fakehover');
                             }
-                            
                           },
                           offHover: function($selectedElement){
-                            if($selectedElement.parent().hasClass("pic")){
+                            if($selectedElement.parent().hasClass("sketchimg")){
                               $selectedElement.parent().removeClass('fakehover');  
                             }else{
                               $selectedElement.removeClass('fakehover');
                             }
                           }                         
                         });
-
     stub.onSwipe = function(event){
       if(event.numOfPointable >= 3 && (event.direction === "left" || event.direction === "right")){
         $("html > div").click();
@@ -608,12 +604,8 @@ var sceneExport = (function(){
       return "long";
     }
     stub.getTips = function(){
-      return "<strong>Point and hold</strong> to navigate or start 3d model &nbsp;&nbsp;\
+      return "<strong>Point and hold</strong> navigation button to view 3d model &nbsp;&nbsp;\
               <strong>Swipe horizontally</strong> to escape"
     }  
-
-    // stub.getTips = function(){
-    //   return "Swipe horizontally to escape <br> Point and hold to navigate or start 3d model"
-    // }
     return stub;
   };

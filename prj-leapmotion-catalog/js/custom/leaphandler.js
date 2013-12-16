@@ -207,7 +207,7 @@ var initLeap = (function(){
                 
             }
         }
-        var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" + " radius:" + event.radius: "1 finger" + " radius:" + event.radius;
+        var submsg = event.numOfPointable > 1 ? event.numOfPointable + " fingers" : "1 finger" + " radius:" + event.radius;
         tutorialManager.displayGesture("CIRCLE",submsg);
 
     }
