@@ -219,18 +219,14 @@ var initLeap = (function(){
         var direction = "unknown";
         if(gesture.direction[1] < -0.7){
           if(frame.hands.length ==2 && (gesture.state==="stop" || gesture.state==="start")){
-              sceneExport.getCurrentScene().onHelpAppear(event);
+            sceneExport.getCurrentScene().onHelpAppear(event);
           }else if(event.x && gesture.state==="stop"){
-              if(event.numOfPointable >=3){
-                  direction = "down"
-              }
+            direction = "down"
           }
         }else if (gesture.direction[1] > 0.7 && gesture.state==="stop"){
           if(frame.hands.length ==2){
           }else if(event.x && gesture.state==="stop"){
-              if(event.numOfPointable >=3){
-                  direction = "up";
-              }
+            direction = "up";
           }       
         }else if(gesture.direction[0] < -0.7 && event.x){
           direction = "left";
@@ -240,12 +236,17 @@ var initLeap = (function(){
         if(direction !== "unknown"){
           event.direction = direction;
           if(direction === "right" || direction ==="left"){ 
-            if(event.numOfPointable >=3) //To align the logic of mothod on onSwipe in scene.js for horizontal swipe
+            if(event.numOfPointable >=4){
                 tutorialManager.displayGesture("SWIPE", "horizontally");
+                graphicalTipsManager.display("SWIPE-HORIZONTAL");
+                sceneExport.getCurrentScene().onHorizontalSwipe(event);
+            }
           }else{
-            tutorialManager.displayGesture("SWIPE", "vertically");
+            if(event.numOfPointable >=4){
+                sceneExport.getCurrentScene().onVerticalSwipe(event);
+                tutorialManager.displayGesture("SWIPE", "vertically");
+            }
           }
-          sceneExport.getCurrentScene().onSwipe(event);
         }
     }
     /*

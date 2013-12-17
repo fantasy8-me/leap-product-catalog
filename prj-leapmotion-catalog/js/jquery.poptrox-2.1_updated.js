@@ -410,7 +410,9 @@
 							globalUtil.reloadModel($(".custom-poptrox-popup div.popupContent div.pic iframe"))
 							$(".nav-previous").show();
 							$(".nav-next").hide();
+							$(".nav-next").removeClass("fakehover");
 							$(".custom-poptrox-popup div.popupContent").children().fadeOut("slow", function(){
+								sceneExport.sceneSwitch(sceneExport.SCENES.SKETCHFAB_SCENE);
 								$(".custom-poptrox-popup div.popupContent div.pic").slideDown("slow");	
 							});
 							
@@ -418,9 +420,11 @@
 						$(".nav-previous").click(function(){
 							$(".nav-next").show();
 							$(".nav-previous").hide();
+							$(".nav-previous").removeClass("fakehover");
 							$(".custom-poptrox-popup div.popupContent div.pic").slideUp("slow", function(){
 								$(".custom-poptrox-popup div.popupContent").children().show();
 								$(".custom-poptrox-popup div.popupContent div.pic").hide();
+								sceneExport.sceneSwitch(sceneExport.SCENES.PRODUCT_SCENE);
 							});
 						})
 						//Enable the navigation ... end

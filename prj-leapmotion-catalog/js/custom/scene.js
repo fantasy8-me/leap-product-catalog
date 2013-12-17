@@ -15,11 +15,13 @@ var sceneExport = (function(){
   var SCENES ={
     APP_MAIN_SCENE:"APP_MAIN_SCENE",
     PRODUCT_SCENE:"PRODUCT_SCENE",
+    SKETCHFAB_SCENE:"SKETCHFAB_SCENE"
   }
 
   var currentScene = null;
   var appMainScene = null;
   var productScene = null;
+  var sketchfabScene = null;
 
   /*
     Switch to specified "Scene"
@@ -39,6 +41,10 @@ var sceneExport = (function(){
         currentScene = productScene;
         break;
       }
+      case SCENES.SKETCHFAB_SCENE:{
+        currentScene = sketchfabScene;
+        break; 
+      }
     }
     currentScene.init();
     tutorialManager.displayTips();
@@ -51,14 +57,15 @@ var sceneExport = (function(){
       defineSceneClass();
       appMainScene = createAppMainScene($);
       productScene = createProductScene($);
+      sketchfabScene = createSketchFabScene($);
       $("article.item.thumb a").each(function(){
         $(this).click(function(){
           console.debug("Go to details scene");
-          setTimeout(function(){sceneSwitch(SCENES.PRODUCT_SCENE);},1000);  
+          setTimeout(function(){sceneSwitch(SCENES.PRODUCT_SCENE);},1000);  //To support mix operation of mouse and Leap
         });
       });
       $("html > div").click(function(){
-        sceneSwitch(SCENES.APP_MAIN_SCENE);  
+        sceneSwitch(SCENES.APP_MAIN_SCENE);  //To support mix operation of mouse and Leap
       });    
       sceneSwitch(SCENES.APP_MAIN_SCENE);
   }
@@ -129,7 +136,7 @@ var sceneExport = (function(){
         if(event.numOfPointableChanged && !this.selecting){
           this.pointer.refresh(event);
         }
-        this.pointer.moveTo(event.x,event.y);
+        this.pointer.moveTo(event);
 
         this.scrollByPosition(event);
 
@@ -186,20 +193,22 @@ var sceneExport = (function(){
       }
       var relativePostionX = event.x/window.innerWidth;
       var relativePostionY = event.y/window.innerHeight;
-      // if(relativePostionX > 0.9 || relativePostionX < 0.1){
-      //   pace = this.scrollPace * 2;
-      // }
+
       if(this.scrollDirection === "vetical"){
         if(relativePostionY > 0.7){
-          this.scrollObject.scrollTop += this.scrollPace + (relativePostionY - 0.7) * 20;  
+          this.scrollObject.scrollTop += this.scrollPace + (relativePostionY - 0.7) * 20;
+          graphicalTipsManager.display("SCROLL-DOWN"); 
         }else if(relativePostionY < 0.3){
           this.scrollObject.scrollTop -= this.scrollPace + (0.3 - relativePostionY) * 20;
+          graphicalTipsManager.display("SCROLL-UP");
         }
       }else{
         if(relativePostionX > 0.7){
           this.scrollObject.scrollLeft += this.scrollPace + (relativePostionX - 0.7) * 20;
+          graphicalTipsManager.display("SCROLL-RIGHT");
         }else if(relativePostionX < 0.3){
           this.scrollObject.scrollLeft -= this.scrollPace + (0.3 - relativePostionX) * 20;
+          graphicalTipsManager.display("SCROLL-LEFT");
         }
       }
     }    
@@ -223,6 +232,7 @@ var sceneExport = (function(){
         var $element = $(document.elementFromPoint(event.x,event.y));
         var $tmpEm = this.elementForCirlceSelect && this.elementForCirlceSelect.bind(this)($element);
         if($tmpEm && event.radius <= 7){
+          graphicalTipsManager.display("SMALL-CIRCLE-CLICK");
           this.onSelected.bind(this)($tmpEm);
           this.triggeredCircleId = event.circleId;
         }
@@ -279,8 +289,10 @@ var sceneExport = (function(){
     /*
       Stub method, do nothing if not overwritten by child
     */
-    Scene.prototype.onSwipe = function(event){
-    } 
+    Scene.prototype.onHorizontalSwipe = function(event){
+    }
+    Scene.prototype.onVerticalSwipe = function(event){
+    }    
 
     Scene.prototype.onKeyTap = function(event){
     }
@@ -322,6 +334,7 @@ var sceneExport = (function(){
         }else{
           console.debug("no event----");
         }
+
       };
 
       /*Clean and redraw the pointer*/
@@ -389,9 +402,17 @@ var sceneExport = (function(){
         refresh(event);
         canvasEm.style.display = "inline-block";
       }
-      var moveTo = function(x,y){
-        canvasEm.style.left = x - center.x + "px";
-        canvasEm.style.top = y - center.y + "px";    
+      var moveTo = function(event){
+        if(canvasEm.style.display === "none"){
+          //Show the pointer(with finger) asap when switch from a pointer-disable scene to a pointer-enable scene
+          appear(event); 
+        }
+        canvasEm.style.left = event.x - center.x + "px";
+        canvasEm.style.top = event.y - center.y + "px";    
+      }
+      var adjustPostion = function(x,y){
+        canvasEm.style.left = $(canvasEm).position().left + x + "px";
+        canvasEm.style.top = $(canvasEm).position().top + y + "px"
       }
       var centerPosition = function(){
         return {
@@ -407,7 +428,8 @@ var sceneExport = (function(){
         stopSelectAnimation:stopSelectAnimation,
         appear:appear,
         disappear:disappear,
-        moveTo:moveTo
+        moveTo:moveTo,
+        adjustPostion:adjustPostion
       }
     })();
   };
@@ -469,32 +491,17 @@ var sceneExport = (function(){
       The scrolling function in the website template is a little bit complicated, to avoid breaking any it's logic,
       we simulate the mouse scroll event to trigger the scrolling, instead of scrolling the reel directly.
     */
-    stub.onCircle2 =function(event){
-        
-        var isClockWise = event.clockwise;
-        var offest = 1 * (isClockWise ? 1 : -1);
-        var oriScrollLeft = document.getElementById("main").scrollLeft;
-        document.getElementById("reel").dispatchEvent(createScrollEvent(offest));  
-        
-        if(event.numOfPointable >= 4){
-          if(oriScrollLeft === document.getElementById("main").scrollLeft){
-            offest = document.getElementById("main").scrollWidth * (isClockWise ? -1 : 1);
-          }
-          document.getElementById("reel").dispatchEvent(createScrollEvent(offest));  
-        }   
-    }
 
     stub.scrollByPosition = function(event){
-      // if(event.numOfPointable < 2){
-      //   return
-      // }
       var offset =0 ;
       var relativePostionX = event.x/window.innerWidth;
 
       if(relativePostionX > 0.7){
         offset = this.scrollPace + (relativePostionX - 0.7) * 5;
+        graphicalTipsManager.display("SCROLL-RIGHT");
       }else if(relativePostionX < 0.3){
         offset = -1 * (this.scrollPace + (0.3 - relativePostionX) * 5);
+        graphicalTipsManager.display("SCROLL-LEFT");
       }
       if(offset !== 0)
         document.getElementById("reel").dispatchEvent(createScrollEvent(offset));  
@@ -585,10 +592,8 @@ var sceneExport = (function(){
                             }
                           }                         
                         });
-    stub.onSwipe = function(event){
-      if(event.numOfPointable >= 3 && (event.direction === "left" || event.direction === "right")){
-        $("html > div").click();
-      }
+    stub.onHorizontalSwipe = function(event){
+      $("html > div").click();
     };
 
     stub.onExit = function(){
@@ -604,8 +609,35 @@ var sceneExport = (function(){
       return "long";
     }
     stub.getTips = function(){
-      return "<strong>Point and hold</strong> navigation button to view 3d model &nbsp;&nbsp;\
-              <strong>Swipe horizontally</strong> to escape"
+      return "<strong>Point At</strong> the navigation button to view 3d model &nbsp;&nbsp;\
+              <strong>Horizontal Swipe</strong> to escape"
+    }  
+    return stub;
+  };
+
+  var createSketchFabScene = function($){
+    var stub = new Scene({
+                          name:sceneExport.SCENES.SKETCHFAB_SCENE,
+                          supportPointer: false         
+                        });
+    stub.onHorizontalSwipe = function(event){
+      $(".nav-previous").click();
+    };
+
+    stub.onExit = function(){
+      this.selecting = false;
+      this.selectedElement = undefined;
+    }
+    stub.init = function(){
+      this.pointer.disappear()
+      /*Reserve for any Initialization logic*/
+    }
+
+    stub.getTipClass = function(){
+      return "long";
+    }
+    stub.getTips = function(){
+      return "<strong>Horizontal Swipe</strong> to escape"
     }  
     return stub;
   };

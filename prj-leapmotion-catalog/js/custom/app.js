@@ -47,6 +47,31 @@ var tutorialManager = (function($){
     }
 })(jQuery);
 
+var graphicalTipsManager = (function($){
+    var paths = {
+        "SCROLL-LEFT":"scroll-left.png",
+        "SCROLL-RIGHT":"scroll-right.png",
+        "SCROLL-UP":"scroll-up.png",
+        "SCROLL-DOWN":"scroll-down.png",
+        "SWIPE-HORIZONTAL":"swipe-horizontal.png",
+        "SMALL-CIRCLE-CLICK":"small-circle.png"
+    }
+    var lastGestureIsScroll;
+
+    var display = function(type){
+        if(lastGestureIsScroll || type.indexOf("SCROLL") === -1 || $("#graphicalTips").css("display") === "none"){
+            lastGestureIsScroll = type.indexOf("SCROLL") === -1 ? false : true;
+            $("#graphicalTips").stop(true,true);
+            $("#graphicalTips img").attr("src", "images/gestures/"+paths[type]);
+            $("#graphicalTips").show();
+            $("#graphicalTips").fadeOut(2500);
+        }
+    }
+    return {
+        display:display
+    }
+})(jQuery);
+
 var globalUtil = (function(){
     var preLoad = function(url){
         if(!ifModelStarted(url)){
