@@ -407,6 +407,7 @@
 						$(".nav-next").show(); //Show next in the beginning
 
 						$(".nav-next").click(function(){
+							$(".custom-poptrox-popup div.popupContent div.pic iframe").attr("src",x.src);
 							globalUtil.reloadModel($(".custom-poptrox-popup div.popupContent div.pic iframe"))
 							$(".nav-previous").show();
 							$(".nav-next").hide();
@@ -422,6 +423,7 @@
 							$(".nav-previous").hide();
 							$(".nav-previous").removeClass("fakehover");
 							$(".custom-poptrox-popup div.popupContent div.pic").slideUp("slow", function(){
+								$(".custom-poptrox-popup div.popupContent div.pic iframe").attr("src","");
 								$(".custom-poptrox-popup div.popupContent").children().show();
 								$(".custom-poptrox-popup div.popupContent div.pic").hide();
 								sceneExport.sceneSwitch(sceneExport.SCENES.PRODUCT_SCENE);

@@ -236,13 +236,15 @@ var initLeap = (function(){
         if(direction !== "unknown"){
           event.direction = direction;
           if(direction === "right" || direction ==="left"){ 
-            if(event.numOfPointable >=4){
+            if(event.numOfPointable >= 4){ 
+                /*Change the number to 3 can make the gesture more sensitive, 
+                but will increase the possibility of conflict with sketchfab model*/
                 tutorialManager.displayGesture("SWIPE", "horizontally");
                 graphicalTipsManager.display("SWIPE-HORIZONTAL");
                 sceneExport.getCurrentScene().onHorizontalSwipe(event);
             }
           }else{
-            if(event.numOfPointable >=4){
+            if(event.numOfPointable >= 4){
                 sceneExport.getCurrentScene().onVerticalSwipe(event);
                 tutorialManager.displayGesture("SWIPE", "vertically");
             }
