@@ -98,6 +98,7 @@ body{
     }
     .custom-poptrox-popup div.picblock.sketchimg:hover{
         border: solid 6px #d64760;
+        cursor: pointer;
     }
     .custom-poptrox-popup div.picblock.fakehover{
         border: solid 6px #d64760;

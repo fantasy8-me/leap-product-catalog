@@ -375,6 +375,9 @@
 
 						//Logic to handle pic display block
 						$("div.picblock").addClass("sketchimg");
+						$("div.picblock").click(function(){
+							$(".nav-next").click();
+						});						
 						$(".viewbutton").click(function(){
 						    console.debug($(this).css("background-image"));
 						    console.debug($("div.picblock iframe").length);
@@ -384,9 +387,13 @@
 						    	// }
 						    	if(!$("div.picblock").hasClass("sketchimg")){
 						    		$("div.picblock").addClass("sketchimg");
+						    		$("div.picblock").click(function(){
+						    			$(".nav-next").click();
+						    		});						    		
 						    	}
 						    }else{
 						    	$("div.picblock").removeClass("sketchimg");
+						    	$("div.picblock").off("click");
 						    }
 					    	$imgTag = $("div.picblock img");
 					    	var imgUrlInCSS = $(this).css("background-image");

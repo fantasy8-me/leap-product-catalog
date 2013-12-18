@@ -567,7 +567,7 @@ var sceneExport = (function(){
                           onSelected: function($selectedElement){
                             if($selectedElement){
                               if($selectedElement.parent().hasClass("sketchimg")){
-                                $(".nav-next").click();
+                                $selectedElement.click();
                               }else{
                                 $selectedElement.click();
                               }
